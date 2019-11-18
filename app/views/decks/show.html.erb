@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vitality:</strong>
+  <%= @deck.vitality %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @deck.rank %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @deck.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @deck.description %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @deck.theme_id %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @deck.stars %>
+</p>
+
+<p>
+  <strong>Is private:</strong>
+  <%= @deck.is_private %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @deck.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_deck_path(@deck) %> |
+<%= link_to 'Back', decks_path %>
