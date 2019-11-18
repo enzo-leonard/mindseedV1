@@ -12,38 +12,67 @@ User.destroy_all
 
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
 
-theme = Theme.new(name: "Anglais")
-theme.user = user
-theme.save
+anglais = Theme.new(name: "Anglais")
+anglais.user = user
+anglais.save
 
-verb = Deck.new(name: "Verbe")
-verb.theme = theme
-verb.parent = nil
-verb.save!
+verb = Deck.create!(
+  name: "Verbe",
+  theme: anglais,
+  rank: 1,
+  parent: nil)
 
-nom = Deck.new(name: "Nom")
-nom.parent = nil
-nom.theme = theme
-nom.save!
+nom = Deck.create!(
+  name: "Nom",
+  rank: 1,
+  parent: nil,
+  theme: anglais)
 
-first = Deck.new(name: "First_group")
-first.parent = verb
-first.theme = theme
-first.save!
+expression = Deck.create!(
+  name: "Expression",
+  rank: 1,
+  parent: nil,
+  theme: anglais)
 
-second = Deck.new(name: "Second_group")
-second.parent = verb
-second.theme = theme
-second.save!
+first = Deck.create!(
+  name: "First_group",
+  rank: 2,
+  parent: verb,
+  theme: anglais)
 
-reg = Deck.new(name: "regulier")
-reg.parent = second
-reg.theme = theme
-reg.save!
+second = Deck.create!(
+  name: "Second_group",
+  rank: 2,
+  parent: verb,
+  theme:anglais)
 
-irr = Deck.new(name: "irrégulier")
-irr.parent = second
-irr.theme = theme
-irr.save!
+reg = Deck.create!(
+  name: "regulier",
+  rank: 3,
+  parent: second,
+  theme: anglais)
 
-second.childs.each { |x| p x.parent.parent.name }
+irr = Deck.create!(
+  name: "irrégulier",
+  rank: 3,
+  parent:  second,
+  theme:  anglais)
+
+
+
+def printChild(parent)
+  parent.childs.each do |child|
+    puts " #{"-"*child.rank}"                                                                                                                                                                                                                                                                          +child.name
+    printChild(child) if child.childs
+  end
+end
+
+
+puts "liste des thèmes : \n\n"
+anglais.decks.each do |x|
+  puts "- "+x.name  if x.rank == 1
+  printChild(x) if x.rank == 1
+  #puts "- #{x.name} (#{x.parent ? x.parent.name : "primary"}, #{x.childs.count})"
+end
+
+
