@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'themes/update'
   get 'themes/delete'
   resources :decks
-  devise_for :users
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get '/search', to: 'decks#index'
   get '/dashboard', to: 'themes#index'
   root to: 'pages#home'
