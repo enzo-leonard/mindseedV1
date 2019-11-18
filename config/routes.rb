@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  get 'themes/index'
-  get 'themes/new'
-  get 'themes/create'
-  get 'themes/edit'
-  get 'themes/update'
-  get 'themes/delete'
+  resources :themes
   resources :decks
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
