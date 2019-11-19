@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :themes
-  resources :decks
+  resources :themes do
+    resources :decks, only: [ :index, :new, :create ]
+  end
+  resources :decks, only: [ :show, :edit, :update, :destroy ]
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get '/search', to: 'decks#index'

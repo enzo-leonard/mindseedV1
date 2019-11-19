@@ -4,13 +4,13 @@ class DecksController < ApplicationController
   # GET /decks
   # GET /decks.json
   def index
-    @decks = Deck.all
+    @theme = Theme.find(params[:theme_id])
+    @decks = Deck.all.where(theme: @theme)
   end
 
   # GET /decks/1
   # GET /decks/1.json
   def show
-
   end
 
   # GET /decks/new

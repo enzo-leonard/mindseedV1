@@ -9,6 +9,7 @@
 Deck.destroy_all
 Theme.destroy_all
 User.destroy_all
+Card.destroy_all
 
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
 
@@ -61,6 +62,14 @@ irr = Deck.create!(
   rank: 3,
   parent:  second,
   theme:  anglais)
+
+Card.create!(
+  term: "abide",
+  definition: "souffrire",
+  deck: irr,
+  context: "I said I would abide by their decision",
+  memo: "avoir du bide ça fait souffire"
+)
 
 
 
