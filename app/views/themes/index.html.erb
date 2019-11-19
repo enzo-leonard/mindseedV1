@@ -1,19 +1,21 @@
 <div class="col-3 border vh-100 p-3">
-<h2>Dashboard</h2>
-<hr>
-<h3>Liste des thèmes</h3>
+  <h2>Dashboard</h2>
+  <hr>
+  <h3>Liste des thèmes</h3>
 
 
 
-  <% @theme.each do |item| %>
-<a href="/themes/<%=item.id%>">
-  <div class="d-flex bd-highlight bg-white p-3 shadow-sm rounded">
-    <div class="p-2 w-100 bd-highlight"> <%= item.name %></div>
-    <div class="p-2 flex-shrink-1 bd-highlight"> </div>
-  </div>
-  </div>
-</a>
-
+  <% @themes.each do |item| %>
+  <a href="/themes/<%=item.id%>">
+    <div class="d-flex bd-highlight bg-white p-3 shadow-sm rounded m-2">
+      <div class="p-2 w-100 bd-highlight"> <%= item.name %></div>
+      <div class="p-2 flex-shrink-1 bd-highlight"> </div>
+    </div>
+  </a>
   <%end%>
+</div>
+
+
+
 
 </div>
