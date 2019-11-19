@@ -10,6 +10,7 @@ class DecksController < ApplicationController
   # GET /decks/1
   # GET /decks/1.json
   def show
+
   end
 
   # GET /decks/new
