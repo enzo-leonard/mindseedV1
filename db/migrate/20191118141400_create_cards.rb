@@ -9,6 +9,7 @@ class CreateCards < ActiveRecord::Migration[6.0]
       t.integer :number_of_test
       t.integer :vitality
       t.string :memo
+      t.references :deck, null: false, foreign_key: true
 
       t.timestamps
     end
