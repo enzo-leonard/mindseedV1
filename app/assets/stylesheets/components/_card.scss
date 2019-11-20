@@ -9,3 +9,74 @@
   padding: 15px;
   width: 20%;
 }
+
+
+.input-card {
+
+  display: flex;
+  margin: 5px 0px;
+
+  #term {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  input {
+    padding: 5px 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 1.2px solid rgb(228, 228, 228);
+    margin: 0px 0px 0px 3px;
+    font-family: "Raleway";
+    color: rgb(65, 65, 65);
+    font-weight: 500;
+    transition: all 0.3;
+  }
+
+  input[type=text]:focus,
+  input[type=text]:active {
+    border-bottom: 2px solid rgb(0, 160, 0);
+    outline: none;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+  }
+}
+
+
+.input-card-left {
+  padding: 10px;
+  margin: 5px 5px 5px 0px;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  width: 25%;
+  border-radius: 5px;
+
+  img {
+    height: 250px;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+
+  }
+}
+
+
+.input-card-right {
+  padding: 10px;
+  margin: 5px 0px;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  width: 70%;
+  border-radius: 5px;
+
+
+}

@@ -1,0 +1,18 @@
+ <div class="input-card">
+  <%= simple_form_for([ deck, card ]) do |form| %>
+   <div class="input-card-left">
+    <%= form.input :term %>
+    <%= form.input :photo, as: :hidden, class: "hidden"%>
+    <img src="" id="img">
+    </div>
+
+    <div class="input-card-right">
+      <%= form.input :definition, as: :text %>
+      <%= form.input :context %>
+      <%= form.input :memo %>
+    </div>
+</div>
+
+    <%= form.button :submit %>
+  <% end %>
+
