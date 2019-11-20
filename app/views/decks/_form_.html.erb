@@ -2,15 +2,15 @@
   <%= simple_form_for([ deck, card ]) do |form| %>
 
    <div class="input-card-left">
-    <%= form.input :term %>
-    <%= form.input :photo, as: :hidden, class: "hidden"%>
-    <img src="" id="img">
+    <%= form.input :term, input_html: { id: 'new_term'} %>
+    <%= form.input :photo, as: :hidden, class: "hidden", input_html: { id: 'new_img_hidden'}%>
+    <img src="" id="new_img">
     </div>
 
     <div class="input-card-right">
-      <%= form.input :definition, as: :text %>
-      <%= form.input :context %>
-      <%= form.input :memo %>
+      <%= form.input :definition, as: :text, input_html: { id: 'new_definition'} %>
+      <%= form.input :context , input_html: { id: 'new_context'}%>
+      <%= form.input :memo , input_html: { id: 'new_memo'}%>
     </div>
 
 

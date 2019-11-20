@@ -4945,16 +4945,6 @@ osenv@0, osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-oxford-dictionary-api@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/oxford-dictionary-api/-/oxford-dictionary-api-1.0.1.tgz#29fecd645b79b27d06106fc2db336f76fb409df3"
-  integrity sha1-Kf7NZFt5sn0GEG/C2zNvdvtAnfM=
-
-oxford-dictionary@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/oxford-dictionary/-/oxford-dictionary-1.5.0.tgz#5e5aebd7f141132a03326ddaeee77a58212b847d"
-  integrity sha512-5LQmGNXmwVbm1evFXn6t1jD+Va9TUdo695gmyPkxPw1vZ0Wy/4a8xCHYn9MBt1rHBSTqhU3iFDrMgf587od5hA==
-
 p-defer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"

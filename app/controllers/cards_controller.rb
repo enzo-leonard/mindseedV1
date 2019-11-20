@@ -13,6 +13,7 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.deck = @deck
 
+
     if @card.save!
       redirect_to deck_path(@deck)
     else
