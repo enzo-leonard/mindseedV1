@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get '/search', to: 'decks#index'
+  get '/search', to: 'decks#search'
   get '/dashboard', to: 'themes#index'
   get '/learn', to: 'themes#learn'
   root to: 'pages#home'

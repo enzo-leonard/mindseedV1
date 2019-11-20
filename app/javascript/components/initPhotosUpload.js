@@ -8,13 +8,10 @@ const serviceKey = "d484f69aa59d4cfd8ddba54c472562d8";
 
 //replace this value with your valid subscription key.
 //the search term for the request
+
 let input = document.querySelector('#card_term');
 const image = document.querySelector("#img");
 const input_photo = document.querySelector('#card_photo');
-
-
-
-
 
 //instantiate the image search client
 let credentials = new CognitiveServicesCredentials(serviceKey);

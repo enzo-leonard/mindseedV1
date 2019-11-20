@@ -8,6 +8,16 @@ class DecksController < ApplicationController
     @decks = Deck.all.where(theme: @theme)
   end
 
+  # GET /decks/search
+  def search
+    @sql = 'name ILike?', "%#{params[:query]}%"
+    @childs = []
+    @decks = Deck.where(@sql)
+    @decks.each do |deck|
+      @childs << deck if deck.childs.count.zero?
+    end
+  end
+
   # GET /decks/1
   # GET /decks/1.json
   def show
