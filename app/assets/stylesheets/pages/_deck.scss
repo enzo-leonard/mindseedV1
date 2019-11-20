@@ -13,6 +13,7 @@
     font-family: "Raleway";
     color: #414141;
     font-weight: 500;
+    margin-bottom: -10px;
   }
 
   .is-valid:focus,
@@ -27,6 +28,8 @@
     text-align: center;
     font-size: 1.2em;
     font-weight: 600;
+    margin-bottom: -10px;
+
   }
 
   label {
@@ -34,7 +37,11 @@
   }
 
   textarea {
-    min-height: 150px;
+    min-height: 100px;
     height: auto;
   }
+}
+
+.hidden {
+  display: none;
 }

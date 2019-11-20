@@ -7,9 +7,6 @@ const ImageSearchAPIClient = require('azure-cognitiveservices-imagesearch');
 const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
 const serviceKey = "d484f69aa59d4cfd8ddba54c472562d8";
 
-//replace this value with your valid subscription key.
-//the search term for the request
-
 let input = document.querySelector('#new_term');
 const image = document.querySelector("#new_img");
 const input_photo = document.querySelector('#new_img_hidden');
