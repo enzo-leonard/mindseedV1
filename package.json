@@ -10,8 +10,11 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "ms-rest-azure": "^3.0.0",
+    "oxford-dictionary": "^1.5.0",
+    "oxford-dictionary-api": "^1.0.1",
     "popper.js": "^1.16.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "unirest": "^0.6.0"
   },
   "version": "0.1.0",
   "devDependencies": {

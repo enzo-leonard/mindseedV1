@@ -5,7 +5,8 @@ const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesC
 
 //replace this value with your valid subscription key.
 //the search term for the request
-let searchTerm = "blue waffle";
+let searchTerm = "fleur";
+const serviceKey = "d484f69aa59d4cfd8ddba54c472562d8"
 
 //instantiate the image search client
 let credentials = new CognitiveServicesCredentials(serviceKey);
