@@ -1,12 +1,63 @@
 <p id="notice"><%= notice %></p>
+<div class="back">
+  <a href="/themes" ><%= icon('fas', 'chevron-left') %></a>
+</div>
 
 
-<input id=term>
 
-<img src="">
 
-<h1>Deck edit </h1>
-<%= @deck.name %>
-<% @deck.cards.each do |item|%>
-<%= item.term%>
-<%end %>
+
+<div class="container mt-5">
+
+  <h1><%= @deck.name.capitalize %></h1>
+  <div class="description"><%= @deck.description %></div>
+
+
+
+  <% @deck.cards.each do |item|%>
+  <!--
+  <div class="input-card">
+    <div class="input-card-left">
+      <input id=term type="text" value="<%=item.term%>" placeholder="term">
+      <img src="<%=item.photo%>" alt="img">
+    </div>
+    <div class="input-card-right">
+      <input type="text" value="<%=item.definition %>" placeholder="definition">
+      <input type="text" value="<%=item.context %>" placeholder="context">
+      <input type="text" value="<%=item.memo %>" placeholder="memo">
+    </div>
+  </div>
+
+  -->
+
+   <div class="input-card">
+  <%= simple_form_for([ @deck, item ]) do |form| %>
+
+   <div class="input-card-left">
+    <%= form.input :term %>
+    <%= form.input :photo, as: :hidden, class: "hidden"%>
+    <img src="<%=item.photo%>" alt="img">
+    </div>
+
+    <div class="input-card-right">
+      <%= form.input :definition, as: :text, :error => false, :hint => false %>
+      <%= form.input :context %>
+      <%= form.input :memo %>
+    </div>
+
+
+
+    </div>
+    <%= form.button :submit %>
+  <% end %>
+
+
+
+  <%end %>
+
+  <h2>Add new card</h2>
+
+
+  <%= render 'decks/form_', deck: @deck, card: Card.new %>
+<hr>
+remonter

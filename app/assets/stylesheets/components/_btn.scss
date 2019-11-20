@@ -1,0 +1,29 @@
+.btn {
+  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155, 170, 185, 0.6);
+  color: #fff !important;
+  line-height: 2.875rem;
+  padding: 0.125rem 1.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Alata', sans-serif;
+  border-radius: 0.375rem;
+  background: #00ab00;
+  transition: 0.2s background-color,
+    0.2s transform,
+    0.2s opacity;
+  ;
+
+}
+
+
+.btn:hover {
+  opacity: 0.8;
+  -webkit-transform: translateY(-0.188rem);
+  -moz-transform: translateY(-0.188rem);
+  -o-transform: translateY(-0.188rem);
+  -ms-transform: translateY(-0.188rem);
+  transform: translateY(-0.188rem);
+}
