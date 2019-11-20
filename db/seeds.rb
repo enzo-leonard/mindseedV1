@@ -9,8 +9,13 @@
 Deck.destroy_all
 Theme.destroy_all
 User.destroy_all
+Card.destroy_all
 
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
+
+puts "Creation du theme anglais"
+
+user = User.first
 
 anglais = Theme.new(name: "Anglais")
 anglais.user = user
@@ -58,6 +63,32 @@ irr = Deck.create!(
   parent:  second,
   theme:  anglais)
 
+Card.create!(
+  term: "abide",
+  definition: "souffrire",
+  deck: irr,
+  context: "I said I would abide by their decision",
+  memo: "avoir du bide ça fait souffire"
+)
+
+
+
+batch = Theme.create!(name: "batch 308", user: user)
+ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: batch)
+ruby_1 = Deck.create!(name: "Programming basic", rank: 2, parent: ruby, theme: batch)
+ruby_1_2 = Deck.create!(name: "Variable", rank: 3, parent: ruby_1, theme: batch)
+ruby_2 = Deck.create!(name: "Flow Conditionnal & array", rank: 2, parent: ruby, theme: batch)
+ruby_3 = Deck.create!(name: "Iterator & blocks", rank: 2, parent: ruby, theme: batch)
+ruby_4 = Deck.create!(name: "Hash & Symbols", rank: 2, parent: ruby, theme: batch)
+ruby_5 = Deck.create!(name: "Regular Expressions", rank: 2, parent: ruby, theme: batch)
+ruby_6 = Deck.create!(name: "Parsing", rank: 2, parent: ruby, theme: batch)
+oop = Deck.create!(name: "Oriented Object programming", rank: 1, parent: nil, theme: batch)
+db = Deck.create!(name: "Base de donnée", rank: 1, parent: nil, theme: batch)
+front = Deck.create!(name: "Front", rank: 1, parent: nil, theme: batch)
+rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: batch)
+
+
+
 
 
 def printChild(parent)
@@ -69,10 +100,14 @@ end
 
 
 puts "liste des thèmes : \n\n"
-anglais.decks.each do |x|
-  puts "- "+x.name  if x.rank == 1
-  printChild(x) if x.rank == 1
-  #puts "- #{x.name} (#{x.parent ? x.parent.name : "primary"}, #{x.childs.count})"
+
+themes = Theme.all
+themes.each do |t|
+  puts "\n\n--------------\nTheme : #{t.name}\n-------------\n\n"
+  t.decks.each do |x|
+    puts "- "+x.name  if x.rank == 1
+    printChild(x) if x.rank == 1
+  end
 end
 
 

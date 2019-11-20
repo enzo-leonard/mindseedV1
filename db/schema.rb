@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2019_11_18_170853) do
     t.integer "number_of_test"
     t.integer "vitality"
     t.string "memo"
+    t.bigint "deck_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deck_id"], name: "index_cards_on_deck_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_170853) do
 
   add_foreign_key "card_tests", "cards"
   add_foreign_key "card_tests", "users"
+  add_foreign_key "cards", "decks"
   add_foreign_key "decks", "themes"
   add_foreign_key "themes", "users"
 end

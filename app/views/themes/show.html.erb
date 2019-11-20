@@ -6,12 +6,11 @@
    <h2> <%= @theme.name %> </h2>
    <% @theme.decks.each do |item|  %>
 
-
-   <div class="d-flex bd-highlight bg-white p-3 shadow-sm rounded m-2 border" style="margin-left: <%=20*(item.rank-1)%>px !important;">
-   <%= item.name%>
-   </div>
-
-
+  <a href=<%="/decks/#{item.id}"%>>
+    <div class="d-flex bd-highlight bg-white p-3 shadow-sm rounded m-2 border" style="margin-left: <%=20*(item.rank-1)%>px !important;">
+      <%= item.name%>
+    </div>
+    </a>
 
    <%end%>
 
