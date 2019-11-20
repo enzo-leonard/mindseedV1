@@ -5,7 +5,6 @@
 <div class="card-theme">
    <h2> <%= @theme.name %> </h2>
    <% @theme.decks.each do |item|  %>
-
   <a href=<%="/decks/#{item.id}"%>>
     <div class="d-flex bd-highlight bg-white p-3 shadow-sm rounded m-2 border" style="margin-left: <%=20*(item.rank-1)%>px !important;">
       <%= item.name%> (<%= item.cards.count%>)
@@ -16,7 +15,7 @@
 
 
 <hr>
-  <%= link_to icon('fas', 'edit', '  Edit'),  edit_theme_path(@theme), class:"btn" %>
+  <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn" %>
   <a href="/learn" class="btn"><%= icon('fas', 'seedling', '  Training') %></a>
 </div>
 

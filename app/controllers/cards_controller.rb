@@ -12,6 +12,7 @@ class CardsController < ApplicationController
     @deck = Deck.find(params[:deck_id])
     @card = Card.new(card_params)
     @card.deck = @deck
+
     if @card.save!
       redirect_to deck_path(@deck)
     else

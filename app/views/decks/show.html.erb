@@ -15,6 +15,7 @@
 
 
   <% @deck.cards.each do |item|%>
+  <!--
   <div class="input-card">
     <div class="input-card-left">
       <input id=term type="text" value="<%=item.term%>" placeholder="term">
@@ -26,13 +27,37 @@
       <input type="text" value="<%=item.memo %>" placeholder="memo">
     </div>
   </div>
+
+  -->
+
+   <div class="input-card">
+  <%= simple_form_for([ @deck, item ]) do |form| %>
+
+   <div class="input-card-left">
+    <%= form.input :term %>
+    <%= form.input :photo, as: :hidden, class: "hidden"%>
+    <img src="<%=item.photo%>" alt="img">
+    </div>
+
+    <div class="input-card-right">
+      <%= form.input :definition, as: :text, :error => false, :hint => false %>
+      <%= form.input :context %>
+      <%= form.input :memo %>
+    </div>
+
+
+
+    </div>
+    <%= form.button :submit %>
+  <% end %>
+
+
+
   <%end %>
 
   <h2>Add new card</h2>
 
 
   <%= render 'decks/form_', deck: @deck, card: Card.new %>
-
-
-
-</div>
+<hr>
+remonter
