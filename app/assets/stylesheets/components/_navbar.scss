@@ -1,16 +1,25 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-}
+  background: transparent;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .navbar-collapse {
+    flex-grow: 0;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+  .navbar-brand img {
+    width: 40px;
+  }
 
-#navbarSupportedContent {
-  margin: 0 auto!important;
+  .logo {
+    color: white;
+    font-weight: 600;
+  }
+
+  .logo-black {
+    color: black;
+    font-weight: 600;
+  }
+  .login-black {
+    color: black;
+  }
 }
