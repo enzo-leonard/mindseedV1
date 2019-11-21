@@ -21,14 +21,14 @@
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border-radius: 10px;
-  padding: 15px;
+  padding: 16px;
   width: 20%;
 }
 
 
 .input-card {
   display: flex;
-  margin: 5px 0px;
+  margin: 24px 0px;
 
   #term {
     text-align: center;
@@ -66,15 +66,15 @@
 
 
 .input-card-left {
-  padding: 10px;
+  padding: 7px;
   margin: 5px 5px 5px 0px;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  width: 25%;
+  width: 20%;
   border-radius: 5px;
 
   img {
-    height: 250px;
+    height: 150px;
     width: 100%;
     border-radius: 5px;
     object-fit: cover;
@@ -89,6 +89,6 @@
   margin: 5px 0px;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  width: 70%;
+  width: 80%;
   border-radius: 5px;
 }
