@@ -20,6 +20,18 @@
 
  <div class="input-card-right">
    <%= form.input :definition, as: :text, input_html: { id: 'new_definition'} %>
+   <div class="change-definition">
+       <!-- <a class="btn-primary btn-change-definition-new"></a> -->
+       <button class="btn-primary"></button>
+       <div class="alt-definition-container-new hidden">
+        <label for="definition">Choose your favorite def</label>
+         <option value=""></option>
+         <option value=""></option>
+         <option value=""></option>
+         <option value=""></option>
+         <option value=""></option>
+       </div>
+     </div>
    <%= form.input :context , input_html: { id: 'new_context'}%>
    <%= form.input :memo , input_html: { id: 'new_memo'}%>
  </div>
