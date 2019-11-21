@@ -14,7 +14,7 @@
     align-items: center;
     border-radius: 5px;
 
-    h1 {
+    h2 {
       color: white;
     }
 
@@ -56,11 +56,13 @@
 .flip-card-front {
   //background-color: #bbb;
   //color: black;
+  .question {
+    color: white;
+  }
 }
 
 /* Style the back side */
 .flip-card-back {
-  left: -20px;
   background-color: rgb(248, 245, 242);
   color: rgb(56, 56, 56);
   border-radius: 5px;
@@ -77,16 +79,19 @@
   }
 
   .title {
-    padding: 7px;
+    padding: 5px;
     display: flex;
-    height: 17%;
+    height: 20%;
     font-size: 20px;
     font-weight: 600;
     background-color: rgb(100, 100, 100);
     color: white;
     border-radius: 5px 5px 0px 0px;
-    align-items: end;
+    align-items: center;
   }
+   .title h5 {
+    margin: 0 auto;
+   }
 
   .icon-title {
     height: 60px;
