@@ -1,0 +1,43 @@
+  .list_element{
+    display: flex;
+    border: 2px solid $white;
+    color : $white;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    padding: 3px;
+    text-decoration: none;
+     transition: all 0.5s ease;
+
+
+    .vitality-count {
+      width : 42px;
+      height : 42px;
+      border-radius: 50%;
+      background-color: $purple;
+      margin-left: 5px;
+    }
+
+    p{
+      padding: 20px 20px;
+      margin : 0;
+      font-weight: 600;
+      color: $white;
+    }
+
+    &:hover{
+      background: $white;
+      transition: all 0.5s ease;
+    }
+
+     &:hover a{
+      text-decoration: none !important;
+      color: white;
+    }
+
+     &:hover p{
+      color: white;
+    }
+
+  }
