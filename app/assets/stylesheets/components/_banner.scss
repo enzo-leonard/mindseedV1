@@ -1,0 +1,79 @@
+.row-fluid {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.wrapper-main {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 15rem;
+  padding-left: 15rem;
+  padding-top: 4rem;
+  width: 100% !important;
+  max-width: 1440px;
+  float: none !important;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.banner {
+  background-size: cover;
+  background-color: aqua;
+  background-position: center;
+  padding: 50px 0 200px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.section-one {
+  padding: 5rem 0;
+}
+
+.section-two {
+  background-color: antiquewhite;
+  padding: 5rem 0;
+}
+.section-three {
+  background-color: cadetblue;
+  padding: 5rem 0;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.title h2 {
+  font-size:2rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.photo img {
+  max-width: 300px;
+}
+.phrase {
+
+}
+
+.card {
+  background-color: bisque;
+}
