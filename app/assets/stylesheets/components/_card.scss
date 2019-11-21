@@ -1,3 +1,18 @@
+.card .card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-infos .card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
 .card-theme {
   position: absolute;
   top: 15%;
@@ -12,7 +27,6 @@
 
 
 .input-card {
-
   display: flex;
   margin: 24px 0px;
 
@@ -77,6 +91,4 @@
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width: 80%;
   border-radius: 5px;
-
-
 }
