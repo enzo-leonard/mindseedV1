@@ -53,6 +53,25 @@
   transition: all 0.4s ease 0s;
 }
 
+.btn-green {
+  color: #fff;
+  border: 1px solid #4A4A4A;
+  padding: 0px 40px;
+  border-radius: 10px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  background: #2caf90;
+}
+
+.btn-green:hover {
+  opacity: 1;
+  color: #ffffff;
+  background: radial-gradient(circle at 50% 21%, #3dceac, #2caf90);
+  border-color: #4A4A4A;
+  transition: all 0.4s ease 0s;
+}
+
 .btn-flat {
   color: white;
   padding: 8px 24px;
