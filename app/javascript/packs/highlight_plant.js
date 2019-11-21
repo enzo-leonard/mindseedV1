@@ -3,6 +3,8 @@ export default highlightPlant;
 console.log('in highlight_plant.js');
 
 function highlightPlant(){
+if (document.querySelector(".plant")) {
+
 console.log('in highlightPlant ');
     let plant = document.querySelectorAll(".plant");
     let return_dashbaord = document.querySelector(".return_dash");
@@ -28,6 +30,7 @@ console.log('in highlightPlant ');
     return_dashbaord.classList.toggle("hidden");
       });
     }
+}
 
 
 
