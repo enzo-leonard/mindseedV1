@@ -4,13 +4,23 @@ class DecksController < ApplicationController
   # GET /decks
   # GET /decks.json
   def index
-    @decks = Deck.all
+    @theme = Theme.find(params[:theme_id])
+    @decks = Deck.all.where(theme: @theme)
+  end
+
+  # GET /decks/search
+  def search
+    @sql = 'name ILike?', "%#{params[:query]}%"
+    @childs = []
+    @decks = Deck.where(@sql)
+    @decks.each do |deck|
+      @childs << deck if deck.childs.count.zero?
+    end
   end
 
   # GET /decks/1
   # GET /decks/1.json
   def show
-
   end
 
   # GET /decks/new

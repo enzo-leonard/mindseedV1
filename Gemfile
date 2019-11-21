@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'omniauth-facebook'
+gem 'oxford_dictionary'
 
 
 group :development do

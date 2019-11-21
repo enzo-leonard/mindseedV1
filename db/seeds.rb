@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Card.destroy_all
 Deck.destroy_all
 Theme.destroy_all
 User.destroy_all
+
 
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
 
@@ -62,8 +63,36 @@ irr = Deck.create!(
   parent:  second,
   theme:  anglais)
 
+Card.create!(
+  term: "abide",
+  definition: "souffrire",
+  deck: irr,
+  context: "I said I would abide by their decision",
+  memo: "avoir du bide ça fait souffire",
+  photo: "https://source.unsplash.com/random"
+)
+
+Card.create!(
+  term: "beget",
+  definition: "engendrer",
+  deck: irr,
+  context: "they hoped that the King might beget an heir by his new queen",
+  memo: "",
+  photo: "https://source.unsplash.com/random"
+)
 
 
+Card.create!(
+  term: "bereave",
+  definition: "scold or criticize (someone) angrily.",
+  deck: irr,
+  context: "she berated herself for being fickle",
+  memo: "",
+  photo: "https://source.unsplash.com/random"
+)
+
+
+learn = Theme.create!(name: "Learn", user: user)
 batch = Theme.create!(name: "batch 308", user: user)
 ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: batch)
 ruby_1 = Deck.create!(name: "Programming basic", rank: 2, parent: ruby, theme: batch)
@@ -84,7 +113,7 @@ rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: batch)
 
 def printChild(parent)
   parent.childs.each do |child|
-    puts " #{"-"*child.rank}"                                                                                                                                                                                                                                                                          +child.name
+    puts " #{"-"*child.rank} (#{child.cards.count})"                                                                                                                                                                                                                                                                          +child.name
     printChild(child) if child.childs
   end
 end

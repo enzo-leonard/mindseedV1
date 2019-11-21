@@ -28,14 +28,14 @@
         <td><%= deck.stars %></td>
         <td><%= deck.is_private %></td>
         <td><%= deck.parent_id %></td>
-        <td><%= link_to 'Show', deck %></td>
-        <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
-        <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', "/decks/#{deck.id}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+
+
 <br>
 
-<%= link_to 'New Deck', new_deck_path %>
+<%# <%= link_to 'New Deck', new_deck_path %>

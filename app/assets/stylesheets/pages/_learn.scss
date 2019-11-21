@@ -1,0 +1,87 @@
+.learn {
+
+  .center-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .view {}
+
+  font-family: 'Alata',
+  sans-serif;
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(45deg);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .progress {
+    position: absolute;
+    top: 30px;
+    left: 20%;
+    right: 20%;
+  }
+
+
+
+  .answer {
+    background-color: white;
+    height: 500px;
+    width: 280px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: whitesmoke;
+  }
+
+  .center {
+    margin: 10px auto;
+  }
+
+  .compteur {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 48px;
+    font-weight: 900;
+    color: grey;
+  }
+
+  .score {
+    background-color: white;
+    padding: 15px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 2px grey;
+    font-size: 48px;
+    font-weight: 900;
+    color: blueviolet;
+  }
+
+  .result {
+    margin: 10% auto;
+    font-size: 48px;
+    color: darkslategrey;
+  }
+
+  #nb_card {
+    color: blue;
+  }
+
+  .content {
+    height: auto;
+  }
+
+  .answer-container {
+
+    margin: 50px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

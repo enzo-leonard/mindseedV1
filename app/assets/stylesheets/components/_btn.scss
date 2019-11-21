@@ -1,0 +1,82 @@
+.btn {
+  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155, 170, 185, 0.6);
+  color: #fff;
+  line-height: 2.875rem;
+  padding: 0.125rem 1.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Alata', sans-serif;
+  border-radius: 0.375rem;
+  transition: 0.2s background-color,
+    0.2s transform,
+    0.2s opacity;
+  ;
+
+}
+
+.btn:hover {
+  opacity: 0.8;
+  -webkit-transform: translateY(-0.188rem);
+  -moz-transform: translateY(-0.188rem);
+  -o-transform: translateY(-0.188rem);
+  -ms-transform: translateY(-0.188rem);
+  transform: translateY(-0.188rem);
+}
+
+.btn-ghost {
+  color: #fff;
+  border: 1px solid #4A4A4A;
+  padding: 0px 40px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-white {
+  color: rgb(236, 236, 236);
+  border: 1px solid #4A4A4A;
+  padding: 0px 40px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: #ffffff;
+  background: radial-gradient(circle at 50% 21%, #3dceac, #2caf90);
+  border-color: #4A4A4A;
+  transition: all 0.4s ease 0s;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}

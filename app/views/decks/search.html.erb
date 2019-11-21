@@ -1,0 +1,12 @@
+<%= form_tag search_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for a set of Flashcards"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<% @childs.each do |d| %>
+  <h3><%= d.name %><h3>
+  <% end %>

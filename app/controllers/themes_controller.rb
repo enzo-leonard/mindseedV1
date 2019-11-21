@@ -16,6 +16,13 @@ class ThemesController < ApplicationController
     @theme = Theme.new
   end
 
+  def learn
+    @cards = []
+    7.times do @cards
+    @cards << Card.all.sample
+    end
+  end
+
   def edit
   end
 

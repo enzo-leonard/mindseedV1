@@ -7,10 +7,14 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.2.0",
     "animejs": "^3.1.0",
+    "azure-cognitiveservices-imagesearch": "^2.0.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "ms-rest-azure": "^3.0.0",
     "popper.js": "^1.16.0",
-    "turbolinks": "^5.2.0"
+    "select2": "^4.0.12",
+    "turbolinks": "^5.2.0",
+    "unirest": "^0.6.0"
   },
   "version": "0.1.0",
   "devDependencies": {
