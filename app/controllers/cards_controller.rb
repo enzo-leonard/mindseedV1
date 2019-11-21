@@ -25,6 +25,13 @@ class CardsController < ApplicationController
   end
 
   def update
+    @deck = Deck.find(params[:deck_id])
+    @card = Card.find(params[:id])
+    if @card.update!(card_params)
+      redirect_to deck_path(@deck)
+    else
+      render 'decks/show'
+    end
   end
 
   def delete

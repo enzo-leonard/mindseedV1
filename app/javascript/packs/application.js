@@ -18,7 +18,6 @@ var ready = function () {
     initDictionary();
     //initGoogleSign()
     initLearn();
-    initPhotosUpload();
   })
 
 };
