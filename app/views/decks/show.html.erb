@@ -34,9 +34,20 @@
   <%= simple_form_for([ @deck, item ]) do |form| %>
 
    <div class="input-card-left">
-    <%= form.input :term %>
+    <%= form.input :term, input_html: { id: "term_#{item.id}"}%>
     <%= form.input :photo, as: :hidden, class: "hidden"%>
-    <img src="<%=item.photo%>" alt="img">
+    <div class="change-photo">
+     <a data_id=<%=item.id%> class=btn-change-photo><%= icon('fas', 'exchange-alt')%></a>
+      <img id=img-<%=item.id%> src="<%=item.photo%>" alt="img">
+      <div data_container_id=<%=item.id%> class="hidden alt-photo-container alt-photo-container-<%= item.id %>" >
+      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
+      </div>
+    </div>
     </div>
 
     <div class="input-card-right">
@@ -59,4 +70,16 @@
 
   <%= render 'decks/form_', deck: @deck, card: Card.new %>
 <hr>
-remonter
+
+
+<%#
+- AJAX
+- SUGGESTION IMAGE
+- SUGGESTION DEFINITION
+- HOLDER
+- UPDATE
+- DELETE
+- CHANGE PHOTO ALL
+- CHANGE DEF ALL
+- V2 FAIRE NOUVEAU GRAPHIQUE
+ %>
