@@ -7,11 +7,10 @@ import initGoogleSign from '../components/initGoogleLog';
 import initDictionary from "../components/initDictionary.js"
 import init from "../components/initMindMap.js";
 import initD3 from "../components/initD3.js"
-import 'd3-webpack-loader'
 import initStickyBar from "../components/initStickyBar.js"
 import "./anime";
 import highlightPlant from "./highlight_plant";
-
+import render from "../components/initTree"
 
 require("turbolinks").start()
 
@@ -20,6 +19,9 @@ var ready = function () {
 
 
   console.log('Nouvelle route ')
+
+    const json = (document.querySelector('.raw-json'))
+    if (json) render(JSON.parse(json.innerHTML))
 
     initPhotosUpload();
     initDictionary();
@@ -30,11 +32,11 @@ var ready = function () {
     initPhotosUpload();
     initStickyBar();
     highlightPlant();
+
   })
 
 };
 
 
 $(document).on('turbolinks:load', ready);
-
 

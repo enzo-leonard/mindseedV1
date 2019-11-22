@@ -1,29 +1,51 @@
  .node circle {
    cursor: pointer;
    fill: #fff;
-   stroke: steelblue;
-   stroke-width: 1.5px;
+   stroke: green;
+   stroke-width: px;
  }
 
  .node text {
-   font-size: 11px;
+   font-size: 18px;
+   font-family: "Alata";
  }
 
  path.link {
    fill: none;
-   stroke: #ccc;
-   stroke-width: 1.5px;
+   stroke: rgb(100, 48, 0);
+   stroke-width: 2px;
  }
 
  .node.selected circle {
    fill: green;
  }
 
- #body {
-   position: absolute;
-   top: 20%;
-   right: 0px;
+ .node {
+   cursor: pointer;
+ }
 
-   width: 60%;
-   height: 50%;
+ .overlay {
+   background-color: #EEE;
+ }
+
+
+ .link {
+   fill: none;
+   stroke: #ccc;
+   stroke-width: 1.5px;
+ }
+
+ .templink {
+   fill: none;
+   stroke: red;
+   stroke-width: 3px;
+ }
+
+ .ghostCircle.show {
+   display: block;
+ }
+
+ .ghostCircle,
+ .activeDrag .ghostCircle {
+   display: none;
  }

@@ -15,14 +15,13 @@
 
 .card-theme {
   position: absolute;
-  top: 15%;
-  left: 10%;
-  height: 70%;
+  top: 0px;
+  height: 100vh;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border-radius: 10px;
-  padding: 16px;
-  width: 20%;
+  padding: 0px 40px;
+  width: 25%;
   z-index: 2;
 }
 
