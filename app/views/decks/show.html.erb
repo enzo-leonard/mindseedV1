@@ -51,7 +51,13 @@
     </div>
 
     <div class="input-card-right">
-      <%= form.input :definition, as: :text, :error => false, :hint => false %>
+      <%= form.input :definition, as: :text, :error => false, :hint => false, class: "update-definition#{item.id}", input_html: { id: "def-#{item.id}"}%>
+       <div class="defs-update-container">
+    <div class="definitions-update-<%= item.id %>"> </div>
+    <div class="definitions-update-<%= item.id %>"> </div>
+    <div class="definitions-update-<%= item.id %>"> </div>
+    <div class="definitions-update-<%= item.id %>"> </div>
+  </div>
       <%= form.input :context %>
       <%= form.input :memo %>
     </div>
