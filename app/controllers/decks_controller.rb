@@ -16,6 +16,10 @@ class DecksController < ApplicationController
     @decks.each do |deck|
       @childs << deck if deck.childs.count.zero?
     end
+    @cards = Card.all
+    @cards.each do |card|
+      p card
+    end
   end
 
   # GET /decks/1
