@@ -1,8 +1,6 @@
 .btn {
-  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155, 170, 185, 0.6);
-  background-color: white;
-  line-height: 2.875rem;
-  padding: 0.125rem 1.125rem 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.725rem 1.125rem;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0px;
@@ -10,92 +8,58 @@
   display: inline-block;
   font-family: 'Alata', sans-serif;
   border-radius: 0.375rem;
-  transition: 0.2s background-color,
-    0.2s transform,
-    0.2s opacity;
-  ;
-
+  transition: all 0.2s ease;
+  background-color: transparent;
 }
 
 .btn:hover {
-  opacity: 0.8;
-  -webkit-transform: translateY(-0.188rem);
-  -moz-transform: translateY(-0.188rem);
-  -o-transform: translateY(-0.188rem);
-  -ms-transform: translateY(-0.188rem);
-  transform: translateY(-0.188rem);
+  -webkit-transform: translateY(-0.22rem);
+  -moz-transform: translateY(-0.22rem);
+  -o-transform: translateY(-0.22rem);
+  -ms-transform: translateY(-0.22rem);
+  transform: translateY(-0.22rem);
+  transition: all 0.2s ease;
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn-ghost {
-  color: #fff;
-  border: 1px solid #4A4A4A;
-  padding: 0px 40px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.btn-white {
-  color: rgb(236, 236, 236);
-  border: 1px solid #4A4A4A;
-  padding: 0px 40px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-}
-
-.btn-ghost:hover {
-  opacity: 1;
-  color: #ffffff;
-  background: radial-gradient(circle at 50% 21%, #3dceac, #2caf90);
-  border-color: #4A4A4A;
+.btn-purple{
+  color: $white;
+  background-color : $purple;
+  border: 2px solid $lightpurple;
   transition: all 0.4s ease 0s;
 }
 
-.btn-green {
-  color: #fff;
-  border: 1px solid #4A4A4A;
-  padding: 0px 40px;
-  border-radius: 10px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  background: #2caf90;
-}
-
-.btn-green:hover {
-  opacity: 1;
-  color: #ffffff;
-  background: radial-gradient(circle at 50% 21%, #3dceac, #2caf90);
-  border-color: #4A4A4A;
+.btn-purple:hover{
+  color: $white;
+  background: $lightpurple;
+  border: 2px solid $purple;
   transition: all 0.4s ease 0s;
 }
 
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
-  transition: background 0.3s ease;
+
+$purple: rgb(110, 89, 156);
+$lightpurple: rgb( 123, 104, 165);
+
+
+.btn-ghost-purple {
+  color: $purple;
+  border: 1px solid $purple;
+  transition: all 0.4s ease 0s;
 }
 
-.btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
+.btn-ghost-purple:hover {
+  color: $white;
+  background-color : $purple;
+  transition: all 0.4s ease 0s;
 }
 
-.btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+.btn-ghost-white {
+  color: $white;
+  border: 1px solid $white;
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+.btn-ghost-green {
+  color: $green;
+  border: 1px solid $green;
 }
+

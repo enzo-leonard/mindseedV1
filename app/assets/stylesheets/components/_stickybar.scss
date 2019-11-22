@@ -2,12 +2,14 @@
   position: fixed;
   width: 100%;
   transition: top 0.3s;
-  background: white;
   z-index: 2;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #mediumgreen;
   top: 0;
   width: 100%;
   left: 0;
+  justify-content: space-between;
+  background: transparent;
+  background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
 }
 
 #search-index {
@@ -32,3 +34,12 @@
   width: 21%;
   margin-right: 10px;
 }
+
+  .logo-sticky {
+    color: $white;
+    font-weight: 600;
+  }
+  .login-sticky {
+    color: $white;
+  }
+

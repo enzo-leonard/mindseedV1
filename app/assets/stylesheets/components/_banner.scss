@@ -9,13 +9,7 @@
   flex-direction: column;
 }
 
-.login {
-  padding-bottom: 20px;
 
-  h1 {
-    font-size: 3rem;
-  }
-}
 
 .catchy-phrase {
   padding-bottom: 20px;
@@ -38,7 +32,7 @@
 
 .banner {
   background-size: cover;
-  background: radial-gradient(circle at 50% 21%, #3dceac, #2caf90);
+  background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
   background-position: center;
   padding: 20px 0 200px 0;
   height: 70vh;
@@ -47,16 +41,20 @@
     padding-top: 8rem;
   }
   h1 {
+    text-align: left;
+    font-family : $headers-font;
     margin: 0;
-    color: white;
+    color: $white;
+    padding-bottom: 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-size: 2.75rem;
     font-weight: bold;
   }
   p {
+    font-family : $body-font;
     font-size: 20px;
-    color: white;
-    opacity: .7;
+    color: $white;
+    opacity: .9;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
