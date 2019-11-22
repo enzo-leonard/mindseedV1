@@ -1,22 +1,26 @@
-<div class="back">
-  <a href="/themes" ><%= icon('fas', 'chevron-left') %></a>
-</div>
+
 
 <div class="center-view">
-<div class="view">
 <div class="container">
 
-  <div class="card-show">
+
+<div class=card-learn>
+<div class=card-learn-header>
+<a class=close href="/themes">x</a>
+ 
   <div class="progress">
     <div id=progressTrue class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     <div id=progressFalse class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
-
-
-    <% @cards.each do |card| %>
+ </div>
+   
+  <div class="card-learn-container">
+  <% @cards.each do |card| %>
   <div class="consigne hidden">
   Quelle est la composition d'un <%= card.term %> ?
   </div>
+
+
     <div class="flip-card hidden">
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -43,24 +47,43 @@
       </div>
     </div>
     <%end%>
-  </div>
 
-<div class="answer-container">
+    <div class="answer-container">
 
-  <div class="text-center">
+
     <a class="btn center" id=show-card>Voir la reponse</a>
-  </div>
-
-   <div class="text-center">
     <a class="btn center" id=btn-next>Suivant</a>
-  </div>
-
-  <div class="text-center">
     <a class="btn center" id=yes>Je sais</a>
     <a class="btn center" id=no>Je sais pas</a>
-  </div>
+
 </div>
+  </div>
+  </div>
+
+
+
+
 
 
   <div class="result hidden"></div>
 
+
+<div id=result class="container hidden">
+  <h1 class="text-center font-weight-bold mt-3">Congratulations!  🎉</h1>
+
+
+  <div style= "display: flex; margin-top: 100px; justify-content: space-around;">
+    <div>
+
+    <div style="margin-bottom: 40px"><h3>Les plus arides</h3></div>
+    <div style="border-radius: 5px; box-shadow: 4px 4px 2px grey; padding: 40px 0px; margin-bottom: 15px; background-color: #BFC0C0">Flashcard pas oufement révisées 1</div>
+    <div style="border-radius: 5px; box-shadow: 4px 4px 2px grey; padding: 40px 0px; margin-bottom: 15px; background-color: #BFC0C0">Flashcard pas oufement révisées 2</div>
+    <div style="border-radius: 5px; box-shadow: 4px 4px 2px grey; padding: 40px 0px; margin-bottom: 15px; background-color: #BFC0C0; margin-bottom: 30px">Flashcard pas oufement révisées 3</div>
+    <div><h2>YOUR SCORE MOTHERFUCKER 💝</h2></div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1525923838299-2312b60f6d69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80" alt="" style="height: 500px">
+    </div>
+
+
+  </div>

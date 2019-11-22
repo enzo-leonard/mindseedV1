@@ -46,6 +46,8 @@ console.log("learn lancé")
         btnYes.style.display = "none"
         btnNo.style.display = "none"
         resultDiv.style.display = "block"
+        document.querySelector('.center-view').innerHTML = ""
+        document.querySelector('#result').classList.toggle('hidden')
         resultDiv.innerHTML =
           `Fecilitation vous avez terminé !
         <div class = "score" > ${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%</div>
@@ -55,8 +57,10 @@ console.log("learn lancé")
       const next = () => {
         if (i >= 0) hide(cardsRecto[i])
         i++
+       
         progressTrue.style.width = `${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%`
         progressFalse.style.width = `${((falseAnswer / nbMaxCard) * 100).toFixed(1)}%`
+         console.log(progressFalse.style.width)
         if (i < nbMaxCard) {
           show(cardsRecto[i])
 

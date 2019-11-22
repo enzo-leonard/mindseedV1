@@ -1,0 +1,41 @@
+.card-trip {
+  display: flex;
+  background-color: #fff;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-image: url(https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
+  margin: 0 auto;
+  max-width: 64rem;
+  min-height: 31.25rem;
+  position: relative;
+  box-shadow: 0 .3125rem 1rem 0 rgba(0, 0, 0, .24);
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  h3 {
+     font-size: 1.5rem;
+   }
+
+   p {
+     font-size: 1rem;
+     opacity: .7;
+     margin: 0;
+   }
+
+   .card-trip-infos {
+     height: 500px;
+     padding: 50px;
+     background-color: white;
+     max-width: 600px;
+   }
+}

@@ -1,0 +1,48 @@
+.dash_bar{
+  width:25vw;
+  left:0;
+  height: 100vh;
+  background: $green;
+
+
+  h2, h3, h4{
+      text-align: center;
+      color : $white;
+    }
+
+}
+
+  .dash_list_theme{
+    display: flex;
+    flex-direction: column;
+    justify-content : space-around;
+    padding: 0 25px;
+}
+
+  .dash_profil{
+    margin-top: 30px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2, h3, h4{
+      text-align: center;
+      color : $white;
+    }
+
+    h4 {
+      font-size : 1.2em;
+    }
+
+    a {
+      color : $purple;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .avatar-large{
+      margin: 0 auto;
+    }
+  }
