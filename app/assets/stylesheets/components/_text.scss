@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.phrase h5 {
+  color: $white;
+  background-color : $purple;
+  padding: 10px 5px;
+  width: 350px;
+  text-align: center;
+  transform : rotate(-0.5deg);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}
+
+.purple {
+  color: $purple;
+}
+
+.green {
+  color: $mediumgreen;
+}
+

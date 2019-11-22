@@ -11,12 +11,12 @@ const initStickybar = () => {
     function scrollFunction() {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky-header")
-        logo.classList.replace('logo', 'logo-black');
-        login.classList.replace('login', 'login-black');
+        logo.classList.replace('logo', 'logo-sticky');
+        login.classList.replace('login', 'login-sticky');
       } else {
         navbar.classList.remove("sticky-header");
-        logo.classList.replace('logo-black', 'logo');
-        login.classList.replace('login-black', 'login');
+        logo.classList.replace('logo-sticky', 'logo');
+        login.classList.replace('login-sticky', 'login');
       }
     };
   }

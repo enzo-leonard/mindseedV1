@@ -1,3 +1,13 @@
+.nav-item{
+  p{
+    display: inline-block;
+  }
+}
+
+.dropdown-toggle {
+  cursor:pointer;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
@@ -11,15 +21,11 @@
   }
 
   .logo {
-    color: white;
+    color: $white;
     font-weight: 600;
   }
 
-  .logo-black {
-    color: black;
-    font-weight: 600;
-  }
-  .login-black {
-    color: black;
+  .login {
+    color: $white;
   }
 }
