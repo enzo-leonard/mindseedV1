@@ -7,8 +7,8 @@
 
 
   .flashcard-card {
-    border-bottom: 8px solid $purple;
-    border-right: 6px solid $lightpurple;
+    border-bottom: 8px solid $darkgray;
+    border-right: 6px solid $mediumgray;
     width: 300px;
     height: 300px;
     margin: 10px;
@@ -75,6 +75,8 @@
   width: 300px;
   height: 300px;
   margin: 10px;
+    border-bottom: 8px solid $darkgray;
+    border-right: 6px solid $mediumgray;
 
   .content {
     overflow-y: hidden;

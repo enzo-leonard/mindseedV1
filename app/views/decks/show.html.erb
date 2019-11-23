@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div class="back">
-  <a href="/themes" ><%= icon('fas', 'chevron-left') %></a>
+<div class="back ">
+  <a href="/themes" class="green"><%= icon('fas', 'chevron-left') %></a>
 </div>
 
 
@@ -9,9 +9,12 @@
 
 <div class="container mt-5">
 
-  <h1><%= @deck.name.capitalize %></h1>
-  <div class="description"><%= @deck.description %></div>
+<div class="header-decks">
 
+  <h1 class="green"><%= @deck.name.capitalize %></h1>
+  <div class="description green"><%= @deck.description %></div>
+</div>
+   <%= render 'decks/form_', deck: @deck, card: Card.new %>
 
 
   <% @deck.cards.each do |item|%>
@@ -37,7 +40,7 @@
     <%= form.input :term, input_html: { id: "term_#{item.id}"}%>
     <%= form.input :photo, as: :hidden, class: "hidden"%>
     <div class="change-photo">
-     <a data_id=<%=item.id%> class=btn-change-photo><%= icon('fas', 'exchange-alt')%></a>
+     <a class="btn-change-photo" data_id=<%=item.id%>><%= icon('fas', 'exchange-alt')%></a>
       <img id=img-<%=item.id%> src="<%=item.photo%>" alt="img">
       <div data_container_id=<%=item.id%> class="hidden alt-photo-container alt-photo-container-<%= item.id %>" >
       <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
@@ -67,15 +70,10 @@
   <% end %>
 
 
+<!--position originale add new-->
 
   <%end %>
-  <br><hr>
-
-  <h2>Add new card</h2>
-
-
-  <%= render 'decks/form_', deck: @deck, card: Card.new %>
-<hr>
+</div>
 
 
 <%#

@@ -1,8 +1,9 @@
-<div class="input-card">
  <%= simple_form_for([ deck, card ]) do |form| %>
+ <%= form.button :submit, class: "btn-green new-cards"%>
+<div class="input-card">
 
  <div class="input-card-left">
-   <%= form.input :term, input_html: { id: 'new_term'} %>
+   <%= form.input :term, input_html: { id: 'new_term'},  class: "term", placeholder: "term..."%>
    <%= form.input :photo, as: :hidden, class: "hidden", input_html: { id: 'new_img_hidden'}%>
    <div class="change-photo">
      <a class="btn-change-photo-new" ><%= icon('fas', 'exchange-alt')%></a>
@@ -19,7 +20,7 @@
  </div>
 
  <div class="input-card-right">
-   <%= form.input :definition, as: :text, input_html: { id: 'new_definition'} %>
+   <%= form.input :definition, as: :text, input_html: { id: 'new_definition'}, placeholder: "definition..."%>
 
    <div class="defs-container hidden">
     <div class="definitions"> </div>
@@ -29,12 +30,12 @@
     <div class="definitions"> </div>
   </div>
 
-  <%= form.input :context , input_html: { id: 'new_context'}%>
-  <%= form.input :memo , input_html: { id: 'new_memo'}%>
+  <%= form.input :context , input_html: { id: 'new_context'}, placeholder: "contextualization..."%>
+  <%= form.input :memo , input_html: { id: 'new_memo'}, placeholder: "pense-bête..."%>
 </div>
 
 
 
 </div>
-<%= form.button :submit %>
+
 <% end %>
