@@ -1,26 +1,28 @@
 <div class="search-full">
 <div class="search-left">
   <div class="search-box">
-    <div class="search-results sticky-top">
-      <div class="search-form">
-        <%= form_tag search_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control input-search",
-            placeholder: "Search for a set of Flashcards"
-          %>
+    <div class="search-results">
+      <div class="fixed-top">
+        <div class="search-form">
+          <%= form_tag search_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control input-search",
+              placeholder: "Search for a set of Flashcards"
+            %>
+          </div>
+          <div class="search-submit">
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
+          </div>
         </div>
-        <div class="search-submit">
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+      <div class="results">
+        <% @childs.each do |d| %>
+          <div class="result" id="<%= d.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513710281312-7a43f9cdbfcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+            <%= d.name %>
+          </div>
         <% end %>
-        </div>
       </div>
-    <div class="results">
-      <% @childs.each do |d| %>
-        <div class="result" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513710281312-7a43f9cdbfcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
-          <%= d.name %>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>
@@ -31,18 +33,10 @@
       </div>
       <div class="flashcards">
         <% @cards.each do |c| %>
-          <div class="flashcard">
-            <img src="<%= c.photo %>" />
-            <div class="flashcard-infos">
-              <h2><%= c.term %></h2>
-              <p><%= c.definition %></p>
-              <p class='italic'><%= c.context %></p>
-            </div>
-          </div>
         <% end %>
       </div>
       <div class="add">
-        <button class="btn btn-white">Add a card</button>
+        <button class="btn btn-white">Download this deck</button>
       </div>
     </div>
   </div>

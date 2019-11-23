@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'omniauth-facebook'
 gem 'oxford_dictionary'
+gem 'gon'
 
 
 group :development do

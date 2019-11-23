@@ -17,6 +17,7 @@ class DecksController < ApplicationController
       @childs << deck if deck.childs.count.zero?
     end
     @cards = Card.all
+    gon.cards = @cards
     @cards.each do |card|
       p card
     end
