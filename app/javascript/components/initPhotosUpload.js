@@ -29,7 +29,6 @@ const changePhotoNew = () => {containerAltPhotoNew.classList.toggle('hidden')}
 
 
 const loadPhoto = (id) => {
-    console.log('update photo')
    let searchTerm = document.querySelector(`#term_${id}`).value
    const image = document.querySelector(`#img-${id}`);
    const altPhotoId = document.querySelectorAll(`.alt-${id}`)
@@ -60,7 +59,7 @@ const loadPhoto = (id) => {
          //you can copy the resulting URLs from the console into your browser to view the image.
          // console.log(`First image thumbnail url: ${firstImageResult.thumbnailUrl}`);
          // console.log(`First image content url: ${firstImageResult.contentUrl}`);
-         console.log(imageResults.value)
+
        }
      })
      .catch(err => console.error(err))
@@ -68,10 +67,9 @@ const loadPhoto = (id) => {
    };
 
    const loadPhotoNew = () => {
-     console.log('new photo')
      let searchTerm = input.value;
      if (searchTerm == "") searchTerm = "search"
-     console.log(searchTerm)
+
 
      const sendQuery = async () => {
        return await imageSearchApiClient.imagesOperations.search(searchTerm);
@@ -92,7 +90,6 @@ const loadPhoto = (id) => {
              alt.addEventListener('click', () => {
                image.src = alt.src
                input_photo.value = alt.src
-               console.log('new')
                changePhoto("new")
              })
            })
@@ -100,7 +97,7 @@ const loadPhoto = (id) => {
            //you can copy the resulting URLs from the console into your browser to view the image.
            // console.log(`First image thumbnail url: ${firstImageResult.thumbnailUrl}`);
            // console.log(`First image content url: ${firstImageResult.contentUrl}`);
-           console.log(imageResults.value)
+
          }
        })
        .catch(err => console.error(err))

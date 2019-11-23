@@ -1,6 +1,5 @@
 .decks {
 
-
   .is-valid,
   .form-control {
     border: inherit;
@@ -84,4 +83,42 @@
 
 .hidden {
   display: none;
+}
+
+.btn-add {
+  position: sticky;
+  bottom: 20px;
+  right: 10px;
+  width: 50px;
+  left: 96vw;
+  height: 50px;
+  background-color: #00b818;
+  padding: 5px 10px;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+
+.btn-add:hover {
+  opacity: 1;
+  position: sticky;
+  bottom: 25px;
+  right: 10px;
+  width: 70px;
+  left: 95vw;
+  height: 70px;
+  background-color: #00b818;
+  padding: 0px 10px;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
 }

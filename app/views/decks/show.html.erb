@@ -1,82 +1,22 @@
 <p id="notice"><%= notice %></p>
+
 <div class="back">
   <a href="/themes" ><%= icon('fas', 'chevron-left') %></a>
 </div>
 
-
-
-
-
 <div class="container mt-5">
-
   <h1><%= @deck.name.capitalize %></h1>
   <div class="description"><%= @deck.description %></div>
-
-
-
-  <% @deck.cards.each do |item|%>
-  <!--
-  <div class="input-card">
-    <div class="input-card-left">
-      <input id=term type="text" value="<%=item.term%>" placeholder="term">
-      <img src="<%=item.photo%>" alt="img">
-    </div>
-    <div class="input-card-right">
-      <input type="text" value="<%=item.definition %>" placeholder="definition">
-      <input type="text" value="<%=item.context %>" placeholder="context">
-      <input type="text" value="<%=item.memo %>" placeholder="memo">
-    </div>
-  </div>
-
-  -->
-
-   <div class="input-card">
-  <%= simple_form_for([ @deck, item ]) do |form| %>
-
-   <div class="input-card-left">
-    <%= form.input :term, input_html: { id: "term_#{item.id}"}%>
-    <%= form.input :photo, as: :hidden, class: "hidden"%>
-    <div class="change-photo">
-     <a data_id=<%=item.id%> class=btn-change-photo><%= icon('fas', 'exchange-alt')%></a>
-      <img id=img-<%=item.id%> src="<%=item.photo%>" alt="img">
-      <div data_container_id=<%=item.id%> class="hidden alt-photo-container alt-photo-container-<%= item.id %>" >
-      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
-      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
-      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
-      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
-      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
-      <img class="alt-photo alt-<%= item.id %>" src="https://source.unsplash.com/random" alt="img">
-      </div>
-    </div>
-    </div>
-
-    <div class="input-card-right">
-      <%= form.input :definition, as: :text, :error => false, :hint => false, class: "update-definition#{item.id}", input_html: { id: "def-#{item.id}"}%>
-       <div class="defs-update-container">
-    <div class="definitions-update-<%= item.id %>"> </div>
-    <div class="definitions-update-<%= item.id %>"> </div>
-    <div class="definitions-update-<%= item.id %>"> </div>
-    <div class="definitions-update-<%= item.id %>"> </div>
-  </div>
-      <%= form.input :context %>
-      <%= form.input :memo %>
-    </div>
-
-    </div>
-    <%= form.button :submit, class: "btn hidden"%>
-  <% end %>
-
-
-
+  <% @deck.cards.each do |card|%>
+  <%= render 'decks/form_update', deck: @deck, card: card %>
   <%end %>
   <br><hr>
-
   <h2>Add new card</h2>
-
-
-  <%= render 'decks/form_', deck: @deck, card: Card.new %>
+  <%= render 'decks/form_new', deck: @deck, card: Card.new %>
 <hr>
+</div>
 
+<div class="btn-add">+</div>
 
 <%#
 - AJAX

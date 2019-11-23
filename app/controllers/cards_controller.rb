@@ -12,12 +12,17 @@ class CardsController < ApplicationController
     @deck = Deck.find(params[:deck_id])
     @card = Card.new(card_params)
     @card.deck = @deck
-
-
     if @card.save!
-      redirect_to deck_path(@deck)
+        respond_to do |format|
+        format.html { redirect_to deck_path(@deck) }
+        format.js{}# <-- will render `app/views/reviews/create.js.erb`
+      end
+
     else
-      render 'decks/show'
+      respond_to do |format|
+        format.html { render 'decks/show' }
+        format.js{}  # <-- idem
+      end
     end
   end
 

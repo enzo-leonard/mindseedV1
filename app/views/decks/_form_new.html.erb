@@ -1,5 +1,6 @@
-<div class="input-card">
- <%= simple_form_for([ deck, card ]) do |form| %>
+<div id="input-card-new">
+<div class="input-card-new">
+ <%= simple_form_for([ deck, card ], remote: true ) do |form| %>
 
  <div class="input-card-left">
    <%= form.input :term, input_html: { id: 'new_term'} %>
@@ -37,4 +38,5 @@
 
 </div>
 <%= form.button :submit %>
+</div>
 <% end %>
