@@ -30,9 +30,14 @@ a {
 
 *::selection {
   background: rgba(110, 89, 156, 0.99);
+  color: $white;
   /* WebKit/Blink Browsers */
 }
 *::-moz-selection {
   background: rgba(110, 89, 156, 0.99);
+  color: $white;
 /* Gecko Browsers */
 }
+
+
+

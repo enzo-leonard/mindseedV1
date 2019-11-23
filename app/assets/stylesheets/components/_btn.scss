@@ -42,24 +42,37 @@ $lightpurple: rgb( 123, 104, 165);
 
 
 .btn-ghost-purple {
-  color: $purple;
+  color: $purple !important;
   border: 1px solid $purple;
   transition: all 0.4s ease 0s;
 }
 
 .btn-ghost-purple:hover {
-  color: $white;
+  color: $white !important;
   background-color : $purple;
   transition: all 0.4s ease 0s;
 }
 
 .btn-ghost-white {
-  color: $white;
+  color: $white !important;
   border: 1px solid $white;
+  transition: all 0.4s ease 0s;
+}
+
+.btn-ghost-white:hover {
+  color: $black !important;
+  background-color : $white;
+  transition: all 0.4s ease 0s;
 }
 
 .btn-ghost-green {
-  color: $green;
+  color: $green !important;
   border: 1px solid $green;
+  transition: all 0.4s ease 0s;
 }
 
+.btn-ghost-green:hover {
+  color: $white !important;
+  background-color : $green;
+  transition: all 0.4s ease 0s;
+}
