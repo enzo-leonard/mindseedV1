@@ -2,28 +2,6 @@
   font-family: 'Alata',
   sans-serif;
 
-   .card-learn{
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
-    display: inline-block;
-    height: 604px;
-    margin: 30px auto;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    text-align: center;
-    width: 1082px;
-    position: relative;
-    padding: 0px 16px;
-  }
-
-  .card-learn-header{
-    height: 50px;
-    display: flex;
-    align-items: center;
-  }
-
   .card-learn-container{
     display: flex;
     justify-content: space-around;
@@ -31,20 +9,53 @@
 
   .center-view {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
   }
 
+   .card-learn{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 604px;
+    width: 60vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+    position: relative;
+    padding: 0px 16px;
+    margin-right:100px;
+  }
+
+  .card-learn-header{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 96%;
+  }
+
+
 
 
   .close{
-    color: grey;
+    color: $purple;
     padding: 10px;
     font-size: 2em;
+
+    &::before{
+      display:none;
+    }
   }
 
-  
+
 
   .flip-card:hover .flip-card-inner {
     transform: rotateY(45deg);
@@ -54,6 +65,11 @@
     display: none;
   }
 
+.plant-progress{
+  width:40vh;
+  height:100vh;
+  background-color: $lightpurple;
+}
   .progress {
     display: flex;
     flex-grow: 1;
@@ -64,14 +80,14 @@
 
     .bg-success{
       height: 30px;
-      background-color: #00d22d !important;
-      
+      background-color: $green !important;
+
     }
 
     .bg-danger{
-      background-color: red !important;
+      background-color: $purple !important;
       height: 30px;
-  
+
     }
   }
 
@@ -134,8 +150,7 @@
 
     .btn {
       width: 100%;
-      max-height: 100px;
-      line-height: 5.875rem;
+      max-height: 80px;
     }
   }
 }

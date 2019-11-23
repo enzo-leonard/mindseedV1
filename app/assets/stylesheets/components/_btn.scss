@@ -10,6 +10,8 @@
   border-radius: 0.375rem;
   transition: all 0.2s ease;
   background-color: transparent;
+  color: inherit;
+  cursor: pointer;
   &:hover {
     -webkit-transform: translateY(-0.22rem);
     -moz-transform: translateY(-0.22rem);
@@ -22,83 +24,121 @@
   &:focus{
     box-shadow: none !important;
   }
+  &:active{
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+     -webkit-transform: translateY(0rem);
+    -moz-transform: translateY(0rem);
+    -o-transform: translateY(0rem);
+    -ms-transform: translateY(0rem);
+    transform: translateY(0rem);
+    transition: all 0.2s ease;
+
+  }
 }
+
 
 
 .btn-purple{
-  color: $white;
+  color: $white !important;
   background-color : $purple;
   border: 2px solid $lightpurple;
   transition: all 0.4s ease 0s;
+  &:hover{
+    color: $white!important;
+    background: $lightpurple;
+    border: 2px solid $purple;
+    transition: all 0.4s ease 0s;
+  }
+    &:active{
+    color: $white !important;
+    background-color : $purple;
+    border: 2px solid $lightpurple;
+    transition: all 0.1s ease 0s;
+  }
+
 }
 
-.btn-purple:hover{
-  color: $white;
-  background: $lightpurple;
-  border: 2px solid $purple;
-  transition: all 0.4s ease 0s;
-}
 
 .btn-green{
-  color: $white;
+  color: $white!important;
   background-color : $mediumgreen;
   border: 2px solid $green;
   transition: all 0.4s ease 0s;
+
+  &:hover{
+    color: $white!important;
+    background: $green;
+    border: 2px solid $mediumgreen;
+    transition: all 0.4s ease 0s;
+  }
+
+  &:active{
+    color: $white!important;
+    background-color : $mediumgreen;
+    border: 2px solid $green;
+    transition: all 0.4s ease 0s;
+  }
 }
 
-.btn-green:hover{
-  color: $white;
-  background: $green;
-  border: 2px solid $mediumgreen;
-  transition: all 0.4s ease 0s;
-}
-
-$purple: rgb(110, 89, 156);
-$lightpurple: rgb( 123, 104, 165);
 
 
 .btn-ghost-purple {
   color: $purple !important;
   border: 1px solid $purple;
   transition: all 0.4s ease 0s;
+
+  &:hover {
+    color: $white !important;
+    background-color : $purple;
+    transition: all 0.4s ease 0s;
+  }
+  &:active {
+    color: $purple !important;
+    border: 1px solid $purple;
+    transition: all 0.4s ease 0s;
+  }
 }
 
-.btn-ghost-purple:hover {
-  color: $white !important;
-  background-color : $purple;
-  transition: all 0.4s ease 0s;
-}
 
 .btn-ghost-white {
   color: $white !important;
   border: 1px solid $white;
   transition: all 0.4s ease 0s;
+
+  &:hover {
+    color: $black !important;
+    background-color : $white;
+    transition: all 0.4s ease 0s;
+  }
+  &:active {
+    color: $white !important;
+    border: 1px solid $white;
+    transition: all 0.4s ease 0s;
+  }
 }
 
-.btn-ghost-white:hover {
-  color: $black !important;
-  background-color : $white;
-  transition: all 0.4s ease 0s;
-}
 
 .btn-ghost-green {
   color: $green !important;
   border: 1px solid $green;
   transition: all 0.4s ease 0s;
+
+  &:hover {
+    color: $white !important;
+    background-color : $green;
+    transition: all 0.4s ease 0s;
+  }
+  &:active {
+    color: $green !important;
+    border: 1px solid $green;
+    transition: all 0.4s ease 0s;
+  }
 }
 
-.btn-ghost-green:hover {
-  color: $white !important;
-  background-color : $green;
-  transition: all 0.4s ease 0s;
-}
 
 .special {
  width:50%;
- // height:100px;
- // border-radius: 50%;
  display:flex;
- // flex-direction: column;
  justify-content: center;
  align-items:center;
 
@@ -114,4 +154,12 @@ border-radius: 0rem 0.375rem 0.375rem 0rem;
 
 .left{
  border-radius: 0.375rem 0rem 0rem 0.375rem;
+}
+
+.big {
+  font-size: 1.4em;
+    .far {
+font-size: 2rem;
+padding: 10px;
+  }
 }
