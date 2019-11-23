@@ -1,3 +1,11 @@
+    .dash_list_theme{
+    display: flex;
+    flex-direction: column;
+    justify-content : space-around;
+    padding: 0 25px;
+}
+
+
   .list_element{
     display: flex;
     border: 2px solid $white;
@@ -20,7 +28,7 @@
     }
 
     p{
-      padding: 20px 20px;
+      padding: 20px;
       margin : 0;
       font-weight: 600;
       color: $white;
@@ -31,13 +39,41 @@
       transition: all 0.5s ease;
     }
 
-     &:hover a{
+   &:hover a{
       text-decoration: none !important;
-      color: white;
+      color: $mediumgreen;
     }
 
      &:hover p{
-      color: white;
+      color: $mediumgreen;
     }
 
   }
+
+    .dash_list_decks{
+    display: flex;
+    flex-direction: column;
+    justify-content : space-around;
+    padding: 0;
+    width:80%;
+    margin: 0 auto;
+
+      .separator-bar{
+      width:2px;
+      height:10px;
+      background: $white;
+    }
+}
+ .rank {
+  // border-bottom: 2px solid $white !important;
+  // border-top: 0 solid $white !important;
+  // border-right: 0px solid $white !important;
+  // border-left: 2px solid $white !important;
+  margin-bottom: 0 !important;
+  width :auto !important;
+  // border-radius: 0 !important;
+
+  // p{
+  //   padding-bottom: 3px !important;
+  // }
+ }

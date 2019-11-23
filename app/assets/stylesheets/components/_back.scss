@@ -1,13 +1,10 @@
  .back {
-   font-size: 56px;
-   padding: 20px 40px;
-   position: absolute;
-   top: 0px;
-   left: 0px;
    z-index: 2;
 
    .fas {
-     color: #00b300 !important;
+    color: $white !important;
+   font-size: 36px;
+   padding: 5px 20px;
 
    }
  }
