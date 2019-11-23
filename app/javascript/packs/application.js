@@ -11,7 +11,7 @@ import 'd3-webpack-loader'
 import initStickyBar from "../components/initStickyBar.js"
 import "./anime";
 import highlightPlant from "./highlight_plant";
-
+import initCardLecteur from "../components/initCardLecteur.js"
 
 require("turbolinks").start()
 
@@ -30,6 +30,7 @@ var ready = function () {
     initPhotosUpload();
     initStickyBar();
     highlightPlant();
+    initCardLecteur();
   })
 
 };
