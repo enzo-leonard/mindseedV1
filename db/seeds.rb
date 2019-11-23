@@ -10,6 +10,10 @@ Deck.destroy_all
 Theme.destroy_all
 User.destroy_all
 
+def addCard(parent,term, definition = nil)
+  Card.create!(term: term, definition: definition, deck: parent)
+end
+
 
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
 
@@ -92,24 +96,109 @@ Card.create!(
 )
 
 
-learn = Theme.create!(name: "Learn", user: user)
-batch = Theme.create!(name: "batch 308", user: user)
-ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: batch)
-ruby_1 = Deck.create!(name: "Programming basic", rank: 2, parent: ruby, theme: batch)
-ruby_1_2 = Deck.create!(name: "Variable", rank: 3, parent: ruby_1, theme: batch)
-ruby_2 = Deck.create!(name: "Flow Conditionnal & array", rank: 2, parent: ruby, theme: batch)
-ruby_3 = Deck.create!(name: "Iterator & blocks", rank: 2, parent: ruby, theme: batch)
-ruby_4 = Deck.create!(name: "Hash & Symbols", rank: 2, parent: ruby, theme: batch)
-ruby_5 = Deck.create!(name: "Regular Expressions", rank: 2, parent: ruby, theme: batch)
-ruby_6 = Deck.create!(name: "Parsing", rank: 2, parent: ruby, theme: batch)
-oop = Deck.create!(name: "Oriented Object programming", rank: 1, parent: nil, theme: batch)
-db = Deck.create!(name: "Base de donnée", rank: 1, parent: nil, theme: batch)
-front = Deck.create!(name: "Front", rank: 1, parent: nil, theme: batch)
-rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: batch)
+learn = Theme.create!(name: "How we learn", user: user)
+brain = Deck.create!(name: "neuroscience", rank: 1, parent: nil, theme: learn)
+
+
+full_stack = Theme.create!(name: "Full Stack", user: user)
+
+
+ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: full_stack)
+ruby_1 = Deck.create!(name: "Programming basic", rank: 2, parent: ruby, theme: full_stack)
+ruby_1_2 = Deck.create!(name: "Variable", rank: 3, parent: ruby_1, theme: full_stack)
+ruby_2 = Deck.create!(name: "Flow Conditionnal & array", rank: 2, parent: ruby, theme: full_stack)
+ruby_3 = Deck.create!(name: "Iterator & blocks", rank: 2, parent: ruby, theme: full_stack)
+ruby_4 = Deck.create!(name: "Hash & Symbols", rank: 2, parent: ruby, theme: full_stack)
+ruby_5 = Deck.create!(name: "Regular Expressions", rank: 2, parent: ruby, theme: full_stack)
+ruby_6 = Deck.create!(name: "Parsing", rank: 2, parent: ruby, theme: full_stack)
+oop = Deck.create!(name: "Oriented Object programming", rank: 1, parent: nil, theme: full_stack)
+db = Deck.create!(name: "Base de donnée", rank: 1, parent: nil, theme: full_stack)
+front = Deck.create!(name: "Front", rank: 1, parent: nil, theme: full_stack)
+rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack)
 
 
 
+history = Theme.create!(name: "History", user: user)
+greek = Deck.create!(name: "Greek mythology", rank: 1, parent: nil, theme: history)
+god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history)
+demigod = Deck.create!(name: "DemiGod", rank: 2, parent: greek, theme: history)
+titan = Deck.create!(name: "Titant", rank: 2, parent: greek, theme: history)
+creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history)
 
+Card.create!(
+  term: "Athena",
+  definition: "goddess of wars",
+  deck: god,
+  context: "Athena !",
+  memo: "Athena as the grece capital",
+  photo: "https://source.unsplash.com/random"
+)
+
+Card.create!(
+  term: "Apollo",
+  definition: "",
+  deck: god,
+  context: "Athena !",
+  memo: "Athena as the grece capital",
+  photo: "https://source.unsplash.com/random"
+)
+Card.create!(term: "Poseidon", deck: god)
+Card.create!(term: "Zeus", deck: god)
+Card.create!(term: "Ares", deck: god)
+Card.create!(term: "Artemis", deck: god)
+Card.create!(term: "Aphrodite", deck: god)
+Card.create!(term: "Hades", deck: god)
+Card.create!(term: "Hephaestus", deck: god)
+Card.create!(term: "Hera", deck: god)
+Card.create!(term: "Hermes", deck: god)
+Card.create!(term: "Hestia", deck: god)
+
+Card.create!(term: "Cronus", deck: titan)
+
+Card.create!(term: "Giant", deck: creature)
+Card.create!(term: "Gorgons", deck: creature)
+Card.create!(term: "Medusa", deck: creature)
+Card.create!(term: "Pegasus", deck: creature)
+Card.create!(term: "Talos", deck: creature)
+Card.create!(term: "Cerberus", deck: creature)
+Card.create!(term: "Cyclopes", deck: creature)
+
+Card.create!(term: "Achilles", deck: demigod)
+Card.create!(term: "Heracles", deck: demigod)
+Card.create!(term: "Persueus", deck: demigod)
+Card.create!(term: "Theseus", deck: demigod)
+
+latin = Deck.create!(name: "Roman deities", rank: 1, parent: nil, theme: history)
+romain_god = Deck.create!(name: "God ", rank: 2, parent: latin, theme: history)
+addCard(romain_god, "Venus")
+addCard(romain_god, "Phoebus")
+addCard(romain_god, "Mars")
+addCard(romain_god, "Saturn")
+addCard(romain_god, "Ceres")
+addCard(romain_god, "Bacchus")
+
+english = Theme.create!(name: "English", user: user)
+
+geo = Theme.create!(name: "Geographie", user: user)
+capital = Deck.create!(name: "Capital", rank: 1, parent: nil, theme: geo)
+afrique = Deck.create!(name: "Afrique", rank: 2, parent: capital, theme: geo)
+am_sud = Deck.create!(name: "South america", rank: 2, parent: capital, theme: geo)
+am_nord = Deck.create!(name: "North america", rank: 2, parent: capital, theme: geo)
+euro = Deck.create!(name: "Europe", rank: 2, parent: capital, theme: geo)
+asie = Deck.create!(name: "Asie", rank: 2, parent: capital, theme: geo)
+
+
+
+addCard(euro, "Paris", "French" )
+addCard(euro, "Madrid", "Spain" )
+addCard(euro, "Rome", "Italie" )
+addCard(euro, "London", "French" )
+addCard(euro, "Paris", "French" )
+addCard(euro, "Paris", "French" )
+addCard(euro, "Paris", "French" )
+addCard(euro, "Paris", "French" )
+addCard(euro, "Paris", "French" )
+addCard(euro, "Paris", "French" )
 
 def printChild(parent)
   parent.childs.each do |child|

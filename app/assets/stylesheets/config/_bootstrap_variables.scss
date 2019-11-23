@@ -26,3 +26,13 @@ $border-radius-sm: 2px;
 a {
   text-decoration: none !important;
 }
+
+
+*::selection {
+  background: rgba(110, 89, 156, 0.99);
+  /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+  background: rgba(110, 89, 156, 0.99);
+/* Gecko Browsers */
+}

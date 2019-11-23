@@ -7,8 +7,8 @@ const initCardLecteur = () => {
       const flashcard = gon.cards;
       flashcards.innerHTML = ""
       flashcard.forEach((f) => {
-      if (f.deck_id == id ) {
-        const card = `<div class="flashcard">
+        if (f.deck_id == id) {
+          const card = `<div class="flashcard">
         <img src="${f.photo}" />
         <div class="flashcard-infos">
         <h2>${f.term}</h2>
@@ -17,7 +17,7 @@ const initCardLecteur = () => {
         </div>
       </div>`
 
-        flashcards.insertAdjacentHTML("beforeend", card)
+          flashcards.insertAdjacentHTML("beforeend", card)
         }
       })
     })

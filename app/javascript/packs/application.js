@@ -2,7 +2,9 @@ import "bootstrap";
 import $ from 'jquery';
 import 'mousetrap';
 import initPhotosUpload from "../components/initPhotosUpload.js";
-import { initLearn } from "../components/initLearn.js";
+import {
+  initLearn
+} from "../components/initLearn.js";
 import initGoogleSign from '../components/initGoogleLog';
 import initDictionary from "../components/initDictionary.js"
 import init from "../components/initMindMap.js";
@@ -19,11 +21,11 @@ var ready = function () {
   $(document).ready(() => {
 
 
-  console.log('Nouvelle route ')
+    console.log('Nouvelle route ')
 
     initPhotosUpload();
     initDictionary();
-   // init();
+    // init();
     initD3();
     //initGoogleSign()
     initLearn();
@@ -37,5 +39,3 @@ var ready = function () {
 
 
 $(document).on('turbolinks:load', ready);
-
-

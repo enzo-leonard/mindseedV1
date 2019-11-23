@@ -81,7 +81,7 @@ class ThemesController < ApplicationController
 
       array.each do |item|
         if !done.include?(item.name)
-          hash = { name: item.name, children: show_child(item.childs, done) }
+          hash = { name: item.name, rank: item.rank, card_nb: item.cards.count, children: show_child(item.childs, done) }
           done << item.name
           childrens << hash
         end
@@ -94,7 +94,8 @@ class ThemesController < ApplicationController
       done = []
       array = @theme.decks
       map4 = {
-        name: 'theme',
+        name: @theme.name,
+        rank: 0,
         children: show_child(array, done)
       }
       map4.to_json
@@ -106,7 +107,7 @@ class ThemesController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
- 
+
 
 end
 
