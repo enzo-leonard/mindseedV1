@@ -31,7 +31,6 @@ var ready = function () {
     initD3();
     //initGoogleSign()
     initLearn();
-    initPhotosUpload();
     initStickyBar();
     highlightPlant();
 

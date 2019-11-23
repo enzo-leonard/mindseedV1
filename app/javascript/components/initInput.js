@@ -15,12 +15,8 @@ const initInput = () => {
 
 
 
-    const update = (id) => {
-      const btn = document.querySelector(`#update_btn_${id}`)
-      console.log(btn)
-      btn.click()
+    const update = (id) => {document.querySelector(`#update_btn_${id}`).click() }
 
-    }
     const btnUpdate = document.querySelectorAll(`.update-event`)
     btnUpdate.forEach((btn) => {
       console.log(btn)

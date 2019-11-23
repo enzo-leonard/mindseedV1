@@ -9,7 +9,7 @@ TO DO HEURISTIQUE
 
 TO DO INPUT
 - AJAX                          - done
-- UPDATE
+- UPDATE                        - done
 - PHOTO DEBUG
 - DEF DEBUG
 - Description

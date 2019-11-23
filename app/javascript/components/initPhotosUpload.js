@@ -22,16 +22,24 @@ const btnChangePhoto = document.querySelector('.btn-change-photo-new')
 let credentials = new CognitiveServicesCredentials(serviceKey);
 let imageSearchApiClient = new ImageSearchAPIClient(credentials);
 
-const changePhoto = (id) => {document.querySelector(`.alt-photo-container-${id}`).classList.toggle('hidden')}
+const changePhoto = (id) => {
+  document.querySelector(`#alts_${id}`).classList.toggle('hidden')
+}
 
+const update = (id) => {
+  console.log('update photo')
+  document.querySelector(`#update_btn_${id}`).click()
+}
 const changePhotoNew = () => {containerAltPhotoNew.classList.toggle('hidden')}
 
 
 
 const loadPhoto = (id) => {
    let searchTerm = document.querySelector(`#term_${id}`).value
-   const image = document.querySelector(`#img-${id}`);
+   const image = document.querySelector(`#img_${id}`);
    const altPhotoId = document.querySelectorAll(`.alt-${id}`)
+   const src = document.querySelector(`#photo_${id}`)
+
    if (searchTerm == "") searchTerm = "search"
 
    const sendQuery = async () => {
@@ -44,6 +52,9 @@ const loadPhoto = (id) => {
        } else {
          let firstImageResult = imageResults.value[0];
          image.src = firstImageResult.contentUrl
+         src.value = firstImageResult.contentUrl
+         console.log("ancienne source")
+          console.log(src)
          input_photo.value = firstImageResult.contentUrl
          let i = 0
 
@@ -52,6 +63,10 @@ const loadPhoto = (id) => {
            i++
            alt.addEventListener('click', () => {
              image.src = alt.src
+             src.value = alt.src
+             update(id)
+             console.log("nouvelle source")
+             console.log(src)
              changePhoto(id)
            })
          })
@@ -65,8 +80,7 @@ const loadPhoto = (id) => {
      .catch(err => console.error(err))
 
    };
-
-   const loadPhotoNew = () => {
+const loadPhotoNew = () => {
      let searchTerm = input.value;
      if (searchTerm == "") searchTerm = "search"
 
@@ -107,9 +121,9 @@ const loadPhoto = (id) => {
 
 $('.btn-change-photo').click((e) => {
      let id = e.currentTarget.attributes.data_id.value
-     const hidden = document.querySelector(`[data_container_id='${id}']`)
+     let hidden = document.querySelector(`#alts_${id}`)
      hidden.classList.toggle('hidden')
-
+     console.log(hidden)
      loadPhoto(id)
    });
 
