@@ -11,6 +11,7 @@ import initStickyBar from "../components/initStickyBar.js"
 import "./anime";
 import highlightPlant from "./highlight_plant";
 import render from "../components/initTree"
+import initInput from "../components/initInput"
 
 require("turbolinks").start()
 
@@ -24,6 +25,7 @@ var ready = function () {
     if (json) render(JSON.parse(json.innerHTML))
 
     initPhotosUpload();
+    initInput();
     initDictionary();
    // init();
     initD3();

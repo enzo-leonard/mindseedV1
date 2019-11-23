@@ -1,4 +1,4 @@
-<div id=card-<%=card.id%> class="input-card">
+<div id=card_<%=card.id%> class="input-card update-event">
   <%= simple_form_for([ deck, card ], remote: true) do |form| %>
 
    <div class="input-card-left">
@@ -31,6 +31,6 @@
     </div>
 
     </div>
-    <%= form.button :submit, class: "btn hidden"%>
+    <%= form.button :submit, id: "update_btn_#{card.id}", class: "inv update-btn"%>
 
       <% end %>

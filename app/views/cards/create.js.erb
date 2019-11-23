@@ -9,6 +9,7 @@ function addcard(cardHTML) {
   const cards = document.querySelectorAll('.input-card')
   const card = cards[cards.length - 1];
   card.insertAdjacentHTML('afterend', cardHTML);
+  window.scrollTo(0, document.body.scrollHeight);
 }
 
 addcard('<%= j render "decks/form_update", deck: @deck , card: @card %>');

@@ -1,14 +1,28 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-
 
 TO DO HEURISTIQUE
 - Heuristique position canvas
 - Heuristique perso
+- (Diffent type of tree)
+- Arbre dans
+- Edit theme
+- View theme
 
 TO DO INPUT
-- AJAX
+- AJAX                          - done
 - UPDATE
+- PHOTO DEBUG
+- DEF DEBUG
 - Description
+- Photo
 - NEW
 - FROM TEXT FUNCTION
 - TRANSITION FROM HEURISTIQUE
+- (WIKI DEF)
+
+
+
+TO DO HOME PAGE
+- DEMO
+- CORRECTION
+
+

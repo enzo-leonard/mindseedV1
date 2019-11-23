@@ -10,10 +10,13 @@
   <% @deck.cards.each do |card|%>
   <%= render 'decks/form_update', deck: @deck, card: card %>
   <%end %>
-  <br><hr>
+  <br>
+ <div class="new hidden">
+ <hr>
   <h2>Add new card</h2>
   <%= render 'decks/form_new', deck: @deck, card: Card.new %>
-<hr>
+<br>
+</div>
 </div>
 
 <div class="btn-add">+</div>
