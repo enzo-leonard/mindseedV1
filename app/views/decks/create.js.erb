@@ -1,0 +1,18 @@
+console.log("creation of a new card")
+
+function refreshForm(innerHTML) {
+  const newcardForm = document.getElementById('.new_card');
+  newcardForm.innerHTML = innerHTML;
+}
+
+function addcard(cardHTML) {
+  const cards = document.getElementById('.new_card');
+  cards.insertAdjacentHTML('beforeend', cardHTML);
+}
+
+<% if @card.errors.any? %>
+  refreshForm('<%= j render "decks/form", restaurant: @restaurant, card: @card %>');
+<% else %>
+  addcard('<%= j render "decks/show", card: @card %>');
+  refreshForm('<%= j render "decks/form", restaurant: @restaurant, card: card.new %>');
+<% end %>

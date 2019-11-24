@@ -1,0 +1,17 @@
+console.log("creation of a new card")
+
+function refreshForm(innerHTML) {
+  const newcardForm = document.querySelector('#input-card-new');
+  newcardForm.innerHTML = innerHTML;
+}
+
+function addcard(cardHTML) {
+  const cards = document.querySelectorAll('.card-container')
+  const card = cards[cards.length - 1];
+  card.insertAdjacentHTML('beforeend', cardHTML);
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+addcard('<%= j render "decks/form_update", deck: @deck , card: @card %>');
+refreshForm('<%= j render 'decks/form_new', deck: @deck, card: Card.new %>');
+
