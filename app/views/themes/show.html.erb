@@ -22,11 +22,28 @@
 </div>
 
 <p id="notice"><%= notice %></p>
-<div id="tree-container"></div>
+<div class="view-data hidden" id="circle-container">
+  <svg width="960" height="960"></svg>
+</div>
+<div class id="tree-container"></div>
 <div class="raw-json hidden">
+
+
+
 <%= @map %>
 </div>
 
+<div class="choice-data">
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label  id="option1" class="btn btn-secondary active">
+    <input type="radio" name="options" id="option2"autocomplete="off" checked> Circle
+  </label>
+  <label id="option2" class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Tree
+  </label>
+</div>
+
+</div>
 
 
 

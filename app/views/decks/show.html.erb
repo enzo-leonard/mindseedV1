@@ -23,14 +23,38 @@
 
 <div class="btn-add">+</div>
 
+<%# <div class="btn-opt opt-hidden"></div> %>
+<button type="button" class="btn btn-opt opt-hidden" data-toggle="modal" data-target="#auto-card">
+ <%= icon('fas', 'edit')%>
+</button>
+
+<div class="modal fade" id="auto-card" tabindex="-1" role="dialog" aria-labelledby="auto-cardLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="auto-cardLabel">Add card from text</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div contenteditable=true class="editable"> </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" id="save-text-btn" class="btn btn-primary">Save</button>
+      </div>
+
+      <div class="modal-after">
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <%#
-- AJAX
-- SUGGESTION IMAGE
-- SUGGESTION DEFINITION
 - HOLDER
-- UPDATE
 - DELETE
-- CHANGE PHOTO ALL
-- CHANGE DEF ALL
 - V2 FAIRE NOUVEAU GRAPHIQUE
  %>

@@ -11,14 +11,16 @@ TO DO INPUT
 - AJAX                          - done
 - UPDATE                        - done
 - PHOTO DEBUG                   - done (need test)
-- DEF DEBUG
-- Description
-- Photo
-- NEW
+- DEF DEBUG                     - done
 - FROM TEXT FUNCTION
 - TRANSITION FROM HEURISTIQUE
 - (WIKI DEF)
 - Debug btn create
+- Description
+- Photo
+- Debug new                     - done
+- add two new card
+- new without charging the page
 
 
 
