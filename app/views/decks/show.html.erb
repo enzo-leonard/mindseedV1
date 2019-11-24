@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="back">
-  <a href="/themes" ><%= icon('fas', 'chevron-left') %></a>
+  <a href="/themes/<%=@theme.id%>" ><%= icon('fas', 'chevron-left') %></a>
 </div>
 
 <div class="container mt-5">
   <h1><%= @deck.name.capitalize %></h1>
   <div class="description"><%= @deck.description %></div>
+  <div class="card-container">
   <% @deck.cards.each do |card|%>
   <%= render 'decks/form_update', deck: @deck, card: card %>
   <%end %>
+  </div>
   <br>
  <div class="new hidden">
  <hr>

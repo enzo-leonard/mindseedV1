@@ -19,7 +19,6 @@ const initInput = () => {
 
     const btnUpdate = document.querySelectorAll(`.update-event`)
     btnUpdate.forEach((btn) => {
-      console.log(btn)
       btn.addEventListener('change', (event) => {
         const id = event.currentTarget.attributes.id.value.split('_')[1]
         update(id)

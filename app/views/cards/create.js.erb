@@ -6,9 +6,9 @@ function refreshForm(innerHTML) {
 }
 
 function addcard(cardHTML) {
-  const cards = document.querySelectorAll('.input-card')
+  const cards = document.querySelectorAll('.card-container')
   const card = cards[cards.length - 1];
-  card.insertAdjacentHTML('afterend', cardHTML);
+  card.insertAdjacentHTML('beforeend', cardHTML);
   window.scrollTo(0, document.body.scrollHeight);
 }
 

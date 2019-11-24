@@ -17,13 +17,9 @@ require("turbolinks").start()
 
 var ready = function () {
   $(document).ready(() => {
-
-
-  console.log('Nouvelle route ')
-
+    console.log('Nouvelle route ')
     const json = (document.querySelector('.raw-json'))
     if (json) render(JSON.parse(json.innerHTML))
-
     initPhotosUpload();
     initInput();
     initDictionary();
@@ -33,7 +29,6 @@ var ready = function () {
     initLearn();
     initStickyBar();
     highlightPlant();
-
   })
 
 };

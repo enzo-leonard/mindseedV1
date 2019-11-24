@@ -10,7 +10,7 @@ TO DO HEURISTIQUE
 TO DO INPUT
 - AJAX                          - done
 - UPDATE                        - done
-- PHOTO DEBUG
+- PHOTO DEBUG                   - done (need test)
 - DEF DEBUG
 - Description
 - Photo
@@ -18,6 +18,7 @@ TO DO INPUT
 - FROM TEXT FUNCTION
 - TRANSITION FROM HEURISTIQUE
 - (WIKI DEF)
+- Debug btn create
 
 
 

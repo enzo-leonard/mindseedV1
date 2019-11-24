@@ -29,7 +29,7 @@
 .input-card,
 .input-card-new {
   display: flex;
-  margin: 24px 0px;
+  margin: 12px 0px;
 
   #term {
     text-align: center;
@@ -92,4 +92,21 @@
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width: 80%;
   border-radius: 5px;
+
+  .defs-update-container {
+    background-color: white;
+    padding: 10px;
+  }
+
+  .suggestion {
+    background-color: white;
+    padding: 10px;
+    border-radius: 1px;
+    margin: 5px 0px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+  }
+
+  .suggestion:hover {
+    background-color: blanchedalmond;
+  }
 }

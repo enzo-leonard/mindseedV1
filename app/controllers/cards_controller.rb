@@ -12,9 +12,10 @@ class CardsController < ApplicationController
     @deck = Deck.find(params[:deck_id])
     @card = Card.new(card_params)
     @card.deck = @deck
+    @theme = @deck.theme
     if @card.save!
         respond_to do |format|
-        format.js{ render 'update'}# <-- will render `app/views/reviews/create.js.erb`
+        format.js{ render 'create'}# <-- will render `app/views/reviews/create.js.erb`
       end
 
     else

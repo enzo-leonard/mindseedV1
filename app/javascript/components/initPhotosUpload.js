@@ -104,7 +104,7 @@ const loadPhotoNew = () => {
              alt.addEventListener('click', () => {
                image.src = alt.src
                input_photo.value = alt.src
-               changePhoto("new")
+               changePhotoNew()
              })
            })
            //display the details for the first image result. After running the application,
