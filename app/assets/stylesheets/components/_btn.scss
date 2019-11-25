@@ -163,3 +163,35 @@ font-size: 1.8rem;
 padding: 10px;
   }
 }
+
+.btn-add-deck {
+  position: sticky;
+  width: 50px;
+  left: 95vw;
+  height: 50px;
+  padding: 5px 10px;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  z-index: 1;
+  line-height: 1;
+}
+
+.btn-add-deck:hover {
+  opacity: 1;
+  position: sticky;
+  width: 50px;
+  left: 95vw;
+  height: 50px;
+  font-weight: 900;
+  text-align: center;
+  color: #7b68a5;
+  cursor: pointer;
+  border-radius: 50%;
+}
