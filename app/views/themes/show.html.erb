@@ -1,8 +1,5 @@
 <div class="container1">
-
   <div class="dash_bar">
-
-    <p id="notice"><%= notice %></p>
     <div class="dash_profil <%= action_name %>">
       <div class="back white">
         <a href="/themes"><%= icon('fas', 'chevron-left') %></a>
@@ -11,35 +8,15 @@
       <div class="btn-add-deck" data-toggle="modal" data-target="#auto-card">+</div>
     </div>
     <br>
-    <div class="dash_list_decks">
-      <%= render 'themes/theme_decks', theme: @theme %>
-    </div>
-    <div class="dash-decks-button">
-      <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple special left" %>
-      <a href="/learn" class="btn btn-green special right"><%= icon('fas', 'seedling', '  Learn') %></a>
-    </div>
-  </div>
-
     <div class="dash-list">
-
       <div class="dash_list_decks">
-        <% @theme.decks.each do |item|  %>
-          <a href=<%="/decks/#{item.id}"%>>
-            <div class="list_element rank" style="margin-left: <%=20*(item.rank-1)%>px !important;">
-              <p><%= item.name%> (<%= item.cards.count%>)</p>
-            </div>
-            <div class="separator-bar" style="margin-left: <%=30*(item.rank)%>px;"></div>
-          </a>
-        <% end %>
+        <%= render 'themes/theme_decks', theme: @theme %>
       </div>
-
       <div class="dash-decks-button">
         <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple special left" %>
         <a href="/learn" class="btn btn-green special right"><%= icon('fas', 'seedling', '  Learn') %></a>
       </div>
-
     </div>
-
   </div>
 
   <div class="view-data">
@@ -55,6 +32,7 @@
     </div>
 
   </div>
+
   <div class="modal fade" id="auto-card" tabindex="-1" role="dialog" aria-labelledby="auto-cardLabel" aria-hidden="true" >
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -73,6 +51,7 @@
     </div>
   </div>
 </div>
+
   <div class="choice-data">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label id="option1" class="btn btn-secondary active">
@@ -82,7 +61,5 @@
         <input type="radio" name="options" id="option2" autocomplete="off"> Tree
       </label>
     </div>
-
   </div>
-
 </div>
