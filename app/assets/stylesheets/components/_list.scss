@@ -24,14 +24,13 @@ height:67vh;
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-  background: $darkgreen;
+  border: 2px solid $darkgreen;
   border-radius: 1px;
   opacity:0.1;
   }
-
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-  background: $lightgreen;
+  background: $darkgreen;
   opacity: 0.3;
   }
 /*------------scrollbar------*/
@@ -103,14 +102,13 @@ height:75vh;
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-  background: $darkgreen;
+  border: 2px solid $darkgreen;
   border-radius: 1px;
   opacity:0.1;
   }
-
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-  background: $lightgreen;
+  background: $darkgreen;
   opacity: 0.3;
   }
 /*------------scrollbar------*/
