@@ -59,14 +59,14 @@
 
 
   &:focus-within .input-card-left {
-    background-color: $green;
+    //background-color: $green;
     border-bottom: 6px solid $darkgreen;
     border-right: 4px solid $mediumgreen;
     transition: all 1s ease-in;
   }
 
   &:focus-within .input-card-right {
-    background-color: $green;
+    //background-color: $green;
     border-bottom: 6px solid $darkgreen;
     border-right: 4px solid $mediumgreen;
     transition: all 1s ease-in;
@@ -116,12 +116,12 @@
 .input-card-left {
   padding: 7px;
   margin: 5px 5px 5px 0px;
-  background-color: $gray;
+  background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width: 30%;
   border-radius: 5px;
-  border-bottom: 6px solid $darkgray;
-  border-right: 4px solid $mediumgray;
+  // border-bottom: 6px solid $darkgray;
+  // border-right: 4px solid $mediumgray;
   transition: all 1s ease-out;
 
   img {
@@ -138,12 +138,12 @@
 .input-card-right {
   padding: 10px;
   margin: 5px 0px;
-  background-color: $gray;
+  background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width: 70%;
   border-radius: 5px;
-  border-bottom: 6px solid $darkgray;
-  border-right: 4px solid $mediumgray;
+  // border-bottom: 6px solid $darkgray;
+  // border-right: 4px solid $mediumgray;
   transition: all 1s ease;
 
 

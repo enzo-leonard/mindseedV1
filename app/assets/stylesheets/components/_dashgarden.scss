@@ -1,15 +1,11 @@
-.dash_garden{
+.dash-garden{
   width:75vw;
   left:0;
   height: 100vh;
   background:$white;
   position:relative;
-  display:flex;
-  align-items: flex-end;
-  justify-content:space-around;
-  align-items : center;
 
-    .return_dash{
+    .return-dash{
       width: 75%;
       background: rgba(0, 0, 0, 0);
       height: 100vh;
@@ -22,69 +18,86 @@
     .hidden{
       display:none;
     }
-
-  .background{
-    position:absolute;
-    bottom: 20vh;
-    left:0;
-    width:300px;
-    height: 250px;
-    background-color: $mediumgreen;
-    z-index: 0;
-    display:none;
-  }
-
-    .foreground{
-    position:absolute;
-    bottom: 0;
-    right:0;
-    width:250px;
-    height: 150px;
-    background-color: $mediumgreen;
-    z-index: 101;
-    pointer-events:none;
-    display:none;
-  }
-
-
-  .dash_ground{
-    position:absolute;
-    bottom: 0;
-    width:100%;
-    background-color: $purple;
-    height: 20vh;
-  }
 }
 
-.plant_container{
-  position:relative;
-      width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 100px;
+*, *::before, *::after { box-sizing: border-box; }
+$max-in-row: 5;
+$min-in-row: $max-in-row - 1;
 
-    .first_row, .second_row{
-    display:flex;
-    justify-content:space-around;
-    position:absolute;
-
-    // background: rgba(255, 255, 255, 0.3);
-  }
-
-  .first_row{
-    width:80%;
-     z-index: 2;
-      bottom:0;
-      // pointer-events: none;
-  }
-  .second_row{
-    width:60%;
-    z-index: 1;
-    bottom: 10vw;
-
-    .plant{
-      transform: scale(0.97);
+@mixin block() {
+  width: 100% / $max-in-row;
+  @for $i from 1 through $max-in-row {
+    &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
+      // background-color: pink;
     }
   }
+  @for $i from $max-in-row through ($max-in-row + $min-in-row) {
+    &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
+      // background-color: indigo;
+    }
+  }
+  &:nth-of-type(#{$max-in-row + $min-in-row}n + 1) {
+    margin-left: 50% / $max-in-row;
+    // background-color: teal;
+  }
+  &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$max-in-row}) {
+    // background-color: cyan;
+    // margin-left: 50% / $hex-max-in-row;
+  }
 }
 
+.forest {
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forest .tree {
+  @include block();
+  height:150px;
+  // !Reset test: need to use something of higher
+  // specificity than just .paras p when @media querying:
+  // not doing this causes all specified :nth-of-type
+  // rules to be applied
+  // &:nth-of-type(n) {
+    // background-color: black;
+  // }
+}
+
+.tree
+  {
+  pointer-events: auto;
+  cursor:pointer;
+  opacity:0;
+  transform: scale(0.01);
+}
+.popout{
+  width: 75%;
+  background: $white;
+  opacity: 0.95;
+  height: 100vh;
+  position:fixed;
+  top: 0;
+  right:0;
+  z-index: 4 !important;
+   transform: scale(1) !important;
+   color: white;
+   display:flex;
+   justify-content: flex-end;
+   align-items: center;
+
+   .content {
+    background-color: black;
+    width:50%;
+    margin-right: 50px;
+   }
+}
+
+.highlight{
+  z-index:5 !important;
+  transform: scale(1.2) !important;
+  position: absolute;
+  left : 3vh;
+  top: 10vh;
+
+}

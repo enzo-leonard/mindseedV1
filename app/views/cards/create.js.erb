@@ -1,7 +1,10 @@
 console.log("creation of a new card")
 
 function refreshForm(innerHTML) {
-  const newcardForm = document.querySelector('#input-card-new');
+  console.log(innerHTML);
+  var newcardForm = document.querySelector('#form-container-card');
+  console.log("je suis la");
+  console.log(newcardForm);
   newcardForm.innerHTML = innerHTML;
 }
 
