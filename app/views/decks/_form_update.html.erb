@@ -1,0 +1,36 @@
+<div id=card_<%=card.id%> class="input-card update-event">
+  <%= simple_form_for([ deck, card ], remote: true) do |form| %>
+
+   <div class="input-card-left">
+    <%= form.input :term, input_html: { id: "term_#{card.id}"}%>
+    <%= form.input :photo, as: :hidden, input_html: { id: "photo_#{card.id}"}, class: "hidden"%>
+    <div class="change-photo">
+     <a data_id=<%=card.id%> class=btn-change-photo><%= icon('fas', 'exchange-alt')%></a>
+      <img id=img_<%=card.id%> src="<%=card.photo%>" alt="img">
+      <div id=<%="alts_"+card.id.to_s%> class="hidden alt-photo-container" >
+      <img class="alt-photo alt-<%= card.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= card.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= card.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= card.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= card.id %>" src="https://source.unsplash.com/random" alt="img">
+      <img class="alt-photo alt-<%= card.id %>" src="https://source.unsplash.com/random" alt="img">
+      </div>
+    </div>
+    </div>
+
+    <div class="input-card-right">
+      <%= form.input :definition, as: :text, :error => false, :hint => false, class: "update-definition#{card.id}", input_html: { id: "def-#{card.id}"}%>
+       <div id=<%="container_"+card.id.to_s%> class="defs-update-container hidden">
+    <div class="hidden suggestion definitions-update-<%= card.id %>"> </div>
+    <div class="hidden suggestion definitions-update-<%= card.id %>"> </div>
+    <div class="hidden suggestion definitions-update-<%= card.id %>"> </div>
+    <div class="hidden suggestion definitions-update-<%= card.id %>"> </div>
+  </div>
+      <%= form.input :context %>
+      <%= form.input :memo %>
+    </div>
+
+    </div>
+    <%= form.button :submit, id: "update_btn_#{card.id}", class: "inv update-btn"%>
+
+      <% end %>

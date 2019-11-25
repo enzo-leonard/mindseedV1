@@ -17,6 +17,7 @@ class DecksController < ApplicationController
       @childs << deck if deck.childs.count.zero?
     end
     @cards = Card.all
+    gon.cards = @cards
     @cards.each do |card|
       p card
     end
@@ -25,6 +26,7 @@ class DecksController < ApplicationController
   # GET /decks/1
   # GET /decks/1.json
   def show
+     @theme = @deck.theme
   end
 
   # GET /decks/new

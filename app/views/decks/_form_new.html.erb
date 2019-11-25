@@ -1,6 +1,7 @@
- <%= simple_form_for([ deck, card ]) do |form| %>
- <%= form.button :submit, class: "btn-green new-cards"%>
-<div class="input-card">
+
+<div id="input-card-new">
+<div class="input-card-new">
+ <%= simple_form_for([ deck, card ], remote: true ) do |form| %>
 
  <div class="input-card-left">
    <%= form.input :term, input_html: { id: 'new_term'},  class: "term", placeholder: "term..."%>
@@ -22,12 +23,11 @@
  <div class="input-card-right">
    <%= form.input :definition, as: :text, input_html: { id: 'new_definition'}, placeholder: "definition..."%>
 
-   <div class="defs-container hidden">
-    <div class="definitions"> </div>
-
-    <div class="definitions"> </div>
-    <div class="definitions"> </div>
-    <div class="definitions"> </div>
+   <div class="defs-container-new hidden">
+    <div class="definitions hidden suggestion"> </div>
+    <div class="definitions hidden suggestion"> </div>
+    <div class="definitions hidden suggestion"> </div>
+    <div class="definitions hidden suggestion"> </div>
   </div>
 
   <%= form.input :context , input_html: { id: 'new_context'}, placeholder: "contextualization..."%>
@@ -38,4 +38,6 @@
 
 </div>
 
+<%= form.button :submit %>
+</div>
 <% end %>

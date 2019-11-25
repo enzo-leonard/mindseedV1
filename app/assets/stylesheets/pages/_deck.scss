@@ -1,12 +1,40 @@
 .decks {
 
-.form-control:focus {
-  color: $black;
-  background-color: $white;
-  border: 2px solid $lightgreen;
-  outline: 0;
-  box-shadow: none !important;
-}
+
+  .form-control:focus {
+    color: $black;
+    background-color: $white;
+    border: 2px solid $lightgreen;
+    outline: 0;
+    box-shadow: none !important;
+  }
+
+  .modal-dialog {
+    max-width: 700px;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    background-color: white;
+  }
+
+  .modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    border-radius: 7px;
+    background-color: transparent;
+    border: none;
+  }
+
+
+
 
   .is-valid,
   .form-control {
@@ -88,3 +116,108 @@
   display: none;
 }
 
+
+.btn-add,
+.btn-opt {
+  position: sticky;
+  bottom: 20px;
+  right: 10px;
+  width: 50px;
+  left: 96vw;
+  height: 50px;
+  background-color: #00b818;
+  padding: 5px 10px;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  z-index: 1;
+}
+
+.opt-hidden {
+  bottom: 23px;
+  right: 8px;
+  z-index: 0;
+  font-size: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.opt-visible {
+  bottom: 110px;
+  cursor: pointer;
+  left: 95vw;
+}
+
+
+
+.btn-add:hover {
+  opacity: 1;
+  position: sticky;
+  bottom: 25px;
+  right: 10px;
+  width: 70px;
+  left: 95vw;
+  height: 70px;
+  background-color: #00b818;
+  padding: 0px 10px;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+.inv {
+  height: 0px;
+  margin: 0px;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  width: 0px;
+  padding: 0px;
+  position: absolute;
+}
+
+
+.editable {
+  color: black;
+  min-height: 300px;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.view-data {
+  background-color: #A3F5CF;
+}
+
+.view-data-tree {
+  padding: 10% 20%;
+  background-color: #A3F5CF;
+}
+
+.choice-data {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.word {
+  display: inline-block;
+  color: grey;
+}
+
+.word:hover {
+  color: purple;
+  font-weight: bold;
+}
+
+.modal-after {}
