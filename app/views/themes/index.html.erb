@@ -1,6 +1,6 @@
 <div class="container1">
 
-  <div class="dash_bar">
+  <div class="dash-bar">
     <div class="search-bar <%= action_name %>">
       <%= form_tag search_path, method: :get do %>
       <%= text_field_tag :query,
@@ -8,20 +8,20 @@
       <button type="submit" class="search-button"><i class="fa fa-search"> </i></button>
       <% end %>
     </div>
-    <div class="dash_profil">
+    <div class="dash-profil">
       <img class="avatar-large" src="https://images.unsplash.com/photo-1546538994-4f15d0aa966f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
       <h4>user.name</h4>
       <a href="#profil">modify</a>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <br>
+      <hr>
    </div>
 
-   <h3>Liste des thèmes</h3>
-   <div class="dash_list_theme">
-    <br>
+   <div class="header"><h3>My seeds</h3></div>
+
+   <div class="dash-list-theme">
     <% @themes.each do |item| %>
     <a href="/themes/<%=item.id%>">
-      <div class="list_element">
+      <div class="list-element">
         <div class="vitality-count"></div>
         <p> <%= item.name %></p>
       </div>
@@ -33,55 +33,39 @@
 <div class="dash-garden">
   <div class="return-dash hidden"></div>
   <div class="forest">
-    <div class="tree">
       <%= render 'plant2' %>
-    </div>
-    <div class="tree">
       <%= render 'plant3' %>
-    </div>
-    <div class="tree">
       <%= render 'plant1' %>
-    </div>
-    <div class="tree">
       <%= render 'plant4' %>
-    </div>
-    <div class="tree">
       <%= render 'plant5' %>
-    </div>
-    <div class="tree">
       <%= render 'plant1' %>
-    </div>
-    <div class="tree">
       <%= render 'plant2' %>
-    </div>
-    <div class="tree">
       <%= render 'plant3' %>
-    </div>
-    <div class="tree">
       <%= render 'plant4' %>
-    </div>
-    <div class="tree">
       <%= render 'plant5' %>
-    </div>
-    <div class="tree">
       <%= render 'plant1' %>
-    </div>
-    <div class="tree">
       <%= render 'plant5' %>
-    </div>
-    <div class="tree">
       <%= render 'plant2' %>
-    </div>
-    <div class="tree">
       <%= render 'plant3' %>
-    </div>
-    <div class="tree">
       <%= render 'plant3' %>
-    </div>
-    <div class="tree">
       <%= render 'plant4' %>
-    </div>
-  </div>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant1' %>
+      <%= render 'plant4' %>
+      <%= render 'plant5' %>
+      <%= render 'plant1' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant4' %>
+      <%= render 'plant5' %>
+      <%= render 'plant1' %>
+      <%= render 'plant5' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant3' %>
+      <%= render 'plant4' %>
+     </div>
 </div>
 </div>
 
