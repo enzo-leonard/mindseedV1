@@ -1,5 +1,14 @@
 .decks {
 
+
+  .form-control:focus {
+    color: $black;
+    background-color: $white;
+    border: 2px solid $lightgreen;
+    outline: 0;
+    box-shadow: none !important;
+  }
+
   .modal-dialog {
     max-width: 700px;
   }
@@ -26,25 +35,25 @@
 
 
 
+
   .is-valid,
   .form-control {
     border: inherit;
     background-image: none;
-    background-color: white;
+    background-color: $white;
     padding: 5px 5px;
     width: 100%;
-    border: none;
-    border-bottom: 1.2px solid #e4e4e4;
+    border: 0px solid $lightgreen;
     margin: 0px 0px 0px 3px;
-    font-family: "Raleway";
-    color: #414141;
+    font-family: $body-font;
+    color: $black;
     font-weight: 500;
     margin-bottom: -10px;
   }
 
   .is-valid:focus,
   .form-control:active {
-    border-bottom: 2px solid #00c100;
+    border: 2px solid $lightgreen;
     outline: none !important;
     box-shadow: none;
 
@@ -80,9 +89,9 @@
     width: 25px;
     padding: 1px 4px;
     opacity: 0.5;
-    color: white;
+    color: $black !important;
     border-radius: 5px;
-    background: black;
+    background: $white !important;
   }
 
   .alt-photo-container,
@@ -101,15 +110,12 @@
     background-size: cover;
     ;
   }
-
-  .fas {
-    color: white
-  }
 }
 
 .hidden {
   display: none;
 }
+
 
 .btn-add,
 .btn-opt {
@@ -190,11 +196,10 @@
 }
 
 .view-data {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  left: 20%;
+  background-color: #A3F5CF;
+}
+
+.view-data-tree {
   padding: 10% 20%;
   background-color: #A3F5CF;
 }

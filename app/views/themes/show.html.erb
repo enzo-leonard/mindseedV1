@@ -1,50 +1,55 @@
-<div class="back">
-  <a href="/themes" ><%= icon('fas', 'chevron-left') %></a>
-</div>
+<div class="container1">
 
-<div class="card-theme">
-  <br>
- <h2> <%= @theme.name %> </h2>
- <hr>
-
- <% @theme.decks.each do |item|  %>
- <a href=<%="/decks/#{item.id}"%>>
-  <div class="d-flex bd-highlight bg-white p-3 shadow-sm rounded m-2 border" style="margin-left: <%=20*(item.rank-1)%>px !important;">
-    <%= item.name%> (<%= item.cards.count%>)
+  <div class="dash_bar">
+    <p id="notice"><%= notice %></p>
+    <div class="dash_profil <%= action_name %>">
+      <div class="back">
+        <a href="/themes"><%= icon('fas', 'chevron-left') %></a>
+      </div>
+      <h2> <%= @theme.name %> </h2>
+    </div>
+    <br>
+    <div class="dash_list_decks">
+      <% @theme.decks.each do |item|  %>
+      <a href=<%="/decks/#{item.id}"%>>
+        <div class="list_element rank" style="margin-left: <%=20*(item.rank-1)%>px !important;">
+          <p><%= item.name%> (<%= item.cards.count%>)</p>
+        </div>
+        <div class="separator-bar" style="margin-left: <%=30*(item.rank)%>px;"></div>
+      </a>
+      <%end%>
+    </div>
+    <div class="dash-decks-button">
+      <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple special left" %>
+      <a href="/learn" class="btn btn-green special right"><%= icon('fas', 'seedling', '  Learn') %></a>
+    </div>
   </div>
-</a>
-<%end%>
+
+    <div class="view-data">
+      <div class="hidden view-data-tree" id="circle-container">
+        <svg width="1100" height="900"></svg>
+      </div>
+
+      <div class id="tree-container"></div>
 
 
-<hr>
-<%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn" %>
-<a href="/learn" class="btn"><%= icon('fas', 'seedling', '  Training') %></a>
-</div>
+      <div class="raw-json hidden">
+        <%= @map %>
+      </div>
 
-<p id="notice"><%= notice %></p>
-<div class="view-data hidden" id="circle-container">
-  <svg width="960" height="960"></svg>
-</div>
-<div class id="tree-container"></div>
-<div class="raw-json hidden">
+    </div>
 
 
+    <div class="choice-data">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label id="option1" class="btn btn-secondary active">
+          <input type="radio" name="options" id="option2" autocomplete="off" checked> Circle
+        </label>
+        <label id="option2" class="btn btn-secondary">
+          <input type="radio" name="options" id="option2" autocomplete="off"> Tree
+        </label>
+      </div>
 
-<%= @map %>
-</div>
+    </div>
 
-<div class="choice-data">
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label  id="option1" class="btn btn-secondary active">
-    <input type="radio" name="options" id="option2"autocomplete="off" checked> Circle
-  </label>
-  <label id="option2" class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Tree
-  </label>
-</div>
-
-</div>
-
-
-
-
+  </div>

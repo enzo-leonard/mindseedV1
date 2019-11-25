@@ -1,19 +1,16 @@
-
-
 <div class="center-view">
-<div class="container">
 
-
+<div class="plant-progress"></div>
 <div class=card-learn>
 <div class=card-learn-header>
-<a class=close href="/themes">x</a>
- 
+<a class=close href="/themes"><i class="fas fa-times"></i></a>
+
   <div class="progress">
     <div id=progressTrue class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     <div id=progressFalse class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
  </div>
-   
+
   <div class="card-learn-container">
   <% @cards.each do |card| %>
   <div class="consigne hidden">
@@ -21,7 +18,7 @@
   </div>
 
 
-    <div class="flip-card hidden">
+    <div class="flip-card hidden learn">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="flashcard-card"
@@ -29,15 +26,13 @@
             <a><%= card.term %></a>
           </div>
         </div>
-        <div class="flip-card-back"
-          style="background-image : linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.9)),  url( <%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>); background-size: cover; background-position: center;">
-          <div class="title"
-            style="background-image : linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),  url( <%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>); background-size: cover; background-position: center;">
+        <div class="flip-card-back">
             <img class="icon-title" src=<%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>>
+          <div class="title learn">
             <%= card.term %>
           </div>
-          <div class="content">
-            <%= card.definition%>
+          <div class="content learn">
+            <span><strong>answer :</strong></span> <%= card.definition%>
 
           </div>
           <div class="end">
@@ -51,10 +46,10 @@
     <div class="answer-container">
 
 
-    <a class="btn center" id=show-card>Voir la reponse</a>
-    <a class="btn center" id=btn-next>Suivant</a>
-    <a class="btn center" id=yes>Je sais</a>
-    <a class="btn center" id=no>Je sais pas</a>
+    <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
+    <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
+    <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
+    <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
 
 </div>
   </div>
@@ -87,3 +82,5 @@
 
 
   </div>
+   </div>
+     </div>
