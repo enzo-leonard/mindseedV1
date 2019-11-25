@@ -16,6 +16,7 @@ end
 
 
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
+user2 = User.create!(username: "toto", password: "password", email: "toto@gmail.com")
 
 puts "Creation du theme anglais"
 
@@ -120,7 +121,7 @@ rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack)
 
 history = Theme.create!(name: "History", user: user)
 greek = Deck.create!(name: "Greek mythology", rank: 1, parent: nil, theme: history)
-god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history)
+god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history, original_owner: true)
 demigod = Deck.create!(name: "DemiGod", rank: 2, parent: greek, theme: history)
 titan = Deck.create!(name: "Titant", rank: 2, parent: greek, theme: history)
 creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history)
@@ -155,7 +156,7 @@ Card.create!(term: "Hestia", deck: god)
 
 Card.create!(term: "Cronus", deck: titan)
 
-Card.create!(term: "Giant", deck: creature)
+Card.create!(term: "Giant", deck: creature,)
 Card.create!(term: "Gorgons", deck: creature)
 Card.create!(term: "Medusa", deck: creature)
 Card.create!(term: "Pegasus", deck: creature)
@@ -189,16 +190,16 @@ asie = Deck.create!(name: "Asie", rank: 2, parent: capital, theme: geo)
 
 
 
-addCard(euro, "Paris", "French" )
-addCard(euro, "Madrid", "Spain" )
-addCard(euro, "Rome", "Italie" )
-addCard(euro, "London", "French" )
-addCard(euro, "Paris", "French" )
-addCard(euro, "Paris", "French" )
-addCard(euro, "Paris", "French" )
-addCard(euro, "Paris", "French" )
-addCard(euro, "Paris", "French" )
-addCard(euro, "Paris", "French" )
+addCard(euro, "Paris", "French")
+addCard(euro, "Madrid", "Spain")
+addCard(euro, "Rome", "Italie")
+addCard(euro, "London", "French")
+addCard(euro, "Paris", "French")
+addCard(euro, "Paris", "French")
+addCard(euro, "Paris", "French")
+addCard(euro, "Paris", "French")
+addCard(euro, "Paris", "French")
+addCard(euro, "Paris", "French")
 
 def printChild(parent)
   parent.childs.each do |child|

@@ -1,5 +1,6 @@
 class DecksController < ApplicationController
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
+  # before_action :use_unsafe_params, only: [:import]
 
   # GET /decks
   # GET /decks.json
@@ -21,6 +22,7 @@ class DecksController < ApplicationController
     @cards.each do |card|
       p card
     end
+    # import_deck
   end
 
   # GET /decks/1
@@ -44,9 +46,12 @@ class DecksController < ApplicationController
   def create
     @theme = Theme.find(params[:theme_id])
     @deck = Deck.new(deck_params)
+    @deck.original_owner = true
+
     @deck.theme = @theme
     @parent = Deck.find(params[:deck][:parent_id])
     @deck.rank = @parent.rank+1
+
 
     if @deck.save
       respond_to do |format|
@@ -83,7 +88,34 @@ class DecksController < ApplicationController
     end
   end
 
+  def import
+    @deck = Deck.find(params[:deck_id])
+
+    args = { rank: @deck.rank, name: @deck.name, description: @deck.description, is_private: true, theme_id: @deck.theme_id}
+    @deck2 = Deck.new(args)
+    @deck2.theme.user = current_user
+    @deck2.save
+    @assign_cards_to_deck = []
+    @deck.cards.each do |card|
+      @args = {
+        term: card.term,
+        definition: card.definition,
+        context: card.context,
+        photo: card.photo,
+        memo: card.memo
+      }
+      carte = Card.new(@args)
+      @assign_cards_to_deck << carte
+    end
+    @assign_cards_to_deck.each do |card|
+      card.deck_id = @deck2.id
+      card.save
+    end
+    @deck2.save
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_deck
       @deck = Deck.find(params[:id])
@@ -91,6 +123,24 @@ class DecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
-      params.require(:deck).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id)
+      params.require(:deck).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id, :photo)
     end
-end
+
+
+    # def import_deck
+    #   @deck = Deck.new
+    #     respond_to do |format|
+    #       if @deck.save(@deck)
+    #     format.html {redirect_to @deckimport, notice: "Deck was succesfully imported"}
+    #     format.json {render :show, status: :ok, location: @deckimport}
+    #   else
+    #     format.html { render :search }
+    #     format.json { render json: @deck.errors, status: :unprocessable_entity }
+    # end
+    #    end
+    #   @deckimported = Deck.new(@deck)
+    #   @deckimported.user = current_user
+    #   @deckimported.save
+
+    # end
+  end
