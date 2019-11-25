@@ -1,18 +1,18 @@
-console.log("creation of a new card")
-
 function refreshForm(innerHTML) {
-  const newcardForm = document.getElementById('.new_card');
-  newcardForm.innerHTML = innerHTML;
+  var newDeckForm = document.querySelector("#modal-deck-creation");
+  console.log("je suis ici");
+  console.log(newDeckForm);
+  newDeckForm.innerHTML = innerHTML;
 }
 
-function addcard(cardHTML) {
-  const cards = document.getElementById('.new_card');
-  cards.insertAdjacentHTML('beforeend', cardHTML);
+function adddeck(deckHTML) {
+  const decks = document.querySelector("#new-deck")
+  decks.insertAdjacentHTML('beforeend', deckHTML);
 }
 
-<% if @card.errors.any? %>
-  refreshForm('<%= j render "decks/form", restaurant: @restaurant, card: @card %>');
+<% if @deck.errors.any? %>
+  refreshForm('<%= j render "decks/form_modal", theme: @theme, deck: @deck %>');
 <% else %>
-  addcard('<%= j render "decks/show", card: @card %>');
-  refreshForm('<%= j render "decks/form", restaurant: @restaurant, card: card.new %>');
+  // adddeck('<%#= j render "decks/show", deck: @deck %>');
+  window.location = '<%= deck_path(@deck) %>'
 <% end %>
