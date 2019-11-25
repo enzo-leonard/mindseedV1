@@ -1,15 +1,15 @@
-.dash_garden{
+.dash-garden{
   width:75vw;
   left:0;
   height: 100vh;
   background:$white;
   position:relative;
-  display:flex;
-  align-items: flex-end;
-  justify-content:space-around;
-  align-items : center;
+  // display:flex;
+  // align-items: flex-end;
+  // justify-content:space-around;
+  // align-items : center;
 
-    .return_dash{
+    .return-dash{
       width: 75%;
       background: rgba(0, 0, 0, 0);
       height: 100vh;
@@ -22,69 +22,77 @@
     .hidden{
       display:none;
     }
+}
 
-  .background{
-    position:absolute;
-    bottom: 20vh;
-    left:0;
-    width:300px;
-    height: 250px;
-    background-color: $mediumgreen;
-    z-index: 0;
-    display:none;
+// .forest{
+//     width:80%;
+//      z-index: 2;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+//   grid-template-rows: auto;
+//   // grid-template-areas:
+//   //   "even even . even even"
+//   //   "odd odd odd odd odd";
+//      background :purple;
+//      .plant1{
+//       width: 100px;
+//       height:100px;
+//       // grid-area: odd;
+//       // background: teal;
+//     }
+//       .plant2{
+//         width: 100px;
+//         height:250px;
+//       // grid-area: even;
+//       // background: blue;
+//     }
+// }
+
+
+*, *::before, *::after { box-sizing: border-box; }
+$max-in-row: 5;
+$min-in-row: $max-in-row - 1;
+
+@mixin block() {
+  width: 100% / $max-in-row;
+  @for $i from 1 through $max-in-row {
+    &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
+      // background-color: pink;
+    }
   }
-
-    .foreground{
-    position:absolute;
-    bottom: 0;
-    right:0;
-    width:250px;
-    height: 150px;
-    background-color: $mediumgreen;
-    z-index: 101;
-    pointer-events:none;
-    display:none;
+  @for $i from $max-in-row through ($max-in-row + $min-in-row) {
+    &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
+      // background-color: indigo;
+    }
   }
-
-
-  .dash_ground{
-    position:absolute;
-    bottom: 0;
-    width:100%;
-    background-color: $purple;
-    height: 20vh;
+  &:nth-of-type(#{$max-in-row + $min-in-row}n + 1) {
+    margin-left: 50% / $max-in-row;
+    // background-color: teal;
+  }
+  &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$max-in-row}) {
+    // background-color: cyan;
+    // margin-left: 50% / $hex-max-in-row;
   }
 }
 
-.plant_container{
-  position:relative;
-      width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 100px;
+.forest {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-    .first_row, .second_row{
-    display:flex;
-    justify-content:space-around;
-    position:absolute;
+.forest .tree {
+  @include block();
+  height:150px;
+  // !Reset test: need to use something of higher
+  // specificity than just .paras p when @media querying:
+  // not doing this causes all specified :nth-of-type
+  // rules to be applied
+  // &:nth-of-type(n) {
+    // background-color: black;
+  // }
+}
 
-    // background: rgba(255, 255, 255, 0.3);
-  }
-
-  .first_row{
-    width:80%;
-     z-index: 2;
-      bottom:0;
-      // pointer-events: none;
-  }
-  .second_row{
-    width:60%;
-    z-index: 1;
-    bottom: 10vw;
-
-    .plant{
-      transform: scale(0.97);
-    }
-  }
+.tree {
+  transform: scale(0.6);
 }
 
