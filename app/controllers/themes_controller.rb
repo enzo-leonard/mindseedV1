@@ -76,12 +76,12 @@ class ThemesController < ApplicationController
 
 
     def show_child(array, done)
-
       childrens = []
-
       array.each do |item|
         if !done.include?(item.name)
-          hash = { name: item.name, rank: item.rank, card_nb: item.cards.count, children: show_child(item.childs, done) }
+          hash = { name: item.name, rank: item.rank, card_nb: item.cards.count }
+          hash[:size] = item.cards.count if item.childs.count == 0
+          hash[:children] = show_child(item.childs, done)
           done << item.name
           childrens << hash
         end

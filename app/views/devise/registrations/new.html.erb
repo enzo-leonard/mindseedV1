@@ -1,9 +1,9 @@
 <div class="login-full">
   <div class="login-left">
     <div class="login-form">
-      <div class="title">
+      <div class="title green">
         <h2 >Sign up</h2>
-        <p class="italic">Keep growing   to your full potential</p>
+        <p class="italic">growing to your full potential</p>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -23,17 +23,20 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "btn-green full" %>
+          <%= f.button :submit, "Sign up", class: "btn btn-purple full" %>
         </div>
       <% end %>
     </div>
     <div class="bottom-login">
       <%- if controller_name != 'sessions' %>
-        <p>Do you already have an account ? <%= link_to "Login", new_session_path(resource_name) %><br />
+
       <% end %>
     </div>
   </div>
   <div class="login-right">
-
+     <div class="content">
+      <p>Do you already have an account ? </p>
+      <p class ="btn btn-ghost-white"><%= link_to "Login", new_session_path(resource_name) %></p>
+    </div>
   </div>
 </div>

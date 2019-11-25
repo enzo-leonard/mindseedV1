@@ -1,0 +1,43 @@
+
+<div id="input-card-new">
+<div class="input-card-new">
+ <%= simple_form_for([ deck, card ], remote: true ) do |form| %>
+
+ <div class="input-card-left">
+   <%= form.input :term, input_html: { id: 'new_term'},  class: "term", placeholder: "term..."%>
+   <%= form.input :photo, as: :hidden, class: "hidden", input_html: { id: 'new_img_hidden'}%>
+   <div class="change-photo">
+     <a class="btn-change-photo-new" ><%= icon('fas', 'exchange-alt')%></a>
+     <img src="" id="new-img" alt="img">
+     <div class="alt-photo-container-new hidden">
+       <img class=alt-photo-new src="" alt="img">
+       <img class=alt-photo-new src="" alt="img">
+       <img class=alt-photo-new src="" alt="img">
+       <img class=alt-photo-new src="" alt="img">
+       <img class=alt-photo-new src="" alt="img">
+       <img class=alt-photo-new src="" alt="img">
+     </div>
+   </div>
+ </div>
+
+ <div class="input-card-right">
+   <%= form.input :definition, as: :text, input_html: { id: 'new_definition'}, placeholder: "definition..."%>
+
+   <div class="defs-container-new hidden">
+    <div class="definitions hidden suggestion"> </div>
+    <div class="definitions hidden suggestion"> </div>
+    <div class="definitions hidden suggestion"> </div>
+    <div class="definitions hidden suggestion"> </div>
+  </div>
+
+  <%= form.input :context , input_html: { id: 'new_context'}, placeholder: "contextualization..."%>
+  <%= form.input :memo , input_html: { id: 'new_memo'}, placeholder: "pense-bête..."%>
+</div>
+
+
+
+</div>
+
+<%= form.button :submit %>
+</div>
+<% end %>
