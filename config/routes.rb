@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :decks, only: [ :index, :new, :create ]
   end
   resources :decks, only: [ :show, :edit, :update, :destroy ] do
+    post '/import', to: 'decks#import'
     resources :cards
   end
   devise_for :users,

@@ -108,9 +108,11 @@ const loadPhoto = (id) => {
    };
 
 
-$('.btn-change-photo').click((e) => {
+document.querySelector('.btn-change-photo').addEventListener('click', (e) => {
      let id = e.currentTarget.attributes.data_id.value
+     console.log("je suis dans le clic frérot")
      const hidden = document.querySelector(`[data_container_id='${id}']`)
+     console.log(hidden)
      hidden.classList.toggle('hidden')
 
      loadPhoto(id)
