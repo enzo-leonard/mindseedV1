@@ -28,7 +28,7 @@ class DecksController < ApplicationController
   # GET /decks/1
   # GET /decks/1.json
   def show
-     @theme = @deck.theme
+    @theme = @deck.theme
   end
 
   # GET /decks/new
@@ -42,17 +42,24 @@ class DecksController < ApplicationController
 
   # POST /decks
   # POST /decks.json
+
   def create
+    @theme = Theme.find(params[:theme_id])
     @deck = Deck.new(deck_params)
     @deck.original_owner = true
 
-    respond_to do |format|
-      if @deck.save
-        format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
-        format.json { render :show, status: :created, location: @deck }
-      else
-        format.html { render :new }
-        format.json { render json: @deck.errors, status: :unprocessable_entity }
+    @deck.theme = @theme
+    @parent = Deck.find(params[:deck][:parent_id])
+    @deck.rank = @parent.rank+1
+
+
+    if @deck.save
+      respond_to do |format|
+        format.js { }# <-- will render `app/views/decks/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.js { }  # <-- idem
       end
     end
   end
