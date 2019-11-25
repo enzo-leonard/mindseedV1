@@ -406,6 +406,9 @@ function render(treeData) {
         return d.id || (d.id = ++i);
       });
 
+    var rectGrpEnter = node.enter().append('g')
+      .attr('class', 'node-rect-text-grp');
+
     // Enter any new nodes at the parent's previous position.
     var nodeEnter = node.enter().append("g")
       .call(dragListener)
@@ -419,7 +422,7 @@ function render(treeData) {
       .attr('class', 'nodeCircle')
       .attr("r", 0)
       .style("fill", function (d) {
-        if (d.rank == 1) return d._children ? "lightsteelblue" : "red";
+        if (d.rank == 1) return d._children ? "lightsteelblue" : "$green";
         return d._children ? "lightsteelblue" : "#fff";
       });
 
@@ -452,6 +455,13 @@ function render(treeData) {
         outCircle(node);
       });
 
+    nodeEnter.append('rect')
+    .attr('rx', 6)
+    .attr('ry', 6)
+    .attr("opacity", 0.5)
+    .attr('width', 70)
+    .attr('height', 50)
+    .attr('class', 'node-rect');
     // Update the text to reflect whether node has children or not.
     node.select('text')
       .attr("x", function (d) {
@@ -474,7 +484,7 @@ function render(treeData) {
       .style("fill", function (d) {
         if (d.children)
         return d._children ? "lightsteelblue" : "#fff";
-        else return d._children ? "lightsteelblue" : "green";
+        else return d._children ? "lightsteelblue" : "$green";
       });
 
     // Transition nodes to their new position.

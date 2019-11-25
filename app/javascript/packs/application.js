@@ -24,12 +24,11 @@ import initCardLecteur from "../components/initCardLecteur.js"
     initInput();
     initDictionary();
     initCircle();
-   // init();
-//    initD3();
+    // init();
+    // initD3();
     //initGoogleSign()
     initLearn();
     initStickyBar();
     highlightPlant();
     initCardLecteur();
 
-$(document).on('turbolinks:load', ready);

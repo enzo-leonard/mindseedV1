@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
+<div id=id-deck class=hidden >
+<%= @deck.id %>
+</div>
 
-
+<div id=id-theme class=hidden >
+<%= @deck.theme.id %>
+</div>
 
 <div class="back">
   <a href="/themes/<%=@theme.id%>" class="green" ><%= icon('fas', 'chevron-left') %></a>
@@ -23,7 +28,9 @@
  <div class="new hidden">
  <hr>
   <h2>Add new card</h2>
-  <%= render 'decks/form_new', deck: @deck, card: Card.new %>
+  <div id="form-container-card">
+    <%= render 'decks/form_new', deck: @deck, card: Card.new %>
+  </div>
 <br>
 </div>
 </div>
@@ -48,8 +55,6 @@
         <div contenteditable=true class="editable"> </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" id="save-text-btn" class="btn btn-primary">Save</button>
       </div>
 

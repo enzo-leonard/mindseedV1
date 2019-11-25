@@ -1,4 +1,4 @@
-import $ from 'jquery';
+
 const initLearn = () => {
 console.log("learn lancé")
 
@@ -57,7 +57,7 @@ console.log("learn lancé")
       const next = () => {
         if (i >= 0) hide(cardsRecto[i])
         i++
-       
+
         progressTrue.style.width = `${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%`
         progressFalse.style.width = `${((falseAnswer / nbMaxCard) * 100).toFixed(1)}%`
          console.log(progressFalse.style.width)
