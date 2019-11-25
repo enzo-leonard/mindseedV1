@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :create
+
   def index
   end
 
@@ -15,7 +17,8 @@ class CardsController < ApplicationController
     @theme = @deck.theme
     if @card.save!
         respond_to do |format|
-        format.js{ render 'create'}# <-- will render `app/views/reviews/create.js.erb`
+          format.html{ render 'decks/form_update', deck: @deck, card: @card, layout: false }
+          format.js{ render 'create'}# <-- will render `app/views/reviews/create.js.erb`
       end
 
     else

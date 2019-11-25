@@ -1,23 +1,32 @@
  .node circle {
    cursor: pointer;
-   fill: #fff;
-   stroke: green;
+   fill: $green;
+   stroke: $green;
    stroke-width: px;
  }
 
+ .node-rect {
+   color: white;
+   background-color: white;
+   z-index: 0;
+ }
+
+
+
  .node text {
    font-size: 18px;
+   z-index: 1;
    font-family: "Alata";
  }
 
  path.link {
    fill: none;
-   stroke: rgb(100, 48, 0);
+   stroke: $purple;
    stroke-width: 2px;
  }
 
  .node.selected circle {
-   fill: green;
+   fill: $green;
  }
 
  .node {
@@ -55,8 +64,7 @@
  }
 
  .node:hover {
-   stroke: #000;
-   stroke-width: 1.5px;
+   color: green;
  }
 
  .node--leaf {
