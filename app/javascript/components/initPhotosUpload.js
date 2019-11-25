@@ -119,7 +119,7 @@ const loadPhotoNew = () => {
    };
 
 
-$('.btn-change-photo').click((e) => {
+document.querySelector('.btn-change-photo').addEventListener('click', (e) => {
      let id = e.currentTarget.attributes.data_id.value
      let hidden = document.querySelector(`#alts_${id}`)
      hidden.classList.toggle('hidden')

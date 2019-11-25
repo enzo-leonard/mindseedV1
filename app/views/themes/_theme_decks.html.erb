@@ -1,0 +1,8 @@
+<% @theme.decks.each do |item|  %>
+<a href=<%="/decks/#{item.id}"%>>
+  <div class="list_element rank" style="margin-left: <%=20*(item.rank-1)%>px !important;">
+    <p><%= item.name%> (<%= item.cards.count%>)</p>
+  </div>
+  <div class="separator-bar" style="margin-left: <%=30*(item.rank)%>px;"></div>
+</a>
+<%end%>

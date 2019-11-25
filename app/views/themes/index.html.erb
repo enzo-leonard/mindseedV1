@@ -20,13 +20,21 @@
    <div class="dash_list_theme">
     <br>
     <% @themes.each do |item| %>
+ <% if item.user == current_user %>
+
     <a href="/themes/<%=item.id%>">
       <div class="list_element">
         <div class="vitality-count"></div>
+
         <p> <%= item.name %></p>
+
       </div>
+
     </a>
     <%end%>
+
+    <%end%>
+
   </div>
 </div>
 
