@@ -18,13 +18,6 @@ import initInput from "../components/initInput"
 import initCircle from "../components/initCirclePacking"
 import initCardLecteur from "../components/initCardLecteur.js"
 
-
-require("turbolinks").start()
-
-var ready = function () {
-  $(document).ready(() => {
-
-    console.log('Nouvelle route ')
     const json = (document.querySelector('.raw-json'))
     if (json) render(JSON.parse(json.innerHTML))
     initPhotosUpload();
@@ -38,9 +31,5 @@ var ready = function () {
     initStickyBar();
     highlightPlant();
     initCardLecteur();
-  })
-
-};
-
 
 $(document).on('turbolinks:load', ready);
