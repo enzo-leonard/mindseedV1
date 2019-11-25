@@ -4,26 +4,17 @@ const initDictionary = () => {
   const input = document.querySelector('#new_term');
   const allDefs = document.querySelector('#new_definition');
   const divDef = document.querySelectorAll('.definitions');
-  const hiddenDefs = document.querySelector('.defs-container')
-  const hiddenUpdateDefs = document.querySelector('.defs-update-container')
-
-
-
-  // const updateDefinition = (id) => {
-  //   console.log(id)
-  // }
-
+  const containerNew = document.querySelector('.defs-container-new')
 
   if (input) {
    document.querySelectorAll(`textArea`).forEach((term) => {
       term.addEventListener('click', (event) => {
         const id = event.currentTarget.id.split("-")[1]
-        console.log(id)
         const allDefsUpdate = document.querySelector(`.update-definition${id}`);
         const divDefUpdate = document.querySelectorAll(`.definitions-update-${id}`)
         const updateDef = document.querySelector(`#def-${id}`)
-
         const mot = document.querySelector(`#term_${id}`).value
+        document.querySelector(`#container_${id}`).classList.toggle('hidden')
 
       fetch(`https://wordsapiv1.p.rapidapi.com/words/${mot}/definitions`, {
           "method": "GET",
@@ -33,35 +24,31 @@ const initDictionary = () => {
           }
         }).then(response => {
           response.json().then(data => {
-            // if (data.message == "word not found") {
-            //   console.log("Word not found.");
-            // } else {
+            if (data.message == "word not found") {
+              console.log("Word not found.");
+            } else {
 
             const html = data.definitions.map(definition => {
               return `${definition.definition}`;
             })
               let i = 0
 
-              hiddenUpdateDefs.classList.toggle('hidden')
+
 
               divDefUpdate.forEach(div => {
-                console.log(div)
                 if (html[i] != null) {
+                  div.classList.toggle('hidden')
                   div.innerText = html[i]
-
                   i += 1
                   div.addEventListener('click', () => {
-
-                    hiddenUpdateDefs.classList.toggle('hidden')
+                    document.querySelector(`#container_${id}`).classList.toggle('hidden')
                     updateDef.innerHTML = div.innerText
+                    document.querySelector(`#update_btn_${id}`).click()
                   })
                 }
               })
-
+            }
             })
-
-            // }
-            //
           })
         })
       });
@@ -89,32 +76,25 @@ const initDictionary = () => {
             };
 
             allDefs.addEventListener('click', () => {
-              console.log("I'm in the click")
               let i = 0
-              hiddenDefs.classList.toggle('hidden')
+              containerNew.classList.toggle('hidden')
               divDef.forEach(div => {
                 if (html[i] != null) {
                   div.innerText = html[i]
-
+                  div.classList.toggle('hidden')
                   i += 1
                   div.addEventListener('click', () => {
-
-                    hiddenDefs.classList.toggle('hidden')
+                    containerNew.classList.toggle('hidden')
                     definition.innerHTML = div.innerText
                   })
                 }
               })
 
             })
-
-            // }
-            //
           })
         })
-        // .catch(err => console.error(err))
-
+        .catch(err => console.error(err))
     })
-
   }
 };
 
