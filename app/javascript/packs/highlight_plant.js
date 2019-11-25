@@ -7,7 +7,7 @@ if (document.querySelector(".tree")) {
 
 console.log('in highlightPlant ');
     let plant = document.querySelectorAll(".tree");
-    let return_dashbaord = document.querySelector(".return_dash");
+    let return_dashbaord = document.querySelector(".return-dash");
     let popout = document.querySelector(".popout");
     console.log(plant);
   for (let i = 0; i < plant.length; i++) {
