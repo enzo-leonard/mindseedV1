@@ -1,7 +1,8 @@
+
 import $ from 'jquery';
 const initInput = () => {
 
-    const addBtn = document.querySelector('.btn-add')
+  const addBtn = document.querySelector('.btn-add')
 
   const containerNew = document.querySelector('#form-container-card')
 
@@ -17,17 +18,15 @@ const initInput = () => {
 
     })
 
-
-
   })
 
-    if (addBtn) {
+  if (addBtn) {
 
 
-      const btnOtp = document.querySelector('.btn-opt')
+    const btnOtp = document.querySelector('.btn-opt')
 
 
-      addBtn.addEventListener('mouseover', () => {
+    addBtn.addEventListener('mouseover', () => {
       btnOtp.classList.toggle('opt-visible')
       setTimeout(function () {
         btnOtp.classList.remove('opt-visible')
@@ -47,7 +46,7 @@ const initInput = () => {
       words.forEach((word) => {
         editable.innerHTML += `<div class=word id="${word}">${word}</div>&nbsp`
       })
-      words = []
+      words = []
 
       let savedWords = document.querySelectorAll('.word')
       savedWords.forEach((w) => {
@@ -55,7 +54,7 @@ const initInput = () => {
           addCard(w.innerHTML)
 
 
-      });
+        });
       })
       console.log(editable.innerHTML)
     })
@@ -72,7 +71,7 @@ const initInput = () => {
 
 
 
-    const update = (id) => {document.querySelector(`#update_btn_${id}`).click() }
+    const update = (id) => { document.querySelector(`#update_btn_${id}`).click() }
 
     const btnUpdate = document.querySelectorAll(`.update-event`)
     btnUpdate.forEach((btn) => {
@@ -91,7 +90,7 @@ const initInput = () => {
         .then((data) => { //console.log(data)
         })
 
-        console.log(`ajout de la card ${word}`)
+      console.log(`ajout de la card ${word}`)
       let formNew = word
       const after = document.querySelector('.modal-after')
       after.insertAdjacentHTML('beforeEnd', formNew)

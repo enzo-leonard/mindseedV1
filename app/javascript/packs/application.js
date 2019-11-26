@@ -1,3 +1,4 @@
+
 import "bootstrap";
 import $ from 'jquery';
 import 'mousetrap';
@@ -18,17 +19,17 @@ import initInput from "../components/initInput"
 import initCircle from "../components/initCirclePacking"
 import initCardLecteur from "../components/initCardLecteur.js"
 
-    const json = (document.querySelector('.raw-json'))
+const json = (document.querySelector('.raw-json
     if (json) render(JSON.parse(json.innerHTML))
-    initPhotosUpload();
-    initInput();
-    initDictionary();
-    initCircle();
-    // init();
-    // initD3();
-    //initGoogleSign()
-    initLearn();
-    initStickyBar();
-    highlightPlant();
-    initCardLecteur();
+initPhotosUpload();
+initInput();
+initDictionary();
+initCircle();
+// init();
+// initD3();
+//initGoogleSign()
+initLearn();
+initStickyBar();
+highlightPlant();
+initCardLecteur();
 
