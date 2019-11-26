@@ -1,6 +1,8 @@
 <div class="container1">
+
   <div class="dash_bar">
     <div class="dash_profil <%= action_name %>">
+
       <div class="back white">
         <a href="/themes"><%= icon('fas', 'chevron-left') %></a>
       </div>
@@ -10,7 +12,9 @@
     <br>
     <div class="dash-list">
       <div class="dash_list_decks">
+
         <%= render 'themes/theme_decks', theme: @theme %>
+
       </div>
       <div class="dash-decks-button">
         <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple special left" %>
