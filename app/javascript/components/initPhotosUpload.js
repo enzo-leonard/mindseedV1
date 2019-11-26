@@ -5,6 +5,16 @@ const initPhotosUpload = () => {
 if (document.querySelector('.decks.show')) {
 
 
+   const modalAfter = document.querySelector('.modal-after')
+   console.log(modalAfter)
+   modalAfter.addEventListener('click', () => {
+      console.log('changement de la modal after')
+      replaceNoPhoto();
+    })
+
+
+
+
   const ImageSearchAPIClient = require('azure-cognitiveservices-imagesearch');
   const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
   const serviceKey = "4182fdf2da204cfda3fbdd407fbfc6db";
@@ -12,6 +22,7 @@ if (document.querySelector('.decks.show')) {
   let imageSearchApiClient = new ImageSearchAPIClient(credentials);
 
   const replaceNoPhoto = () => {
+    console.log('replace no photo')
 
     let noPhoto = []
 
@@ -22,6 +33,7 @@ if (document.querySelector('.decks.show')) {
       }
     })
 
+    console.log('no photo : '+noPhoto)
     noPhoto.forEach((id) => {
       let image = document.querySelector(`#img_${id}`)
       let searchTerm = document.querySelector(`#term_${id}`).value
@@ -36,9 +48,11 @@ if (document.querySelector('.decks.show')) {
           console.log("No image results were found.");
         } else {
           let firstImageResult = imageResults.value[0];
+          if (firstImageResult){
           image.src = firstImageResult.contentUrl
           src.value = firstImageResult.contentUrl
-        input_photo.value = firstImageResult.contentUrl
+          document.querySelector(`#update_btn_${id}`).click()
+          }
         }
     })
     .catch(err => console.error(err))
