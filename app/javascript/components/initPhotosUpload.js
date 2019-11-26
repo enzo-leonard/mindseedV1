@@ -118,8 +118,8 @@ const loadPhotoNew = () => {
 
    };
 
-
-document.querySelector('.btn-change-photo').addEventListener('click', (e) => {
+  if (btnChangePhoto){
+btnChangePhoto.addEventListener('click', (e) => {
      let id = e.currentTarget.attributes.data_id.value
      let hidden = document.querySelector(`#alts_${id}`)
      hidden.classList.toggle('hidden')
@@ -130,7 +130,7 @@ document.querySelector('.btn-change-photo').addEventListener('click', (e) => {
 
 btnChangePhoto.addEventListener('click', () => {changePhotoNew()})
 document.querySelector('#new_term').addEventListener("change", loadPhotoNew)
-
+  }
 
   }}
 
