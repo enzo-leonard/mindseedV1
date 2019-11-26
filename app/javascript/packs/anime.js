@@ -6,5 +6,5 @@ anime({
   opacity: 1,
    scale: '1',
   delay: anime.stagger(100),
-  duration: 3000
+  duration: 9000
 });

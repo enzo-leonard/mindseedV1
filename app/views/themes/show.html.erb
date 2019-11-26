@@ -1,9 +1,9 @@
 <div class="container1">
 
-  <div class="dash_bar">
+  <div class="dash-bar">
 
-    <p id="notice"><%= notice %></p>
-    <div class="dash_profil <%= action_name %>">
+ <!--    <p id="notice"><%= notice %></p> -->
+    <div class="dash-profil <%= action_name %>">
       <div class="back white">
         <a href="/themes"><%= icon('fas', 'chevron-left') %></a>
       </div>
@@ -16,7 +16,7 @@
       <div class="dash_list_decks">
         <% @theme.decks.each do |item|  %>
           <a href=<%="/decks/#{item.id}"%>>
-            <div class="list_element rank" style="margin-left: <%=20*(item.rank-1)%>px !important;">
+            <div class="list-element rank" style="margin-left: <%=20*(item.rank-1)%>px !important;">
               <p><%= item.name%> (<%= item.cards.count%>)</p>
             </div>
             <div class="separator-bar" style="margin-left: <%=30*(item.rank)%>px;"></div>
