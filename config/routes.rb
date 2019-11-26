@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
   end
   resources :decks, only: [ :show, :edit, :update, :destroy ] do
+    post '/import', to: 'decks#import'
     resources :cards
   end
   devise_for :users,

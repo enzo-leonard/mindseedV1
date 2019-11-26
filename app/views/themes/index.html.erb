@@ -1,78 +1,81 @@
 <div class="container1">
 
-  <div class="dash_bar">
-
-   <div class="wrap <%= action_name %>">
-     <div class="search_bar">
+  <div class="dash-bar">
+    <div class="search-bar <%= action_name %>">
       <%= form_tag search_path, method: :get do %>
       <%= text_field_tag :query,
-      params[:query],
-      class: "search_field",
-        placeholder: "Search"
-        %>
-        <button type="submit" class="search_button"><i class="fa fa-search"> </i></button>
-      </div>
-
+      params[:query], class: "search-field", placeholder: "Search"%>
+      <button type="submit" class="search-button"><i class="fa fa-search"> </i></button>
       <% end %>
-
-
-
-     <!--  <button type="submit" class="search_button">
-
-     </button> -->
-
+    </div>
+    <div class="dash-profil">
+      <img class="avatar-large" src="https://images.unsplash.com/photo-1546538994-4f15d0aa966f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+      <h4>user.name</h4>
+      <a href="#profil">modify</a>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <hr>
    </div>
 
+   <div class="header"><h3>My seeds</h3></div>
 
-   <div class="dash_profil">
-     <img class="avatar-large" src="https://images.unsplash.com/photo-1546538994-4f15d0aa966f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
-     <h4>user.name</h4>
-     <a href="#profil">modify</a>
-     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-   </div>
-
-
-   <hr>
-   <h3>Liste des thèmes</h3>
-   <div class="dash_list_theme">
+   <div class="dash-list-theme">
     <% @themes.each do |item| %>
+ <% if item.user == current_user %>
+
     <a href="/themes/<%=item.id%>">
-      <div class="list_element">
+      <div class="list-element">
         <div class="vitality-count"></div>
+
         <p> <%= item.name %></p>
+
       </div>
+
     </a>
+    <%end%>
+
     <%end%>
 
   </div>
 </div>
 
-<div class="dash_garden">
-
-<div class="return_dash hidden"></div>
-  <div class="plant_container">
-     <div class="first_row">
-          <div class="plant">
-<%= render 'plant1' %>
-      </div>
-            <div class="plant">
-<%= render 'plant2' %>
-      </div>
-            <div class="plant">
-<%= render 'plant3' %>
-      </div>
-            <div class="plant">
-<%= render 'plant4' %>
-      </div>
-            <div class="plant">
-<%= render 'plant5' %>
-      </div>
-    </div>
-     <div class="second_row">
-    </div>
-  </div>
-  </div>
-
+<div class="dash-garden">
+  <div class="return-dash hidden"></div>
+  <div class="forest">
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant1' %>
+      <%= render 'plant4' %>
+      <%= render 'plant5' %>
+      <%= render 'plant1' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant4' %>
+      <%= render 'plant5' %>
+      <%= render 'plant1' %>
+      <%= render 'plant5' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant3' %>
+      <%= render 'plant4' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant1' %>
+      <%= render 'plant4' %>
+      <%= render 'plant5' %>
+      <%= render 'plant1' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant4' %>
+      <%= render 'plant5' %>
+      <%= render 'plant1' %>
+      <%= render 'plant5' %>
+      <%= render 'plant2' %>
+      <%= render 'plant3' %>
+      <%= render 'plant3' %>
+      <%= render 'plant4' %>
+     </div>
 </div>
+</div>
+
 
 

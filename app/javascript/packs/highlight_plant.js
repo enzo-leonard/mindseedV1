@@ -3,11 +3,11 @@ export default highlightPlant;
 console.log('in highlight_plant.js');
 
 function highlightPlant(){
-if (document.querySelector(".plant")) {
+if (document.querySelector(".tree")) {
 
 console.log('in highlightPlant ');
-    let plant = document.querySelectorAll(".plant");
-    let return_dashbaord = document.querySelector(".return_dash");
+    let plant = document.querySelectorAll(".tree");
+    let return_dashbaord = document.querySelector(".return-dash");
     let popout = document.querySelector(".popout");
     console.log(plant);
   for (let i = 0; i < plant.length; i++) {
@@ -22,7 +22,7 @@ console.log('in highlightPlant ');
       console.log('in unlight part');
 
   return_dashbaord.addEventListener("click", (event) =>{
-    const plant = document.querySelector('.plant.highlight');
+    const plant = document.querySelector('.tree.highlight');
     let popout = document.querySelector(".popout");
     console.log('get return click');
     popout.remove();

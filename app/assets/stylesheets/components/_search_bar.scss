@@ -1,22 +1,25 @@
-.wrap.index {
+
+
+.search-bar.index {
   position: absolute;
   top: 10px;
-  right : 10px;
+  right: 24px;
   z-index : 900;
-  width: 200px;
+  width: 240px;
   margin:0;
 }
 
-.wrap {
+.search-bar {
+  display: flex;
   position: relative;
   margin: 10px 30px;
 }
 
-.search_field {
-  width: 100%;
+.search-field {
+  width: 80%;
   padding: 7px 20px;
   outline: none;
-  color: #fff;
+  color: $mediumgreen;
   height:100%;
   background: transparent;
   border: none;
@@ -24,11 +27,12 @@
 }
 
   ::placeholder {
-  color: #fff;
+  color: $mediumgreen;
+  transition: all 0.5s ease;
 }
 
-.search_button {
-  color: #fff;
+.search-button {
+  color: $mediumgreen;
   width: 40px;
   padding-top: 5px;
   background: transparent;
@@ -38,46 +42,54 @@
   transition: all 0.5s ease;
 }
 
-
-.search_bar {
-
-  display: flex;
-  // border: 2px solid #fff;
-}
-
-.search_bar::after {
+.search-bar::after {
   content:'';
   width:100%;
   position: absolute;
   left:0;
   bottom:-1px;
   height: 0.2rem;
-  background: #fff;
+  background: $mediumgreen;
   transition: 0.2s;
   z-index: -1;
    border-radius: 0;
   transition: all 0.5s ease;
 }
 
-.search_bar:focus-within {
-
+.search-bar:focus-within {
   .search_field {
-    color: $purple;
+    color: $white;
     transition: all 0.5s ease;
   }
-  .search_button {
-  color:$purple;
+  .search-button {
+  color:$white;
   transition: all 0.5s ease;
   }
     ::placeholder {
-    color: $purple;
+    color: $white;
     transition: all 0.5s ease;
   }
-
+}
+.search-bar:focus-within::after {
+  height: 100%;
 }
 
-.search_bar:focus-within::after {
-  height: 2rem;
-  // border-radius: 50px;
+.search-bar:hover::after {
+  height: 100%;
 }
 
+
+.search-bar:hover {
+  .search_field {
+    color: $white;
+    transition: all 0.5s ease;
+  }
+  .search-button {
+  color:$white;
+  transition: all 0.5s ease;
+  }
+    ::placeholder {
+    color: $white;
+    transition: all 0.5s ease;
+  }
+}

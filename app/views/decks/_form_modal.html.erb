@@ -1,0 +1,6 @@
+<%= simple_form_for([theme, deck], remote: :true) do |form| %>
+  <%= form.input :name %>
+  <%= form.input :description %>
+  <%= form.association :parent %>
+  <%= form.button :submit %>
+<% end %>

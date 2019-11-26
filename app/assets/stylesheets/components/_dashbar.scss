@@ -1,23 +1,33 @@
-.dash_bar{
+.dash-bar{
   width:25vw;
   left:0;
   height: 100vh;
   background: $mediumgreen;
   z-index:2;
 
-
   h2, h3, h4{
       text-align: center;
       color : $white;
     }
 
+    .header{
+      height: 5vh;
+    }
 }
-  .dash_profil{
-    padding-top: 30px;
+  .dash-profil{
+    height: 25vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width:100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    background-color: $green;
+
+    &.show{
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+      height: 10vh;
+    }
 
     h2, h3, h4{
       text-align: center;
@@ -29,7 +39,7 @@
     }
 
     a {
-      color : $purple;
+      color : $white;
       text-decoration: none;
       text-align: center;
       font-size: 0.8rem;
@@ -52,7 +62,7 @@
     justify-content: center;
     border-radius: 0.375rem;
     border: 2px solid $white;
-    width:80%;
+    width:90%;
     padding: 3px;
     background: $white;
     margin: 0 auto;

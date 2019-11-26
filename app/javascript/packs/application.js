@@ -21,6 +21,7 @@ import initCardLecteur from "../components/initCardLecteur.js"
 
 const json = (document.querySelector('.raw-json
     if (json) render(JSON.parse(json.innerHTML))
+
 initPhotosUpload();
 initInput();
 initDictionary();
@@ -32,4 +33,5 @@ initLearn();
 initStickyBar();
 highlightPlant();
 initCardLecteur();
+
 

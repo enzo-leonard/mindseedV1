@@ -1,11 +1,12 @@
 const initCardLecteur = () => {
-  const result = document.querySelectorAll(".result");
+  const result = document.querySelectorAll(".result-deck");
   result.forEach((r) => {
     r.addEventListener('click', (event) => {
       const id = event.currentTarget.id
       const flashcards = document.querySelector('.flashcards')
       const flashcard = gon.cards;
       flashcards.innerHTML = ""
+
       flashcard.forEach((f) => {
         if (f.deck_id == id) {
           const card = `<div class="flashcard">
@@ -20,6 +21,11 @@ const initCardLecteur = () => {
           flashcards.insertAdjacentHTML("beforeend", card)
         }
       })
+
+      document.querySelector('.add').innerHTML = `
+
+        <a href="/decks/${id}/import" class="btn btn-white" data-method="post">Download this deck</a>
+      `
     })
   })
 }
