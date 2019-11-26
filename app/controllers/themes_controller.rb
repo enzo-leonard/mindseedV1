@@ -15,7 +15,6 @@ class ThemesController < ApplicationController
 
      @map = mind_map()
 
-
   end
 
   def new
