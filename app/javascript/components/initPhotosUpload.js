@@ -2,12 +2,65 @@ import $ from 'jquery';
 
 const initPhotosUpload = () => {
 'use strict';
-if (document.querySelector('#new-img')) {
+if (document.querySelector('.decks.show')) {
 
 
-const ImageSearchAPIClient = require('azure-cognitiveservices-imagesearch');
-const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
-const serviceKey = "d484f69aa59d4cfd8ddba54c472562d8";
+   const modalAfter = document.querySelector('.modal-after')
+   console.log(modalAfter)
+   modalAfter.addEventListener('click', () => {
+      console.log('changement de la modal after')
+      replaceNoPhoto();
+    })
+
+
+  const ImageSearchAPIClient = require('azure-cognitiveservices-imagesearch');
+  const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
+  const serviceKey = "4182fdf2da204cfda3fbdd407fbfc6db";
+  let credentials = new CognitiveServicesCredentials(serviceKey);
+  let imageSearchApiClient = new ImageSearchAPIClient(credentials);
+
+  const replaceNoPhoto = () => {
+    console.log('replace no photo')
+
+    let noPhoto = []
+
+    document.querySelectorAll('.hidden-photo').forEach((pic) => {
+      if (pic.value == "") {
+        let id = pic.id.split('_')[1]
+        noPhoto.push(id)
+      }
+    })
+
+    console.log('no photo : '+noPhoto)
+    noPhoto.forEach((id) => {
+      let image = document.querySelector(`#img_${id}`)
+      let searchTerm = document.querySelector(`#term_${id}`).value
+      let src = document.querySelector(`#photo_${id}`)
+      if (searchTerm == "") searchTerm = "search"
+
+      const sendQuery = async () => {return await imageSearchApiClient.imagesOperations.search(searchTerm); };
+
+      sendQuery()
+      .then(imageResults => {
+        if (imageResults == null) {
+          console.log("No image results were found.");
+        } else {
+          let firstImageResult = imageResults.value[0];
+          if (firstImageResult){
+          image.src = firstImageResult.contentUrl
+          src.value = firstImageResult.contentUrl
+          document.querySelector(`#update_btn_${id}`).click()
+          }
+        }
+    })
+    .catch(err => console.error(err))
+  })
+}
+
+replaceNoPhoto()
+
+
+
 
 let input = document.querySelector('#new_term');
 const image = document.querySelector("#new-img");
@@ -19,8 +72,7 @@ const btnChangePhoto = document.querySelector('.btn-change-photo-new')
 
 
 //instantiate the image search client
-let credentials = new CognitiveServicesCredentials(serviceKey);
-let imageSearchApiClient = new ImageSearchAPIClient(credentials);
+
 
 const changePhoto = (id) => {
   document.querySelector(`#alts_${id}`).classList.toggle('hidden')
@@ -53,8 +105,6 @@ const loadPhoto = (id) => {
          let firstImageResult = imageResults.value[0];
          image.src = firstImageResult.contentUrl
          src.value = firstImageResult.contentUrl
-         console.log("ancienne source")
-          console.log(src)
          input_photo.value = firstImageResult.contentUrl
          let i = 0
 
@@ -65,8 +115,6 @@ const loadPhoto = (id) => {
              image.src = alt.src
              src.value = alt.src
              update(id)
-             console.log("nouvelle source")
-             console.log(src)
              changePhoto(id)
            })
          })
@@ -118,21 +166,28 @@ const loadPhotoNew = () => {
 
    };
 
-  if (btnChangePhoto){
-btnChangePhoto.addEventListener('click', (e) => {
-     let id = e.currentTarget.attributes.data_id.value
-     let hidden = document.querySelector(`#alts_${id}`)
-     hidden.classList.toggle('hidden')
-     console.log(hidden)
-     loadPhoto(id)
-   });
+
+
+  if (document.querySelector('.btn-change-photo')){
+    document.querySelectorAll('.btn-change-photo').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        let id = e.currentTarget.attributes.data_id.value
+        let hidden = document.querySelector(`#alts_${id}`)
+        hidden.classList.toggle('hidden')
+        console.log("la")
+        loadPhoto(id)
+
+    })
+    });
 
 
 btnChangePhoto.addEventListener('click', () => {changePhotoNew()})
 document.querySelector('#new_term').addEventListener("change", loadPhotoNew)
   }
 
-  }}
+  }
+
+}
 
 
 

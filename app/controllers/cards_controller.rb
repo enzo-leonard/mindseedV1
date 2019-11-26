@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     @theme = @deck.theme
     if @card.save!
         respond_to do |format|
-          format.html{ render 'decks/form_update' }
+          format.html { render partial: 'decks/form_update', locals: { card: @card, deck: @deck} }
           format.js{ render 'create'}# <-- will render `app/views/reviews/create.js.erb`
       end
 

@@ -23,9 +23,6 @@ const initInput = () => {
   })
 
 
-
-
-
     const btnOtp = document.querySelector('.btn-opt')
 
 
@@ -34,12 +31,11 @@ const initInput = () => {
       setTimeout(function () {
         btnOtp.classList.remove('opt-visible')
       }, 2000);
-      console.log('hover')
+
     })
 
     const editable = document.querySelector('.editable')
     const saveBtn = document.querySelector('#save-text-btn')
-    console.log(editable)
     let words = []
     saveBtn.addEventListener('click', () => {
 
@@ -59,7 +55,6 @@ const initInput = () => {
 
         });
       })
-      console.log(editable.innerHTML)
     })
 
 
@@ -71,7 +66,6 @@ const initInput = () => {
       add.classList.toggle('hidden')
       window.scrollTo(0, document.body.scrollHeight);
     })
-
 
 
     const update = (id) => { document.querySelector(`#update_btn_${id}`).click() }
@@ -90,13 +84,25 @@ const initInput = () => {
       const idTheme = document.querySelector('#id-theme').innerHTML
       fetch(`/themes/${idTheme}/decks/${idDeck}/cards`, { method: 'POST', headers: { 'Accepts': 'text/html', 'Content-Type': 'application/json' }, body: JSON.stringify({ term: word }) })
         .then(response => response.text())
-        .then((data) => { //console.log(data)
+        .then((data) => {
+          //console.log(data)
+          after.insertAdjacentHTML('beforeEnd', data)
+          const btnUpdate = document.querySelectorAll(`.update-event`)
+          console.log(btnUpdate)
+          btnUpdate.forEach((btn) => {
+            btn.addEventListener('change', (event) => {
+              const id = event.currentTarget.attributes.id.value.split('_')[1]
+              console.log(document.querySelector(`#update_btn_${id}`))
+              const form = document.querySelector(`#edit_card_${id}`)
+              Rails.fire(form, 'submit');
+            })
+          })
         })
 
       console.log(`ajout de la card ${word}`)
       let formNew = word
       const after = document.querySelector('.modal-after')
-      after.insertAdjacentHTML('beforeEnd', formNew)
+      //after.insertAdjacentHTML('beforeEnd', formNew)
 
 
 
