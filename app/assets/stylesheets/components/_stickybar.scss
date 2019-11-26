@@ -1,15 +1,36 @@
+.navbar{
+  height: 10vh;
+  background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+  .navbar-nav{
+  margin-top: 12px;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+  }
+
+  .logo {
+    color: $white;
+    font-weight: 600;
+  }
+
+  .login {
+    color: $white;
+  }
+}
 .sticky-header {
   position: fixed;
   width: 100%;
   transition: top 0.3s;
-  z-index: 2;
+  z-index: 100;
   border-bottom: 1px solid #mediumgreen;
   top: 0;
   width: 100%;
   left: 0;
   justify-content: space-between;
-  background: transparent;
-  background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
 }
 
 #search-index {
@@ -42,4 +63,67 @@
   .login-sticky {
     color: $white;
   }
+
+
+.nav-item{
+  p{
+    display: inline-block;
+    color: $white;
+    font-weight: 400;
+  }
+}
+
+
+
+.dropdown-menu {
+background:$white;
+padding: 0;
+margin: 0;
+position: relative;
+border: 2px solid $white;
+border-radius: 2px;
+}
+
+
+.popover-arrow {
+  z-index:-1;
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid $white;
+  border-radius: 2px;
+  width: 0;
+  height: 0;
+
+}
+
+.dropdown-item{
+  display:flex;
+  justify-content: flex-start;
+  padding: 8px;
+  margin: 0;
+  width:100%;
+  color: $mediumgreen;
+  border: 2px solid $white;
+
+
+
+  &:hover{
+    background:$mediumgreen;
+    color:white;
+    border: 2px solid $white;
+  }
+  i.fas {
+    padding-right: 10px;
+  }
+}
+
+.dropdown-toggle {
+  cursor:pointer;
+}
+
+
+
 
