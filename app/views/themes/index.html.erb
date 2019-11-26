@@ -1,19 +1,8 @@
+<%= render 'shared/navbar' %>
 <div class="container1">
+
   <div class="dash-bar">
-    <div class="search-bar <%= action_name %>">
-      <%= form_tag search_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query], class: "search-field", placeholder: "Search"%>
-      <button type="submit" class="search-button"><i class="fa fa-search"> </i></button>
-      <% end %>
-    </div>
-    <div class="dash-profil">
-      <img class="avatar-large" src="<%= current_user.avatar %>" alt="">
-      <h4><%= current_user.first_name %></h4>
-      <a href="#profil">modify</a>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <hr>
-   </div>
+
    <div class="header">
     <h3>My seeds</h3>
    </div>
