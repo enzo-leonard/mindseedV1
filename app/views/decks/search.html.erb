@@ -39,8 +39,24 @@
           <% @cards.each do |c| %>
           <% end %>
         </div>
-        <div class="add">
-        </div>
+
+
+          <% if Theme.where(user: current_user).empty? %>
+          <div class="add hidden">
+          <%= flash[:notice] = "Before being able to import a deck, you have to create a Theme" %>
+          <%= render partial: 'themes/form', theme: @theme %>
+          </div>
+          <% else %>
+
+          <div class="add2 hidden">
+            <%= simple_form_for(@deck, url: '') do |f| %>
+            <%= f.association :theme, :collection => Theme.where(user: current_user) %>
+            <%= f.button :submit, class: 'btn btn-white' %>
+          </div>
+          <% end %>
+          <% end %>
+
+
       </div>
     </div>
   </div>

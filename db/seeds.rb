@@ -185,8 +185,6 @@ addCard(romain_god, "Saturn")
 addCard(romain_god, "Ceres")
 addCard(romain_god, "Bacchus")
 
-english = Theme.create!(name: "English", user: user)
-
 geo = Theme.create!(name: "Geography", user: user)
 capital = Deck.create!(name: "Capital", rank: 1, parent: nil, theme: geo, original_owner: true)
 afrique = Deck.create!(name: "Africa", rank: 2, parent: capital, theme: geo, original_owner: true)

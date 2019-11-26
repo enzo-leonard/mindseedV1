@@ -18,10 +18,12 @@ class DecksController < ApplicationController
       @childs << deck if deck.childs.count.zero?
     end
     @cards = Card.all
+    @deck = Deck.new
     gon.cards = @cards
     @cards.each do |card|
       p card
     end
+    @theme = Theme.new
     # import_deck
   end
 
@@ -111,7 +113,10 @@ class DecksController < ApplicationController
       card.deck_id = @deck2.id
       card.save
     end
+    @theme = Theme.find(params[:deck][:theme_id])
+
     @deck2.save
+
   end
 
   private
@@ -126,21 +131,4 @@ class DecksController < ApplicationController
       params.require(:deck).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id, :photo)
     end
 
-
-    # def import_deck
-    #   @deck = Deck.new
-    #     respond_to do |format|
-    #       if @deck.save(@deck)
-    #     format.html {redirect_to @deckimport, notice: "Deck was succesfully imported"}
-    #     format.json {render :show, status: :ok, location: @deckimport}
-    #   else
-    #     format.html { render :search }
-    #     format.json { render json: @deck.errors, status: :unprocessable_entity }
-    # end
-    #    end
-    #   @deckimported = Deck.new(@deck)
-    #   @deckimported.user = current_user
-    #   @deckimported.save
-
-    # end
   end
