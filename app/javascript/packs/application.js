@@ -20,7 +20,7 @@ import initCircle from "../components/initCirclePacking"
 import initCardLecteur from "../components/initCardLecteur.js"
 
 const json = (document.querySelector('.raw-json'))
-if(json) render(JSON.parse(json.innerHTML))
+if (json) render(JSON.parse(json.innerHTML))
 
 initPhotosUpload();
 initInput();
@@ -33,5 +33,4 @@ initLearn();
 initStickyBar();
 highlightPlant();
 initCardLecteur();
-
 

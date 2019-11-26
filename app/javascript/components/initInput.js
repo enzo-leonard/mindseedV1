@@ -5,6 +5,7 @@ const initInput = () => {
   const addBtn = document.querySelector('.btn-add')
 
   const containerNew = document.querySelector('#form-container-card')
+  if (containerNew) {
 
   containerNew.addEventListener('change', () => {
     console.log('changement formulaire')
@@ -19,6 +20,7 @@ const initInput = () => {
     })
 
   })
+}
 
   if (addBtn) {
 
