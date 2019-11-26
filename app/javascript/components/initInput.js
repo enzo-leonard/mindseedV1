@@ -5,7 +5,7 @@ const initInput = () => {
   const addBtn = document.querySelector('.btn-add')
 
   const containerNew = document.querySelector('#form-container-card')
-  if (containerNew) {
+  if (addBtn) {
 
 
   containerNew.addEventListener('change', () => {
@@ -21,7 +21,9 @@ const initInput = () => {
     })
 
   })
-}
+
+
+
 
 
     const btnOtp = document.querySelector('.btn-opt')
