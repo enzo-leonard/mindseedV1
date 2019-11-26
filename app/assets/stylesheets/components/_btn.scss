@@ -149,11 +149,11 @@ padding:5px;
 }
 
 .right{
-border-radius: 0rem 0.375rem 0.375rem 0rem;
+border-radius: 0rem 0.375rem 0.375rem 0rem !important;
 }
 
 .left{
- border-radius: 0.375rem 0rem 0rem 0.375rem;
+ border-radius: 0.375rem 0rem 0rem 0.375rem !important;
 }
 
 .big {
@@ -194,4 +194,8 @@ padding: 10px;
   color: #7b68a5;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.full {
+  width: 100%;
 }

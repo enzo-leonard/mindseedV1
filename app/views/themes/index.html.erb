@@ -1,5 +1,4 @@
 <div class="container1">
-
   <div class="dash-bar">
     <div class="search-bar <%= action_name %>">
       <%= form_tag search_path, method: :get do %>
@@ -15,32 +14,35 @@
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <hr>
    </div>
-
-   <div class="header"><h3>My seeds</h3></div>
-
+   <div class="header">
+    <h3>My seeds</h3>
+   </div>
    <div class="dash-list-theme">
     <% @themes.each do |item| %>
- <% if item.user == current_user %>
-
-    <a href="/themes/<%=item.id%>">
-      <div class="list-element">
-        <div class="vitality-count"></div>
-
-        <p> <%= item.name %></p>
-
+      <% if item.user == current_user %>
+        <a href="/themes/<%=item.id%>">
+          <div class="list-element">
+            <div class="vitality-count">
+            </div>
+            <p> <%= item.name %></p>
+          </div>
+        </a>
+      <%end%>
+    <%end%>
+    <div class="new hidden">
+      <div id="form-container-theme">
+        <%= render 'themes/form_new', theme: Theme.new %>
       </div>
-
-    </a>
-    <%end%>
-
-    <%end%>
-
+    </div>
+    <div class="dash-decks-button">
+      <a id="launch-new-theme" class="btn btn-green special right full"><%= icon('fa', 'plus', 'Add a new theme') %></a>
+    </div>
   </div>
 </div>
-
 <div class="dash-garden">
-  <div class="return-dash hidden"></div>
-  <div class="forest">
+  <div class="return-dash hidden">
+</div>
+    <div class="forest">
       <%= render 'plant2' %>
       <%= render 'plant3' %>
       <%= render 'plant1' %>
@@ -74,7 +76,7 @@
       <%= render 'plant3' %>
       <%= render 'plant4' %>
      </div>
-</div>
+  </div>
 </div>
 
 
