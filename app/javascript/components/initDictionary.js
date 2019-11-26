@@ -7,6 +7,7 @@ const initDictionary = () => {
   const containerNew = document.querySelector('.defs-container-new')
 
   if (input) {
+
    document.querySelectorAll(`textArea`).forEach((term) => {
       term.addEventListener('click', (event) => {
         const id = event.currentTarget.id.split("-")[1]
@@ -54,6 +55,7 @@ const initDictionary = () => {
       });
 
     input.addEventListener('change', () => {
+      console.log('la')
       const definition = document.querySelector("#new_definition");
 
       fetch(`https://wordsapiv1.p.rapidapi.com/words/${input.value}/definitions`, {
