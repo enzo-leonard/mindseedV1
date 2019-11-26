@@ -2,17 +2,41 @@
   width:25vw;
   left:0;
   height: 90vh;
-  background: $mediumgreen;
+  background: $light-gray;
   z-index:2;
 
-  h2, h3, h4{
+  h3 {
+      text-align:left;
+      margin-left: 22px !important;
+      color : $mediumgreen;
+    }
+
+  h2, h4{
       text-align: center;
       color : $white;
     }
 
     .header{
-      height: 5vh;
+      height: 10vh;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
     }
+}
+
+.heading{
+  display:flex;
+  justify-content: flex-start;
+
+  p{
+    color: $mediumgreen;
+    margin: 0;
+    margin-left: 9px;
+
+  }
+  .vitality{
+    width: 76px;
+  }
 }
   .dash-profil{
     height: 25vh;
@@ -29,7 +53,8 @@
       height: 10vh;
     }
 
-    h2, h3, h4{
+
+    h2, h4{
       text-align: center;
       color : $white;
     }

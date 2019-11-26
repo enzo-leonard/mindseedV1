@@ -33,9 +33,9 @@
     .return-dash{
       width: 75%;
       background: rgba(0, 0, 0, 0);
-      height: 100vh;
+      height: 90vh;
       position:fixed;
-      top: 0;
+      bottom: 0;
       right:0;
       z-index: 102;
     }
@@ -46,11 +46,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-$max-in-row: 5;
+$max-in-row: 3;
 $min-in-row: $max-in-row - 1;
 
 @mixin block() {
-  width: 100% / $max-in-row;
+  width: 90% / $max-in-row;
   @for $i from 1 through $max-in-row {
     &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
       // background-color: pink;
@@ -79,7 +79,7 @@ $min-in-row: $max-in-row - 1;
 
 .forest .tree {
   @include block();
-  height:150px;
+  height:200px;
   // !Reset test: need to use something of higher
   // specificity than just .paras p when @media querying:
   // not doing this causes all specified :nth-of-type
@@ -100,9 +100,9 @@ $min-in-row: $max-in-row - 1;
   width: 75%;
   background: $white;
   opacity: 0.95;
-  height: 100vh;
+  height: 90vh;
   position:fixed;
-  top: 0;
+  bottom: 0;
   right:0;
   z-index: 4 !important;
    transform: scale(1) !important;

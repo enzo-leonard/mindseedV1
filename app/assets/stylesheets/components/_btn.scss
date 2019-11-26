@@ -163,7 +163,16 @@ font-size: 1.8rem;
 padding: 10px;
   }
 }
-
+.button-bar{
+  position:absolute;
+  background-color:$light-gray;
+  padding:10px;
+  border-radius: 5px;
+  // box-shadow: 5px 5px 10px rgba($black, 0.2);
+  top: 11vh;
+  right: 20px;
+  z-index: 10;
+}
 .btn-add-deck {
   position: sticky;
   width: 50px;
