@@ -1,24 +1,26 @@
 
 const initLearn = () => {
-console.log("learn lancé")
+  const step = document.querySelector("#growing.active");
+  console.log("plant :")
+  console.log(step);
 
 
-    const resultDiv = document.querySelector(".result")
-    if (resultDiv) {
-      console.log("learn activé")
-      const cardsRecto = document.querySelectorAll('.flip-card')
-      const cardsVerso = document.querySelectorAll('.flip-card-inner')
-      const btnYes = document.querySelector('#yes')
-      const btnNo = document.querySelector('#no')
-      const btnShow = document.querySelector("#show-card")
-      const btnNext = document.querySelector("#btn-next")
-      const progressTrue = document.querySelector("#progressTrue")
-      const progressFalse = document.querySelector("#progressFalse")
-      const nbMaxCard = 7
-      const score = document.querySelector(".score")
+  const resultDiv = document.querySelector(".answers")
+  if (resultDiv) {
+    console.log("learn activé")
+    const cardsRecto = document.querySelectorAll('.flip-card')
+    const cardsVerso = document.querySelectorAll('.flip-card-inner')
+    const btnYes = document.querySelector('#yes')
+    const btnNo = document.querySelector('#no')
+    const btnShow = document.querySelector("#show-card")
+    const btnNext = document.querySelector("#btn-next")
+    const progressTrue = document.querySelector("#progressTrue")
+    const progressFalse = document.querySelector("#progressFalse")
+    const nbMaxCard = 7
+    const score = document.querySelector(".score")
 
-      let trueAnswer = 0
-      let falseAnswer = 0
+    let trueAnswer = 0
+    let falseAnswer = 0
 
       //const answer = $("#answer").value
       let i = -1;
@@ -42,30 +44,41 @@ console.log("learn lancé")
         btnShow.style.display = "none"
       }
 
-      const result = () => {
-        btnYes.style.display = "none"
-        btnNo.style.display = "none"
-        resultDiv.style.display = "block"
-        document.querySelector('.center-view').innerHTML = ""
-        document.querySelector('#result').classList.toggle('hidden')
-        resultDiv.innerHTML =
-          `Fecilitation vous avez terminé !
-        <div class = "score" > ${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%</div>
-        <hr>
-        <a href="" class="btn center" id=btn-again>Recommencer ?</a>`
-      }
       const next = () => {
         if (i >= 0) hide(cardsRecto[i])
-        i++
+          i++
 
         progressTrue.style.width = `${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%`
         progressFalse.style.width = `${((falseAnswer / nbMaxCard) * 100).toFixed(1)}%`
-         console.log(progressFalse.style.width)
+        console.log(progressFalse.style.width)
+        console.log(progressTrue.style.width)
         if (i < nbMaxCard) {
           show(cardsRecto[i])
 
           return [cardsRecto[i], cardsVerso[i]]
         } else result()
+      }
+
+      const result = () => {
+        const resultcard = document.querySelector('.result')
+        const learncard = document.querySelector(".card-learn")
+        btnYes.style.display = "none"
+        btnNo.style.display = "none"
+        resultDiv.style.display = "block"
+        learncard.classList.toggle("slide-out");
+        resultcard.classList.toggle("slide-out");
+        resultcard.classList.toggle("slide-in");
+        // learncard.classList.toggle("hidden");
+        // resultcard.classList.toggle("hidden");
+        const resultcontent = document.querySelector(".result .content")
+        resultcontent.insertAdjacentHTML("beforeend",
+          `Fecilitation vous avez terminé !
+          <div class = "score" > ${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%</div>
+          <hr>
+          <a href="" class="btn center" id=btn-again>Recommencer ?</a>`)
+
+        console.log(resultcard)
+
       }
 
       let card = next()
@@ -79,21 +92,23 @@ console.log("learn lancé")
       btnYes.addEventListener('click', () => {
         trueAnswer++
         card = next()
-      })
+        const step = document.querySelector("#growing.active");
+        step.classList.toggle("active");
+        if (step.nextElementSibling === null) {
+          step.classList.toggle("active");
+            // window.location.reload();
+          } else {
+            step.nextElementSibling.classList.toggle("active")
+          }
+        })
       btnNo.addEventListener('click', () => {
         falseAnswer++
         card = next()
       })
     }
 
-}
+  }
 
-
-
-
-
-
-
-export {
-  initLearn
-}
+  export {
+    initLearn
+  }

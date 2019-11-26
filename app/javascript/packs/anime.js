@@ -8,3 +8,4 @@ anime({
   delay: anime.stagger(100),
   duration: 9000
 });
+

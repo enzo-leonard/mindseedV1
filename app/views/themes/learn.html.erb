@@ -1,33 +1,40 @@
 <div class="center-view">
 
-<div class="plant-progress"></div>
-<div class=card-learn>
-<div class=card-learn-header>
-<a class=close href="/themes"><i class="fas fa-times"></i></a>
-
-  <div class="progress">
-    <div id=progressTrue class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-    <div id=progressFalse class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-   </div>
- </div>
-
-  <div class="card-learn-container">
-  <% @cards.each do |card| %>
-  <div class="consigne hidden">
-  Quelle est la composition d'un <%= card.term %> ?
+  <div class="plant-progress">
+    <div id="growing"class="active"><%= render 'plant1' %></div>
+    <div id="growing"><%= render 'plant2' %></div>
+    <div id="growing"><%= render 'plant3' %></div>
+    <div id="growing"><%= render 'plant3' %></div>
+    <div id="growing"><%= render 'plant4' %></div>
+    <div id="growing"><%= render 'plant5' %></div>
+    <div id="growing"><%= render 'plant5' %></div>
   </div>
+  <div class="card-learn">
+    <div class="card-learn-header">
+      <a class=close href="/themes"><i class="fas fa-times"></i></a>
+      <div class="progress">
+        <div id=progressTrue class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div id=progressFalse class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <div class="card-learn-container">
+      <% @cards.each do |card| %>
+      <div class="consigne hidden">
+        Quelle est la composition d'un <%= card.term %> ?
+      </div>
 
 
-    <div class="flip-card hidden learn">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="flashcard-card"
+      <div class="flip-card hidden learn">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="flashcard-card"
             style="background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg" %>); background-size: cover; background-position: center;;">
             <a><%= card.term %></a>
           </div>
         </div>
         <div class="flip-card-back">
-            <img class="icon-title" src=<%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>>
+          <img class="icon-title" src=<%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>>
           <div class="title learn">
             <%= card.term %>
           </div>
@@ -46,41 +53,32 @@
     <div class="answer-container">
 
 
-    <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
-    <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
-    <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
-    <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
+      <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
+      <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
+      <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
+      <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="answers hidden"></div>
+
+
+<div class="result slide-out">
+
+  <div>
+    <img src="https://images.unsplash.com/photo-1525923838299-2312b60f6d69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80" alt="" style="height: 500px">
+  </div>
+  <div class ="content">
+    <h2>Congratulations!  🎉</h2>
+    <h3>Les plus arides</h3>
+    <p>Flashcard pas oufement révisées 1</p>
+    <p>Flashcard pas oufement révisées 2</p>
+    <p>Flashcard pas oufement révisées 3</p>
+  </div>
+
 
 </div>
-  </div>
-  </div>
-
-
-
-
-
-
-  <div class="result hidden"></div>
-
-
-<div id=result class="container hidden">
-  <h1 class="text-center font-weight-bold mt-3">Congratulations!  🎉</h1>
-
-
-  <div style= "display: flex; margin-top: 100px; justify-content: space-around;">
-    <div>
-
-    <div style="margin-bottom: 40px"><h3>Les plus arides</h3></div>
-    <div style="border-radius: 5px; box-shadow: 4px 4px 2px grey; padding: 40px 0px; margin-bottom: 15px; background-color: #BFC0C0">Flashcard pas oufement révisées 1</div>
-    <div style="border-radius: 5px; box-shadow: 4px 4px 2px grey; padding: 40px 0px; margin-bottom: 15px; background-color: #BFC0C0">Flashcard pas oufement révisées 2</div>
-    <div style="border-radius: 5px; box-shadow: 4px 4px 2px grey; padding: 40px 0px; margin-bottom: 15px; background-color: #BFC0C0; margin-bottom: 30px">Flashcard pas oufement révisées 3</div>
-    <div><h2>YOUR SCORE MOTHERFUCKER 💝</h2></div>
-    </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1525923838299-2312b60f6d69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80" alt="" style="height: 500px">
-    </div>
-
-
-  </div>
-   </div>
-     </div>
+</div>
