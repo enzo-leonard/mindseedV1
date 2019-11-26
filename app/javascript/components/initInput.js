@@ -2,7 +2,7 @@
 import $ from 'jquery';
 const initInput = () => {
 
-  const addBtn = document.querySelector('.btn-add')
+  const addBtn = document.querySelector('#btn-add-card')
 
   const containerNew = document.querySelector('#form-container-card')
   if (addBtn) {
@@ -22,17 +22,6 @@ const initInput = () => {
 
   })
 
-
-    const btnOtp = document.querySelector('.btn-opt')
-
-
-    addBtn.addEventListener('mouseover', () => {
-      btnOtp.classList.toggle('opt-visible')
-      setTimeout(function () {
-        btnOtp.classList.remove('opt-visible')
-      }, 2000);
-
-    })
 
     const editable = document.querySelector('.editable')
     const saveBtn = document.querySelector('#save-text-btn')
@@ -88,7 +77,6 @@ const initInput = () => {
           //console.log(data)
           after.insertAdjacentHTML('beforeEnd', data)
           const btnUpdate = document.querySelectorAll(`.update-event`)
-          console.log(btnUpdate)
           btnUpdate.forEach((btn) => {
             btn.addEventListener('change', (event) => {
               const id = event.currentTarget.attributes.id.value.split('_')[1]
@@ -98,8 +86,6 @@ const initInput = () => {
             })
           })
         })
-
-      console.log(`ajout de la card ${word}`)
       let formNew = word
       const after = document.querySelector('.modal-after')
       //after.insertAdjacentHTML('beforeEnd', formNew)

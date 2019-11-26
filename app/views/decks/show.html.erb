@@ -17,9 +17,10 @@
 <%# <div class="header-decks"> %>
 
 
+
+  <div class="card-container">
   <h1 class=green><%= @deck.name.capitalize %></h1>
   <div class="description green"><%= @deck.description %></div>
-  <div class="card-container">
   <% @deck.cards.each do |card|%>
   <%= render 'decks/form_update', deck: @deck, card: card %>
   <%end %>
@@ -34,13 +35,14 @@
 <br>
 </div>
 </div>
+<div class="brf">
+  <div id=btn-add-card class="btn">New</div>
 
-<div class="btn-add">+</div>
-
-<%# <div class="btn-opt opt-hidden"></div> %>
-<button type="button" class="btn btn-opt opt-hidden" data-toggle="modal" data-target="#auto-card">
- <%= icon('fas', 'edit')%>
-</button>
+  <%# <div class="btn-opt opt-hidden"></div> %>
+  <button type="button" class="btn" data-toggle="modal" data-target="#auto-card">
+  Add from text
+  </button>
+</div>
 
 <div class="modal fade" id="auto-card" tabindex="-1" role="dialog" aria-labelledby="auto-cardLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

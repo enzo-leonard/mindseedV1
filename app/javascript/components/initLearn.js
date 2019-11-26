@@ -1,7 +1,6 @@
 
 const initLearn = () => {
   const step = document.querySelector("#growing.active");
-  console.log("plant :")
   console.log(step);
 
 

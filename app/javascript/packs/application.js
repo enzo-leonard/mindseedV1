@@ -20,7 +20,13 @@ import initNewTheme from "../components/initNewTheme.js"
 const json = (document.querySelector('.raw-json'))
 if (json) render(JSON.parse(json.innerHTML))
 
-initPhotosUpload();
+$(function () {
+  // Handler for .ready() called.
+  initPhotosUpload();
+
+});
+
+
 initInput();
 initDictionary();
 initCircle();
