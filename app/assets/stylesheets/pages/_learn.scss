@@ -1,6 +1,7 @@
 .learn {
   font-family: 'Alata',
   sans-serif;
+  overflow: hidden;
 
   .card-learn-container{
     display: flex;
@@ -12,6 +13,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    width: 100vw;
   }
 
    .card-learn{
@@ -30,6 +32,7 @@
     position: relative;
     padding: 0px 16px;
     margin-right:100px;
+    opacity: 1;
   }
 
   .card-learn-header{
@@ -68,7 +71,28 @@
 .plant-progress{
   width:40vh;
   height:100vh;
-  background-color: $lightpurple;
+  background-color: white;
+  position: relative;
+
+  #growing{
+    position: absolute;
+    bottom:0px;
+    left: 85px;
+    opacity:0;
+    transition: all 1s ease;
+    width: 19vh;
+    transform: scaleY(0.5) scaleX(2.5);
+    transform-origin: bottom center;
+
+  }
+  svg {
+    width:100%;
+  }
+  .active{
+    opacity:1 !important;
+    transform: scaleY(2.1) scaleX(2.1)!important;
+    transition: all 1s ease;
+  }
 }
   .progress {
     display: flex;
@@ -126,9 +150,15 @@
   }
 
   .result {
-    margin: 10% auto;
-    font-size: 48px;
-    color: darkslategrey;
+    background-color: darkslategrey;
+    display: flex;
+    justify-content: space-around;
+    position:absolute;
+    bottom: -30vh;
+    left: 40vh;
+  .content{
+    margin: 0 10vw;
+  }
   }
 
   #nb_card {
@@ -153,4 +183,16 @@
       max-height: 80px;
     }
   }
+}
+
+.slide-out{
+  transform: translateY(56vw);
+  opacity : 0!important;
+  transition: all 1s ease;
+}
+
+.slide-in{
+  transform: translateY(-30vw);
+  opacity : 1!important;
+  transition:all 1s ease;
 }

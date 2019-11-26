@@ -3,10 +3,10 @@ export default highlightPlant;
 console.log('in highlight_plant.js');
 
 function highlightPlant(){
-if (document.querySelector(".tree")) {
+if (document.querySelector(".forest.tree")) {
 
 console.log('in highlightPlant ');
-    let plant = document.querySelectorAll(".tree");
+    let plant = document.querySelectorAll(".forest.tree");
     let return_dashbaord = document.querySelector(".return-dash");
     let popout = document.querySelector(".popout");
     console.log(plant);
