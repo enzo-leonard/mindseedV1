@@ -18,59 +18,66 @@ end
 user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
 user2 = User.create!(username: "toto", password: "password", email: "toto@gmail.com")
 
-puts "Creation du theme anglais"
+puts "Creation du theme english"
 
 user = User.first
 
-anglais = Theme.new(name: "Anglais")
-anglais.user = user
-anglais.save
+english = Theme.new(name: "English")
+english.user = user
+english.save
 
 verb = Deck.create!(
-  name: "Verbe",
-  theme: anglais,
-  rank: 1,
-  parent: nil)
-
-nom = Deck.create!(
-  name: "Nom",
+  name: "Verb",
+  theme: english,
   rank: 1,
   parent: nil,
-  theme: anglais)
+  original_owner: true)
+
+name = Deck.create!(
+  name: "Name",
+  rank: 1,
+  parent: nil,
+  theme: english,
+  original_owner: true)
 
 expression = Deck.create!(
   name: "Expression",
   rank: 1,
   parent: nil,
-  theme: anglais)
+  theme: english,
+  original_owner: true)
 
 first = Deck.create!(
-  name: "First_group",
+  name: "First Group",
   rank: 2,
   parent: verb,
-  theme: anglais)
+  theme: english,
+  original_owner: true)
 
 second = Deck.create!(
   name: "Second_group",
   rank: 2,
   parent: verb,
-  theme:anglais)
+  theme: english,
+  original_owner: true)
 
 reg = Deck.create!(
-  name: "regulier",
+  name: "Regular",
   rank: 3,
   parent: second,
-  theme: anglais)
+  theme: english,
+  original_owner: true)
 
 irr = Deck.create!(
-  name: "irrégulier",
+  name: "Irregular",
   rank: 3,
   parent:  second,
-  theme:  anglais)
+  theme:  english,
+  original_owner: true)
 
 Card.create!(
-  term: "abide",
-  definition: "souffrire",
+  term: "Abide",
+  definition: "To suffer",
   deck: irr,
   context: "I said I would abide by their decision",
   memo: "avoir du bide ça fait souffire",
@@ -78,7 +85,7 @@ Card.create!(
 )
 
 Card.create!(
-  term: "beget",
+  term: "Beget",
   definition: "engendrer",
   deck: irr,
   context: "they hoped that the King might beget an heir by his new queen",
@@ -88,7 +95,7 @@ Card.create!(
 
 
 Card.create!(
-  term: "bereave",
+  term: "Bereave",
   definition: "scold or criticize (someone) angrily.",
   deck: irr,
   context: "she berated herself for being fickle",
@@ -98,33 +105,33 @@ Card.create!(
 
 
 learn = Theme.create!(name: "How we learn", user: user)
-brain = Deck.create!(name: "neuroscience", rank: 1, parent: nil, theme: learn)
+brain = Deck.create!(name: "Neuroscience", rank: 1, parent: nil, theme: learn, original_owner: true)
 
 
 full_stack = Theme.create!(name: "Full Stack", user: user)
 
 
-ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: full_stack)
-ruby_1 = Deck.create!(name: "Programming basic", rank: 2, parent: ruby, theme: full_stack)
-ruby_1_2 = Deck.create!(name: "Variable", rank: 3, parent: ruby_1, theme: full_stack)
-ruby_2 = Deck.create!(name: "Flow Conditionnal & array", rank: 2, parent: ruby, theme: full_stack)
-ruby_3 = Deck.create!(name: "Iterator & blocks", rank: 2, parent: ruby, theme: full_stack)
-ruby_4 = Deck.create!(name: "Hash & Symbols", rank: 2, parent: ruby, theme: full_stack)
-ruby_5 = Deck.create!(name: "Regular Expressions", rank: 2, parent: ruby, theme: full_stack)
-ruby_6 = Deck.create!(name: "Parsing", rank: 2, parent: ruby, theme: full_stack)
-oop = Deck.create!(name: "Oriented Object programming", rank: 1, parent: nil, theme: full_stack)
-db = Deck.create!(name: "Base de donnée", rank: 1, parent: nil, theme: full_stack)
-front = Deck.create!(name: "Front", rank: 1, parent: nil, theme: full_stack)
-rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack)
+ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: full_stack, original_owner: true)
+ruby_1 = Deck.create!(name: "Programming basics", rank: 2, parent: ruby, theme: full_stack, original_owner: true)
+ruby_1_2 = Deck.create!(name: "Variable", rank: 3, parent: ruby_1, theme: full_stack, original_owner: true)
+ruby_2 = Deck.create!(name: "Flow Conditionnal & Array", rank: 2, parent: ruby, theme: full_stack, original_owner: true)
+ruby_3 = Deck.create!(name: "Iterator & Blocks", rank: 2, parent: ruby, theme: full_stack, original_owner: true)
+ruby_4 = Deck.create!(name: "Hash & Symbols", rank: 2, parent: ruby, theme: full_stack, original_owner: true)
+ruby_5 = Deck.create!(name: "Regular Expressions", rank: 2, parent: ruby, theme: full_stack, original_owner: true)
+ruby_6 = Deck.create!(name: "Parsing", rank: 2, parent: ruby, theme: full_stack, original_owner: true)
+oop = Deck.create!(name: "Oriented Object Programming", rank: 1, parent: nil, theme: full_stack, original_owner: true)
+db = Deck.create!(name: "Database", rank: 1, parent: nil, theme: full_stack, original_owner: true)
+front = Deck.create!(name: "Front", rank: 1, parent: nil, theme: full_stack, original_owner: true)
+rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack, original_owner: true)
 
 
 
 history = Theme.create!(name: "History", user: user)
-greek = Deck.create!(name: "Greek mythology", rank: 1, parent: nil, theme: history)
+greek = Deck.create!(name: "Greek Mythology", rank: 1, parent: nil, theme: history, original_owner: true)
 god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history, original_owner: true)
-demigod = Deck.create!(name: "DemiGod", rank: 2, parent: greek, theme: history)
-titan = Deck.create!(name: "Titant", rank: 2, parent: greek, theme: history)
-creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history)
+demigod = Deck.create!(name: "SemiGod", rank: 2, parent: greek, theme: history, original_owner: true)
+titan = Deck.create!(name: "Titant", rank: 2, parent: greek, theme: history, original_owner: true)
+creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history, original_owner: true)
 
 Card.create!(
   term: "Athena",
@@ -156,7 +163,7 @@ Card.create!(term: "Hestia", deck: god)
 
 Card.create!(term: "Cronus", deck: titan)
 
-Card.create!(term: "Giant", deck: creature,)
+Card.create!(term: "Giant", deck: creature)
 Card.create!(term: "Gorgons", deck: creature)
 Card.create!(term: "Medusa", deck: creature)
 Card.create!(term: "Pegasus", deck: creature)
@@ -180,26 +187,23 @@ addCard(romain_god, "Bacchus")
 
 english = Theme.create!(name: "English", user: user)
 
-geo = Theme.create!(name: "Geographie", user: user)
-capital = Deck.create!(name: "Capital", rank: 1, parent: nil, theme: geo)
-afrique = Deck.create!(name: "Afrique", rank: 2, parent: capital, theme: geo)
-am_sud = Deck.create!(name: "South america", rank: 2, parent: capital, theme: geo)
-am_nord = Deck.create!(name: "North america", rank: 2, parent: capital, theme: geo)
-euro = Deck.create!(name: "Europe", rank: 2, parent: capital, theme: geo)
-asie = Deck.create!(name: "Asie", rank: 2, parent: capital, theme: geo)
+geo = Theme.create!(name: "Geography", user: user)
+capital = Deck.create!(name: "Capital", rank: 1, parent: nil, theme: geo, original_owner: true)
+afrique = Deck.create!(name: "Africa", rank: 2, parent: capital, theme: geo, original_owner: true)
+am_sud = Deck.create!(name: "South America", rank: 2, parent: capital, theme: geo, original_owner: true)
+am_nord = Deck.create!(name: "North America", rank: 2, parent: capital, theme: geo, original_owner: true)
+euro = Deck.create!(name: "Europe", rank: 2, parent: capital, theme: geo, original_owner: true)
+asie = Deck.create!(name: "Asia", rank: 2, parent: capital, theme: geo, original_owner: true)
 
 
 
-addCard(euro, "Paris", "French")
+addCard(euro, "Paris", "France")
 addCard(euro, "Madrid", "Spain")
-addCard(euro, "Rome", "Italie")
-addCard(euro, "London", "French")
-addCard(euro, "Paris", "French")
-addCard(euro, "Paris", "French")
-addCard(euro, "Paris", "French")
-addCard(euro, "Paris", "French")
-addCard(euro, "Paris", "French")
-addCard(euro, "Paris", "French")
+addCard(euro, "Roma", "Italy")
+addCard(euro, "London", "Great Britain")
+addCard(euro, "Copenhagen", "Danemark")
+addCard(euro, "Berlin", "Germany")
+
 
 def printChild(parent)
   parent.childs.each do |child|
