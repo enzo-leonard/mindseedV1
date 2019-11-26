@@ -2,10 +2,10 @@
 <div id="input-theme-new">
   <div class="input-theme-new">
    <%= simple_form_for(theme, remote: true) do |form| %>
-  <div class="input-theme">
-    <%= form.input :name, as: :text, input_html: { id: 'new_theme'}%>
+    <div class="input-theme">
+      <%= form.input :name, input_html: {class: "theme-input left", id: 'new_theme'}%>
+      <%= form.button :submit, class: "btn-purple right", id: "btn-new-theme" %>
+    </div>
   </div>
-  </div class="btn-create-theme">
-      <%= form.button :submit, class: "btn-new" %>
-  </div>
+</div>
 <% end %>
