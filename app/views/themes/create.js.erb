@@ -1,2 +1,20 @@
-console.log("creation of a new deck")
-const newDeckForm = document.querySelector("#new-deck")
+console.log("creation of a new theme")
+
+function refreshForm(innerHTML) {
+  var newThemeForm = document.querySelector("#form-container-theme");
+  console.log("je suis ici");
+  console.log(newThemeForm);
+  newDeckForm.innerHTML = innerHTML;
+}
+
+function adddeck(deckHTML) {
+  const decks = document.querySelector("#new-deck")
+  decks.insertAdjacentHTML('beforeend', deckHTML);
+}
+
+<% if @deck.errors.any? %>
+  refreshForm('<%= j render "decks/form_modal", theme: @theme %>');
+<% else %>
+  // adddeck('<%#= j render "decks/show", deck: @deck %>');
+  window.location = '<%= theme_path(@theme) %>'
+<% end %>

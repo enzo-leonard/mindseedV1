@@ -16,6 +16,7 @@ import render from "../components/initTree"
 import initInput from "../components/initInput"
 import initCircle from "../components/initCirclePacking"
 import initCardLecteur from "../components/initCardLecteur.js"
+import initNewTheme from "../components/initNewTheme.js"
 const json = (document.querySelector('.raw-json'))
 if (json) render(JSON.parse(json.innerHTML))
 
@@ -30,3 +31,4 @@ initLearn();
 initStickyBar();
 highlightPlant();
 initCardLecteur();
+initNewTheme();

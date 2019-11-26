@@ -29,10 +29,15 @@
         </a>
       <%end%>
     <%end%>
+    <div class="new hidden">
+      <div id="form-container-theme">
+        <%= render 'themes/form_new', theme: Theme.new %>
+      </div>
+    </div>
     <div class="dash-decks-button">
-      <a href="/learn" class="btn btn-green special right full"><%= icon('fa', 'plus', 'Add a new theme') %></a>
+      <a id="launch-new-theme" class="btn btn-green special right full"><%= icon('fa', 'plus', 'Add a new theme') %></a>
     </div>
-    </div>
+  </div>
 </div>
 <div class="dash-garden">
   <div class="return-dash hidden">
