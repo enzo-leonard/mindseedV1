@@ -1,4 +1,3 @@
-
 import "bootstrap";
 import $ from 'jquery';
 import 'mousetrap';
@@ -8,7 +7,6 @@ import {
 } from "../components/initLearn.js";
 import initGoogleSign from '../components/initGoogleLog';
 import initDictionary from "../components/initDictionary.js"
-
 //import init from "../components/initMindMap.js";
 //import initD3 from "../components/initD3.js"
 import initStickyBar from "../components/initStickyBar.js"
@@ -18,7 +16,6 @@ import render from "../components/initTree"
 import initInput from "../components/initInput"
 import initCircle from "../components/initCirclePacking"
 import initCardLecteur from "../components/initCardLecteur.js"
-
 const json = (document.querySelector('.raw-json'))
 if (json) render(JSON.parse(json.innerHTML))
 
@@ -33,4 +30,3 @@ initLearn();
 initStickyBar();
 highlightPlant();
 initCardLecteur();
-
