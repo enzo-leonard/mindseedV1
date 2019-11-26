@@ -2,19 +2,17 @@ console.log("creation of a new theme")
 
 function refreshForm(innerHTML) {
   var newThemeForm = document.querySelector("#form-container-theme");
-  console.log("je suis ici");
-  console.log(newThemeForm);
   newDeckForm.innerHTML = innerHTML;
 }
 
 function adddeck(deckHTML) {
-  const decks = document.querySelector("#new-deck")
+  var decks = document.querySelector(".dash-list-theme")
   decks.insertAdjacentHTML('beforeend', deckHTML);
 }
 
-<% if @deck.errors.any? %>
-  refreshForm('<%= j render "decks/form_modal", theme: @theme %>');
+<% if @theme.errors.any? %>
+  refreshForm('<%= j render "decks/form_modal", theme: Theme.new %>');
 <% else %>
-  // adddeck('<%#= j render "decks/show", deck: @deck %>');
+
   window.location = '<%= theme_path(@theme) %>'
 <% end %>

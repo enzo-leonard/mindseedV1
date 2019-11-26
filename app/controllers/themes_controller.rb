@@ -37,7 +37,7 @@ class ThemesController < ApplicationController
     @theme.user = @user
     if @theme.save!
       respond_to do |format|
-        format.js{ render 'create', notice: "Theme was successfully created."}# <-- will render `app/views/reviews/create.js.erb`
+        format.js# <-- will render `app/views/reviews/create.js.erb`
       end
     else
       respond_to do |format|

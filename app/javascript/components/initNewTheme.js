@@ -4,7 +4,6 @@ const initNewTheme = () => {
 
   if (newTheme) {
     newTheme.addEventListener('click', () => {
-      console.log("jsuis al")
       const newForm = document.querySelector('.new')
       newForm.classList.toggle('hidden')
     })

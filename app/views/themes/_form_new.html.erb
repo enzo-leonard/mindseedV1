@@ -1,9 +1,9 @@
 
 <div id="input-theme-new">
   <div class="input-theme-new">
-   <%= simple_form_for(theme, remote: :true) do |form| %>
+   <%= simple_form_for(theme, remote: true) do |form| %>
   <div class="input-theme">
-    <%= form.input :name, as: :text, input_html: { id: 'new_theme'}, placeholder: "Theme name"%>
+    <%= form.input :name, as: :text, input_html: { id: 'new_theme'}%>
   </div>
   </div class="btn-create-theme">
       <%= form.button :submit, class: "btn-new" %>
