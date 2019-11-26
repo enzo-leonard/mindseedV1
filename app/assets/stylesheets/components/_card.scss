@@ -44,7 +44,7 @@
 
   margin: 24px auto;
   transition: all 0.2s ease;
-  width: 75%;
+  width: 100%;
 
 
   &:focus-within {
@@ -118,7 +118,7 @@
   margin: 5px 5px 5px 0px;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  width: 30%;
+  width: 20%;
   border-radius: 5px;
   // border-bottom: 6px solid $darkgray;
   // border-right: 4px solid $mediumgray;
@@ -134,13 +134,18 @@
   }
 }
 
+.card-container {
+  width: 90%;
+  margin: 0px auto;
+}
+
 
 .input-card-right {
   padding: 10px;
   margin: 5px 0px;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  width: 70%;
+  width: 80%;
   border-radius: 5px;
   // border-bottom: 6px solid $darkgray;
   // border-right: 4px solid $mediumgray;

@@ -13,8 +13,6 @@ if (document.querySelector('.decks.show')) {
     })
 
 
-
-
   const ImageSearchAPIClient = require('azure-cognitiveservices-imagesearch');
   const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
   const serviceKey = "4182fdf2da204cfda3fbdd407fbfc6db";

@@ -102,7 +102,7 @@ const initInput = () => {
       console.log(`ajout de la card ${word}`)
       let formNew = word
       const after = document.querySelector('.modal-after')
-      after.insertAdjacentHTML('beforeEnd', formNew)
+      //after.insertAdjacentHTML('beforeEnd', formNew)
 
 
 

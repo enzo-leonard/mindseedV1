@@ -8,6 +8,64 @@ const initDictionary = () => {
 
   if (input) {
 
+
+    const modalAfter = document.querySelector('.modal-after')
+    modalAfter.addEventListener('click', () => {
+      const def = document.querySelectorAll('.modal-after .update-definition')
+      def.forEach((d) => {
+        const id = d.id.split('-')[1]
+        const term = document.querySelector(`#term_${id}`).value
+        const divDefUpdate = document.querySelectorAll(`.definitions-update-${id}`)
+
+
+        if (d.value != null) {
+
+        fetch(`https://wordsapiv1.p.rapidapi.com/words/${term}/definitions`, {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+            "x-rapidapi-key": "4e917b8f2dmsh4fa52e5533bb1d1p1a5513jsn5cac3f95ad3e"
+          }
+        }).then(response => {
+          response.json().then(data => {
+            if (data.message == "word not found") {
+              console.log("Word not found.");
+            } else {
+
+              const html = data.definitions.map(definition => {
+                return `${definition.definition}`;
+              })
+              let i = 0
+              d.value = html[0]
+
+              divDefUpdate.forEach(div => {
+                if (html[i] != null) {
+                  div.classList.toggle('hidden')
+                  div.innerText = html[i]
+                  i += 1
+                  div.addEventListener('click', () => {
+                    document.querySelector(`#container_${id}`).classList.toggle('hidden')
+                    updateDef.innerHTML = div.innerText
+                    document.querySelector(`#update_btn_${id}`).click()
+                  })
+                }
+              })
+
+
+
+
+            }
+          })
+        })
+
+      }
+        console.log(term)
+
+
+
+      })
+    })
+
    document.querySelectorAll(`textArea`).forEach((term) => {
       term.addEventListener('click', (event) => {
         const id = event.currentTarget.id.split("-")[1]
@@ -34,8 +92,6 @@ const initDictionary = () => {
             })
               let i = 0
 
-
-
               divDefUpdate.forEach(div => {
                 if (html[i] != null) {
                   div.classList.toggle('hidden')
@@ -48,6 +104,10 @@ const initDictionary = () => {
                   })
                 }
               })
+
+
+
+
             }
             })
           })

@@ -19,7 +19,7 @@
     </div>
 
     <div class="input-card-right">
-      <%= form.input :definition, as: :text, :error => false, :hint => false, class: "update-definition#{card.id}", input_html: { id: "def-#{card.id}"}%>
+      <%= form.input :definition, as: :text, :error => false, :hint => false,  input_html: { id: "def-#{card.id}", class: "update-definition"}%>
        <div id=<%="container_"+card.id.to_s%> class="defs-update-container hidden">
     <div class="hidden suggestion definitions-update-<%= card.id %>"> </div>
     <div class="hidden suggestion definitions-update-<%= card.id %>"> </div>
