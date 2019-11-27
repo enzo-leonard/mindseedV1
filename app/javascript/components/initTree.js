@@ -362,7 +362,7 @@ function render(treeData) {
 
   function click(d) {
     if (d.deck_id) {
-      window.location.replace(`http://localhost:3000/decks/${d.deck_id}`);
+      window.location.replace(`../decks/${d.deck_id}`);
     }
 
     if (d3.event.defaultPrevented) return; // click suppressed
