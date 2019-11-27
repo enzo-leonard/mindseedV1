@@ -61,13 +61,10 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params)
     @deck.original_owner = true
     @deck.theme = @theme
-    if @theme.decks.empty?
-      @deck.rank = 1
-    else
-      @parent = Deck.find(params[:deck][:parent_id])
-      @deck.rank = @parent.rank+1
-    end
-    @deck.save
+    params[:deck][:parent_id] !='' ? @parent = Deck.find(params[:deck][:parent_id]) : @parent = nil
+    @parent ? @deck.rank = @parent.rank+1 : @deck.rank = 1
+    @deck.save!
+    redirect_to theme_path(@deck.theme)
   end
 
   # PATCH/PUT /decks/1
