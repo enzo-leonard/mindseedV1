@@ -1,13 +1,13 @@
 .search-full {
   flex-direction: row;
   display: flex;
-  height:90vh;
-  overflow :hidden;
+  height: 90vh;
+  overflow: hidden;
   align-items: flex-start;
 }
 
 .search-left {
-  height:90vh;
+  height: 90vh;
   overflow-x: auto;
   justify-content: flex-start;
   align-items: center;
@@ -26,7 +26,7 @@
 
 
 .search-right {
-  height:90vh;
+  height: 90vh;
   overflow-x: auto;
   justify-content: flex-start;
   align-items: center;
@@ -40,9 +40,14 @@
   transition: all 0.3s ease;
   padding-bottom: 30px;
 
+  .button-bar {
+    width: 100%;
+    position: relative;
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
-    margin:2px;
+    margin: 2px;
   }
 
   /* Track */
@@ -57,89 +62,97 @@
     background: $mediumgreen;
     border-radius: 50px;
   }
+
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: $white;
   }
 }
 
-.open{
+.open {
   width: 50% !important;
   transition: all 0.3s ease;
 }
 
 .fix-btn {
-  padding:0 !important;
+  padding: 0 !important;
 }
 
 
 .choose-decks {
-height:44px;
+  height: 44px;
+  width: 100%;
+}
+
+#new_deck {
+  min-width: 300px;
+  ;
 }
 
 .small {
-  height:44px;
+  height: 44px;
 }
 
 
-  .card-name {
-    margin: 50px 30px;
-  }
+.card-name {
+  margin: 50px 30px;
+}
 
 
 
-  .flashcard {
-    overflow: hidden;
-    height: 120px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+.flashcard {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .flashcard img {
-    height: 90vh;
-    width: 120px;
-    object-fit: cover;
-  }
+.flashcard img {
+  height: 90vh;
+  width: 120px;
+  object-fit: cover;
+}
 
-  .flashcard h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
+.flashcard h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
 
-  .flashcard p {
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
-  }
+.flashcard p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
 
-  .flashcard .flashcard-infos {
-    padding: 16px;
-  }
+.flashcard .flashcard-infos {
+  padding: 16px;
+  color: black;
+}
 
-  .add {
-    text-align: center;
-  }
+.add {
+  text-align: center;
+}
 
 .search-bar-big {
   background: white;
   width: 100%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin: 0 auto;
-  padding:30px;
+  padding: 30px;
 }
 
 .bar {
   background: white;
   width: 100%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin: 0 auto;
 }
 
@@ -162,14 +175,14 @@ height:44px;
 }
 
 .input-search {
-  width:100% !important;
-  border : 2px solid rgba($lightpurple, 0.2) !important;
+  width: 100% !important;
+  border: 2px solid rgba($lightpurple, 0.2) !important;
   padding: 22px !important;
   margin-bottom: 20px !important;
 
-&:focus-within{
-  border : 2px solid rgba($lightpurple, 1) !important;
-}
+  &:focus-within {
+    border: 2px solid rgba($lightpurple, 1) !important;
+  }
 
 }
 
@@ -198,21 +211,22 @@ height:44px;
   position: relative;
   cursor: pointer;
 
-  h3{
+  h3 {
     font-size: 1.5rem;
   }
 
-.fx-hover{
-  top: 0;
-  left: 0;
-  width:100%;
-  height:100%;
-  position: absolute;
-  border-radius: 5px;
-  background-color: rgba($purple, 0);
-  transition: all 0.6 ease;
-}
-  &:hover .fx-hover{
+  .fx-hover {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: rgba($purple, 0);
+    transition: all 0.6 ease;
+  }
+
+  &:hover .fx-hover {
     background-color: rgba($purple, 0.4);
     transition: all 0.6 ease;
   }

@@ -4,7 +4,7 @@
   <div class="button-bar">
    <div class="btn btn-green" data-toggle="modal" data-target="#auto-card"><%= icon('fa', 'plus', 'New branch') %></div>
       <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple" %>
-      <a href="/learn" class="btn btn-green"><%= icon('fas', 'seedling', '  Learn') %></a>
+      <a href=<%="#{@theme.id}/learn"%> class="btn btn-green"><%= icon('fas', 'seedling', '  Learny') %></a>
 </div>
 
 <div class="dash-bar">

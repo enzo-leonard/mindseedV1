@@ -1,0 +1,21 @@
+#new-deck {
+  display: flex;
+  background-color: red;
+  flex-wrap: wrap;
+
+
+  h5 {
+    color: $purple !important;
+  }
+
+}
+
+.form-group {
+  width: 100%;
+
+  input {
+    width: 100%;
+    ;
+  }
+
+}

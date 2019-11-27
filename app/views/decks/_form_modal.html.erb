@@ -2,5 +2,5 @@
   <%= form.input :name %>
   <%= form.input :description %>
   <%= form.association :parent, :collection => Deck.where(theme: theme) %>
-  <%= form.button :submit %>
+  <%= form.button :submit, class: "btn btn-green"%>
 <% end %>
