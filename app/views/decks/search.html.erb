@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="search-full">
   <div class="search-left">
     <div class="search-box">
@@ -7,12 +8,12 @@
             <%= form_tag search_path, method: :get do %>
             <%= text_field_tag :query,
             params[:query],
-            class: "form-control input-search",
+            class: "form-control input-search left",
               placeholder: "Search for a set of Flashcards"
               %>
             </div>
             <div class="search-submit">
-              <%= submit_tag "Search", class: "btn btn-primary" %>
+              <%= submit_tag "Search", class: "btn btn-purple right" %>
               <% end %>
             </div>
           </div>
