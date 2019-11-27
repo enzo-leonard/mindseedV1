@@ -2,8 +2,8 @@
 <div class="search-full">
   <div class="search-left">
     <div class="search-box">
-      <div class="search-results">
-        <div class="fixed-top">
+      <div class="search-bar-big">
+        <div class="bar">
           <div class="search-form">
             <%= form_tag search_path, method: :get do %>
             <%= text_field_tag :query,
@@ -17,31 +17,31 @@
               <% end %>
             </div>
           </div>
+          </div>
           <div class="results">
             <% @childs.each do |d| %>
             <% if d.original_owner == true %>
             <div class="result-deck" id="<%= d.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513710281312-7a43f9cdbfcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
-
-              <%= d.name  %>
+              <h3 style="z-index: 4;"><%= d.name  %></h3>
+              <div class="fx-hover"></div>
 
             </div>
             <% end %>
             <% end %>
           </div>
-        </div>
       </div>
     </div>
-    <div class="search-right hidden">
+    <div class="search-right">
       <div class="search-box">
         <div class="card-name">
-          <p>Name</p>
+          <h2>Flashcards</h2>
         </div>
         <div class="flashcards">
           <% @cards.each do |c| %>
           <% end %>
         </div>
 
-
+    <div class="button-bar fix-btn">
           <% if Theme.where(user: current_user).empty? %>
           <div class="add hidden">
           <%= flash[:notice] = "Before being able to import a deck, you have to create a Theme" %>
@@ -51,12 +51,15 @@
 
           <div class="add2 hidden">
             <%= simple_form_for(@deck, url: '') do |f| %>
-            <%= f.association :theme, :collection => Theme.where(user: current_user) %>
-            <%= f.button :submit, class: 'btn btn-white' %>
+            <%= f.association :theme, :placeholder => "choose a theme", :collection => Theme.where(user: current_user), input_html: { class: 'choose-decks left' } %>
+            <%= button_tag(type: 'submit', class: "btn btn-green small right") do %>
+            <i class="fas fa-plus"></i>
+
+            <% end %>
           </div>
           <% end %>
           <% end %>
-
+    </div>
 
       </div>
     </div>
