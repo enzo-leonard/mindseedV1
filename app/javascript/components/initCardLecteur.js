@@ -33,7 +33,7 @@ const initCardLecteur = () => {
         document.querySelector('.add form').setAttribute('action', `/themes`)
       }
       else {
-        document.querySelector("body > div.search-full > div.search-right > div > div.add2.hidden").classList.toggle('hidden')
+        document.querySelector(".add2").classList.toggle('hidden')
         document.querySelector('.add2 form').setAttribute('action', `/decks/${id}/import`)
 
 
