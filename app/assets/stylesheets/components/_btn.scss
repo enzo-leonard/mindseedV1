@@ -175,6 +175,7 @@ padding: 10px;
   z-index: 10;
   display:flex;
   height : 70px;
+  transition: all 0.3s ease;
 }
 
 .btn-add-deck {
@@ -231,4 +232,8 @@ padding: 10px;
   .fas:hover{
     color:$mediumgreen !important;
   }
+}
+
+.new_deck{
+  display:flex;
 }
