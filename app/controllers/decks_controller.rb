@@ -120,6 +120,8 @@ class DecksController < ApplicationController
 
     @deck2.save
 
+    redirect_to theme_path(@theme)
+
   end
 
   private

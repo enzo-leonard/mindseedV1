@@ -22,6 +22,7 @@ class ThemesController < ApplicationController
   end
 
   def learn
+    @theme = Theme.find(params[:id])
     @cards = []
     7.times do @cards
     @cards << Card.all.sample
