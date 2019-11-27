@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <p id="notice"><%= notice %></p>
 <div id=id-deck class=hidden >
 <%= @deck.id %>
@@ -36,10 +37,10 @@
 </div>
 </div>
 <div class="brf">
-  <div id=btn-add-card class="btn">New</div>
+  <div id=btn-add-card class="btn btn-purple">New</div>
 
   <%# <div class="btn-opt opt-hidden"></div> %>
-  <button type="button" class="btn" data-toggle="modal" data-target="#auto-card">
+  <button type="button" class="btn btn-green" data-toggle="modal" data-target="#auto-card">
   Add from text
   </button>
 </div>
@@ -48,7 +49,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="auto-cardLabel">Add card from text</h5>
+        <h5 class="modal-title" id="auto-cardLabel">Create card from text</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -57,7 +58,7 @@
         <div contenteditable=true class="editable"> </div>
       </div>
       <div class="modal-footer">
-        <button type="button" id="save-text-btn" class="btn btn-primary">Save</button>
+        <button type="button" id="save-text-btn" class="btn btn-green">Save</button>
       </div>
 
       <div class="modal-after"></div>
@@ -65,7 +66,6 @@
 
 
 <!--position originale add new-->
-
 
 
 </div>

@@ -27,7 +27,6 @@ const initInput = () => {
     const saveBtn = document.querySelector('#save-text-btn')
     let words = []
     saveBtn.addEventListener('click', () => {
-
       words = editable.innerText.split(' ')
 
       editable.innerHTML = ""
@@ -38,10 +37,8 @@ const initInput = () => {
 
       let savedWords = document.querySelectorAll('.word')
       savedWords.forEach((w) => {
-        w.addEventListener('click', () => {
+        w.addEventListener('dblclick', () => {
           addCard(w.innerHTML)
-
-
         });
       })
     })
