@@ -1,6 +1,7 @@
 .decks {
 
 
+
   .form-control:focus {
     color: $black;
     background-color: $white;
@@ -196,17 +197,7 @@
   overflow-y: scroll;
 }
 
-.view-data {}
 
-.view-data-tree {
-  padding: 10% 20%;
-}
-
-.choice-data {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-}
 
 .word {
   display: inline-block;
