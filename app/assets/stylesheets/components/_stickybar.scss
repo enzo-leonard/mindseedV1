@@ -3,7 +3,12 @@
   background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
   display: inline-flex;
   justify-content: space-between;
-  width: 100vw;
+  padding: 0px;
+  width: 100%;
+
+  .space {
+    color: white;
+  }
 
   .navbar-collapse {
     flex-grow: 0;
@@ -28,6 +33,7 @@
 
   .login {
     color: $white;
+    margin-right: 25px;
   }
 }
 
