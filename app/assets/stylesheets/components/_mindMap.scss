@@ -11,12 +11,27 @@
    z-index: 0;
  }
 
+ .node .rect {
+   color: white
+ }
+
+ .node-rect-text-grp {
+   background-color: red;
+ }
+
 
 
  .node text {
    font-size: 18px;
    z-index: 1;
    font-family: "Alata";
+   color: blue;
+ }
+
+ .nodeText2 {
+   font-size: 10px;
+   ;
+   color: red;
  }
 
  path.link {
@@ -33,9 +48,7 @@
    cursor: pointer;
  }
 
- .overlay {
-   background-color: #EEE;
- }
+ .overlay {}
 
 
  .link {
@@ -81,4 +94,40 @@
  .node--root,
  .node--leaf {
    pointer-events: none;
+ }
+
+ #tree-container {
+   //    margin-left: 100px;
+   //    overflow: visible;
+ }
+
+
+ .dash_mindmap {
+   width: 100vw;
+   left: 0;
+   height: 100vh;
+   background: $white;
+   position: absolute;
+   z-index: 1;
+   overflow: hidden;
+ }
+
+ .overlay {
+   background-color: rgb(240, 240, 240) !important;
+   padding: 50px;
+
+ }
+
+ .view-data {
+   width: 75vw;
+ }
+
+ .view-data-tree {
+   padding: 10% 20%;
+ }
+
+ .choice-data {
+   position: absolute;
+   top: 40px;
+   right: 40px;
  }

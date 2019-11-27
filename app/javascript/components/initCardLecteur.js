@@ -3,7 +3,9 @@ const initCardLecteur = () => {
   result.forEach((r) => {
     r.addEventListener('click', (event) => {
       const right = document.querySelector('.search-right')
-      right.classList.toggle("hidden");
+      const btnRight = document.querySelector('.button-bar')
+      right.classList.toggle("open");
+      btnRight.classList.toggle("fix-btn");
       const id = event.currentTarget.id
       const flashcards = document.querySelector('.flashcards')
       const flashcard = gon.cards;

@@ -41,7 +41,8 @@ const initPhotosUpload = () => {
             if (firstImageResult) {
               image.src = firstImageResult.contentUrl
               src.value = firstImageResult.contentUrl
-              document.querySelector(`#update_btn_${id}`).click()
+              form = document.querySelector(`#edit_card_${id}`)
+              Rails.fire(form, 'submit');
             }
           }
         })
@@ -107,7 +108,8 @@ const initPhotosUpload = () => {
                 alt.addEventListener('click', () => {
                   image.src = alt.src
                   src.value = alt.src
-                  update(id)
+                  form = document.querySelector(`#edit_card_${id}`)
+                  Rails.fire(form, 'submit');
                   changePhoto(id)
                 })
               })
