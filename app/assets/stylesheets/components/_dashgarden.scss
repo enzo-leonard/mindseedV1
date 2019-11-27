@@ -1,15 +1,15 @@
-.dash-garden{
-  width:75vw;
-  left:0;
+.dash-garden {
+  width: 75vw;
+  left: 0;
   height: 90vh;
-  background:$white;
-  position:relative;
+  background: rgb(240, 240, 240);
+  position: relative;
   padding-top: 50px;
   overflow-y: auto;
-  overflow-x : hidden;
+  overflow-x: hidden;
 
-&::-webkit-scrollbar {
-  width: 20px;
+  &::-webkit-scrollbar {
+    width: 20px;
   }
 
   /* Track */
@@ -23,48 +23,58 @@
   &::-webkit-scrollbar-thumb {
     background: transparent;
   }
+
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-  background: $green;
-  opacity:0.2;
-  border-radius: 50px;
+    background: $green;
+    opacity: 0.2;
+    border-radius: 50px;
   }
 
-    .return-dash{
-      width: 75%;
-      background: rgba(0, 0, 0, 0);
-      height: 90vh;
-      position:fixed;
-      bottom: 0;
-      right:0;
-      z-index: 102;
-    }
+  .return-dash {
+    width: 75%;
+    background: rgba(0, 0, 0, 0);
+    height: 90vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 102;
+  }
 
-    .hidden{
-      display:none;
-    }
+  .hidden {
+    display: none;
+  }
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 $max-in-row: 3;
 $min-in-row: $max-in-row - 1;
 
 @mixin block() {
   width: 90% / $max-in-row;
+
   @for $i from 1 through $max-in-row {
     &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
       // background-color: pink;
     }
   }
+
   @for $i from $max-in-row through ($max-in-row + $min-in-row) {
     &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$i}) {
       // background-color: indigo;
     }
   }
+
   &:nth-of-type(#{$max-in-row + $min-in-row}n + 1) {
     margin-left: 50% / $max-in-row;
     // background-color: teal;
   }
+
   &:nth-of-type(#{$max-in-row + $min-in-row}n + #{$max-in-row}) {
     // background-color: cyan;
     // margin-left: 50% / $hex-max-in-row;
@@ -79,50 +89,50 @@ $min-in-row: $max-in-row - 1;
 
 .forest .tree {
   @include block();
-  height:200px;
+  height: 200px;
   // !Reset test: need to use something of higher
   // specificity than just .paras p when @media querying:
   // not doing this causes all specified :nth-of-type
   // rules to be applied
   // &:nth-of-type(n) {
-    // background-color: black;
+  // background-color: black;
   // }
 }
 
-.tree
-  {
+.tree {
   pointer-events: auto;
-  cursor:pointer;
-  opacity:0;
+  cursor: pointer;
+  opacity: 0;
   transform: scale(0.01);
 }
-.popout{
+
+.popout {
   width: 75%;
   background: $white;
   opacity: 0.95;
   height: 90vh;
-  position:fixed;
+  position: fixed;
   bottom: 0;
-  right:0;
+  right: 0;
   z-index: 4 !important;
-   transform: scale(1) !important;
-   color: white;
-   display:flex;
-   justify-content: flex-end;
-   align-items: center;
+  transform: scale(1) !important;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
-   .content {
+  .content {
     background-color: black;
-    width:50%;
+    width: 50%;
     margin-right: 50px;
-   }
+  }
 }
 
-.highlight{
-  z-index:5 !important;
+.highlight {
+  z-index: 5 !important;
   transform: scale(1.2) !important;
   position: absolute;
-  left : 3vh;
+  left: 3vh;
   top: 10vh;
 
 }
