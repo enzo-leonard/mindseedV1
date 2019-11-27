@@ -1,15 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" >
-  <div class="container">
-    <div class="">
+
+    <div class="brand">
 
          <%= link_to dashboard_path, class: "navbar-brand" do%>
-         <%= render 'shared/logo' %>
+         <%= image_tag("logo_mindseed.png", size: "200x46", alt: "logo mindseed")%>
          <% end %>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
 
      <div class="search-bar <%= action_name %>">
       <%= form_tag search_path, method: :get do %>
@@ -18,6 +20,8 @@
       <button type="submit" class="search-button"><i class="fa fa-search"> </i></button>
       <% end %>
     </div>
+
+
 
       <ul class="navbar-nav">
         <% if user_signed_in? %>
@@ -52,5 +56,5 @@
         <% end %>
       </ul>
     </div>
-  </div>
+
 </div>

@@ -60,21 +60,14 @@ class DecksController < ApplicationController
     @theme = Theme.find(params[:theme_id])
     @deck = Deck.new(deck_params)
     @deck.original_owner = true
-
     @deck.theme = @theme
-    @parent = Deck.find(params[:deck][:parent_id])
-    @deck.rank = @parent.rank+1
-
-
-    if @deck.save
-      respond_to do |format|
-        format.js { }# <-- will render `app/views/decks/create.js.erb`
-      end
+    if @theme.decks.empty?
+      @deck.rank = 1
     else
-      respond_to do |format|
-        format.js { }  # <-- idem
-      end
+      @parent = Deck.find(params[:deck][:parent_id])
+      @deck.rank = @parent.rank+1
     end
+    @deck.save
   end
 
   # PATCH/PUT /decks/1
@@ -132,14 +125,14 @@ class DecksController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_deck
-      @deck = Deck.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def deck_params
-      params.require(:deck).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id, :photo)
-    end
-
+  # Use callbacks to share common setup or constraints between actions.
+  def set_deck
+    @deck = Deck.find(params[:id])
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def deck_params
+    params.require(:deck).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id, :photo)
+  end
+
+end
