@@ -1,11 +1,20 @@
-.navbar{
+.navbar {
   height: 10vh;
   background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100vw;
+
   .navbar-collapse {
     flex-grow: 0;
   }
-  .navbar-nav{
-  margin-top: 12px;
+
+  .navbar-nav {
+    margin-top: 12px;
+
+    .dropdown {
+      margin-right: 25px;
+    }
   }
 
   .navbar-brand img {
@@ -21,6 +30,7 @@
     color: $white;
   }
 }
+
 .sticky-header {
   position: fixed;
   width: 100%;
@@ -56,37 +66,40 @@
   margin-right: 10px;
 }
 
-  .logo-sticky {
-    color: $white;
-    font-weight: 600;
-  }
-  .login-sticky {
-    color: $white;
-  }
+.logo-sticky {
+  color: $white;
+  font-weight: 600;
+}
+
+.login-sticky {
+  color: $white;
+}
 
 
-.nav-item{
-  p{
+.nav-item {
+  p {
     display: inline-block;
     color: $white;
     font-weight: 400;
   }
+
+
 }
 
 
 
 .dropdown-menu {
-background:$white;
-padding: 0;
-margin: 0;
-position: relative;
-border: 2px solid $mediumgreen;
-border-radius: 2px;
+  background: $white;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  border: 2px solid $mediumgreen;
+  border-radius: 2px;
 }
 
 
 .popover-arrow {
-  z-index:-2;
+  z-index: -2;
   position: absolute;
   top: -10px;
   left: 5px;
@@ -99,31 +112,27 @@ border-radius: 2px;
 
 }
 
-.dropdown-item{
-  display:flex;
+.dropdown-item {
+  display: flex;
   justify-content: flex-start;
   padding: 8px;
-  margin: 0;
-  width:100%;
+  width: 100%;
   color: $mediumgreen;
   border: 2px solid $white;
 
 
 
-  &:hover{
-    background:$mediumgreen;
-    color:white;
+  &:hover {
+    background: $mediumgreen;
+    color: white;
     border: 2px solid $white;
   }
+
   i.fas {
     padding-right: 10px;
   }
 }
 
 .dropdown-toggle {
-  cursor:pointer;
+  cursor: pointer;
 }
-
-
-
-

@@ -1,14 +1,13 @@
-.dash_mindmap{
-  width:100vw;
-  left:0;
+.dash_mindmap {
+  width: 100vw;
+  left: 0;
   height: 100vh;
-  background:$white;
-  position:absolute;
-  z-index : 1;
+  background: $white;
+  position: absolute;
+  z-index: 1;
   overflow: hidden;
 }
 
 .overlay {
-  background-color: $white !important;
+  background-color: rgb(240, 240, 240) !important;
 }
-

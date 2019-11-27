@@ -29,7 +29,7 @@ $(function () {
 
 initInput();
 initDictionary();
-initCircle();
+//initCircle();
 // init();
 // initD3();
 //initGoogleSign()
