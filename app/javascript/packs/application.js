@@ -23,6 +23,7 @@ if (json) render(JSON.parse(json.innerHTML))
 $(function () {
   // Handler for .ready() called.
   initPhotosUpload();
+  initCardLecteur();
 
 });
 
@@ -36,5 +37,5 @@ initCircle();
 initLearn();
 initStickyBar();
 highlightPlant();
-initCardLecteur();
+
 initNewTheme();
