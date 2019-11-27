@@ -1,162 +1,164 @@
 .card .card-infos {
-	padding: 16px;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	position: relative;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
 
 .card-infos .card-user {
-	position: absolute;
-	right: 16px;
-	top: -20px;
-	width: 40px;
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }
 
 .card-theme {
-	position: absolute;
-	top: 0px;
-	height: 100vh;
-	background-color: $white;
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-	border-radius: 10px;
-	padding: 0px 40px;
-	width: 25%;
-	z-index: 2;
+  position: absolute;
+  top: 0px;
+  height: 100vh;
+  background-color: $white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 10px;
+  padding: 0px 40px;
+  width: 25%;
+  z-index: 2;
 }
 
 .new-cards {
-	position: absolute;
+  position: absolute;
 }
 
 .header-decks {
-	display: flex;
-	margin: 24px auto;
-	transition: all 0.2s ease;
-	width: 75%;
+  display: flex;
+  margin: 24px auto;
+  transition: all 0.2s ease;
+  width: 75%;
 }
 
 .input-card,
 .input-card-new {
-	display: flex;
+  display: flex;
 
-	margin: 24px auto;
-	transition: all 0.2s ease;
-	width: 100%;
+  margin: 24px auto;
+  transition: all 0.2s ease;
+  width: 100%;
 
-	&:focus-within {
-		transform: scale(1.02);
-		transition: all 0.2s ease;
-	}
+  &:focus-within {
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+  }
 
-	&:hover {
-		transform: scale(1.02);
-		transition: all 0.2s ease;
-	}
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+  }
 
-	&:focus-within .input-card-left {
-		//background-color: $green;
-		// border-bottom: 6px solid $darkgreen;
-		// border-right: 4px solid $mediumgreen;
-		transition: all 1s ease-in;
-	}
+  &:focus-within .input-card-left {
+    //background-color: $green;
+    // border-bottom: 6px solid $darkgreen;
+    // border-right: 4px solid $mediumgreen;
+    transition: all 1s ease-in;
+  }
 
-	&:focus-within .input-card-right {
-		//background-color: $green;
-		// border-bottom: 6px solid $darkgreen;
-		// border-right: 4px solid $mediumgreen;
-		transition: all 1s ease-in;
-	}
+  &:focus-within .input-card-right {
+    //background-color: $green;
+    // border-bottom: 6px solid $darkgreen;
+    // border-right: 4px solid $mediumgreen;
+    transition: all 1s ease-in;
+  }
 
-	#term {
-		text-align: center;
-		font-size: 1.2em;
-		font-weight: 600;
-	}
+  #term {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
 
-	::placeholder {
-		color: $black;
-		opacity: 0.2;
-	}
+  ::placeholder {
+    color: $black;
+    opacity: 0.2;
+  }
 
-	.hidden {
-		display: none;
-	}
+  .hidden {
+    display: none;
+  }
 
-	input {
-		padding: 5px 5px;
-		width: 100%;
-		border: none;
-		margin: 0px 0px 0px 3px;
-		font-family: $body-font;
-		color: $black;
-		font-weight: 500;
-		transition: all 0.7 ease-out;
-	}
+  input {
+    padding: 5px 5px;
+    width: 100%;
+    border: none;
+    margin: 0px 0px 0px 3px;
+    font-family: $body-font;
+    color: $black;
+    font-weight: 500;
+    transition: all 0.7 ease-out;
+  }
 
-	input[type=text]:focus,
-	input[type=text]:active {
-		border-bottom: 2px solid $lightgreen;
-		outline: none;
-		transition: all 0.7 ease-out;
-	}
+  input[type=text]:focus,
+  input[type=text]:active {
+    border-bottom: 2px solid $lightgreen;
+    outline: none;
+    transition: all 0.7 ease-out;
+  }
 
-	form {
-		width: 100%;
-		display: flex;
-	}
+  form {
+    width: 100%;
+    display: flex;
+  }
 }
 
 .input-card-left {
-	padding: 7px;
-	margin: 0px 8px 0px 0px;
-	background-color: white;
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-	width: 20%;
-	border-radius: 5px;
-	// border-bottom: 6px solid $darkgray;
-	// border-right: 4px solid $mediumgray;
-	transition: all 1s ease-out;
+  padding: 7px;
+  margin: 0px 8px 0px 0px;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  width: 20%;
+  border-radius: 5px;
+  // border-bottom: 6px solid $darkgray;
+  // border-right: 4px solid $mediumgray;
+  transition: all 1s ease-out;
 
-	img {
-		height: 120px;
-		width: 100%;
-		border-radius: 5px;
-		object-fit: cover;
-		object-position: center;
-	}
+  img {
+    height: 120px;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .card-container {
-	width: 80%;
-	margin: 0px auto;
+  width: 80%;
+  margin: 0px auto;
 }
 
 .input-card-right {
-	padding: 0px 10px;
-	margin: 0px 0px;
-	background-color: white;
-	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-	width: 80%;
-	border-radius: 5px;
-	// border-bottom: 6px solid $darkgray;
-	// border-right: 4px solid $mediumgray;
-	transition: all 1s ease;
+  padding: 0px 10px;
+  margin: 0px 0px;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  width: 80%;
+  border-radius: 5px;
+  // border-bottom: 6px solid $darkgray;
+  // border-right: 4px solid $mediumgray;
+  transition: all 1s ease;
 
-	.defs-update-container {
-		background-color: white;
-		padding: 0px 10px;
-	}
+  .defs-update-container {
+    background-color: white;
+    padding: 0px 10px;
+  }
 
-	.suggestion {
-		background-color: white;
-		padding: 10px;
-		border-radius: 1px;
-		margin: 5px 0px;
-		border-bottom: 1px solid rgb(192, 192, 192);
-	}
+  .suggestion {
+    background-color: white;
+    color: $green;
+    padding: 10px;
+    border-radius: 1px;
+    margin: 5px 0px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+  }
 
-	.suggestion:hover {
-		background-color: blanchedalmond;
-	}
+  .suggestion:hover {
+    background-color: white;
+    color: $purple;
+  }
 }

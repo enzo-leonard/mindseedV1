@@ -9,7 +9,7 @@ const initDictionary = () => {
   if (input) {
 
 
-    const modalAfter = document.querySelector('.modal-after')
+    const modalAfter = document.querySelector('.editable')
     modalAfter.addEventListener('click', () => {
       const def = document.querySelectorAll('.modal-after .update-definition')
       def.forEach((d) => {
@@ -46,7 +46,8 @@ const initDictionary = () => {
                   div.addEventListener('click', () => {
                     document.querySelector(`#container_${id}`).classList.toggle('hidden')
                     updateDef.innerHTML = div.innerText
-                    document.querySelector(`#update_btn_${id}`).click()
+                    const form = document.querySelector(`#edit_card_${id}`)
+                    Rails.fire(form, 'submit');
                   })
                 }
               })

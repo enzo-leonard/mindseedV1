@@ -30,6 +30,7 @@ $(function () {
 });
 
 
+
 initInput();
 initDictionary();
 //initCircle();
