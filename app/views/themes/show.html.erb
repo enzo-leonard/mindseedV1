@@ -1,19 +1,64 @@
+<%= render 'shared/navbar' %>
 <div class="container1">
+
+  <div class="button-bar">
+   <div class="btn btn-green" data-toggle="modal" data-target="#auto-card"><%= icon('fa', 'plus', 'New theme') %></div>
+      <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple" %>
+      <a href="/learn" class="btn btn-green"><%= icon('fas', 'seedling', '  Learn') %></a>
+</div>
+
 <div class="dash-bar">
-    <div class="dash-profil <%= action_name %>">
+    <div class="header">
       <div class="back white">
         <a href="/themes"><%= icon('fas', 'chevron-left') %></a>
       </div>
-      <h2> <%= @theme.name %></h2>
-      <div class="btn-add-deck" data-toggle="modal" data-target="#auto-card">+</div>
+      <h3 class="white"> <%= @theme.name %></h3>
     </div>
     <div class="dash-list-decks">
-      <%= render 'themes/theme_decks', theme: @theme %>
-    </div>
-    <div class="dash-decks-button">
-      <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple special left" %>
-      <a href="/learn" class="btn btn-green special right"><%= icon('fas', 'seedling', '  Learn') %></a>
-    </div>
+    <canvas class="separator"></canvas>
+
+      <div class="vitality-time">
+        <div class="vitality">
+          <div class="counter"></div>
+          <p>vitality</p>
+        </div>
+        <div class="time">
+        <h4 class="nb"><%=rand(0..5)%>h</h4>
+        <p>learning</p>
+        </div>
+      </div>
+      <canvas class="separator"></canvas>
+
+      <div class="numbers-card">
+        <% totalcards = 0 %>
+        <% @theme.decks.each do |item|  %>
+        <% totalcards += item.cards.count%>
+        <%end%>
+        <% unknown = 0 %>
+        <% known = 0 %>
+        <div class="totalcards">
+          <h4 class="nb"><%= totalcards %></h4>
+          <h4 >Flashcards</h4>
+        </div>
+        <div class="good">
+          <h4 class="nb"><%= known = totalcards/rand(1..totalcards)%></h4>
+          <h4>known</h4>
+        </div>
+        <div class="bad">
+          <h4 class="nb"><%= unknown = totalcards - known %></h4>
+          <h4>unknow</h4>
+        </div>
+      </div>
+
+      <% render 'themes/theme_decks', theme: @theme %>
+      <canvas class="separator"></canvas>
+      <div class="option">
+        <h4>public deck</h4>
+        <input type="checkbox" name="sharing">
+      </div>
+      </div>
+     <!--  liste des decks -->
+
   </div>
   <div class="view-data">
     <div class="hidden view-data-tree" id="circle-container">
@@ -42,7 +87,7 @@
     </div>
   </div>
 </div>
-  <div class="choice-data">
+<!--   <div class="choice-data">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label id="option1" class="btn btn-secondary active">
         <input type="radio" name="options" id="option2" autocomplete="off" checked> Circle
@@ -51,6 +96,6 @@
         <input type="radio" name="options" id="option2" autocomplete="off"> Tree
       </label>
     </div>
-  </div>
-</div>
-</div>
+  </div> -->
+
+

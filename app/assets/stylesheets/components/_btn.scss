@@ -1,6 +1,7 @@
 .btn {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   padding: 0.725rem 1.125rem;
+  margin: 0rem 0.2rem;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0px;
@@ -163,6 +164,18 @@ font-size: 1.8rem;
 padding: 10px;
   }
 }
+.button-bar{
+  position:absolute;
+  background-color:$light-gray;
+  padding:10px;
+  border-radius: 5px;
+  // box-shadow: 5px 5px 10px rgba($black, 0.2);
+  top: 11vh;
+  right: 20px;
+  z-index: 10;
+  display:flex;
+  height : 70px;
+}
 
 .btn-add-deck {
   position: sticky;
@@ -198,4 +211,24 @@ padding: 10px;
 
 .full {
   width: 100%;
+}
+
+.white {
+  color:$white !important;
+  .fas{
+    color:$white !important;
+  }
+  .fas:hover{
+    color:$white !important;
+  }
+}
+
+.mediumgreen {
+  color:$mediumgreen !important;
+  .fas{
+    color:$mediumgreen !important;
+  }
+  .fas:hover{
+    color:$mediumgreen !important;
+  }
 }

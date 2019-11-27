@@ -8,7 +8,7 @@
   margin:0px 5px;
   overflow-y: auto;
   overflow-x : hidden;
-  height:85vh;
+  height:80vh;
   position: relative;
 
   &::-webkit-scrollbar {
@@ -35,86 +35,43 @@
 /*------------scrollbar------*/
 }
 
-.dash-list-decks{
-display: flex;
-flex-direction: column;
-padding:0px 5px;
-margin:0px 5px;
-overflow-y: auto;
-overflow-x : hidden;
-height:75vh;
-
-/*------------scrollbar------*/
-
-  &::-webkit-scrollbar {
-  width: 8px;
-  margin:2px;
-  }
-
-  /* Track */
-  &::-webkit-scrollbar-track {
-  // box-shadow: inset 0 0 5px pink;
-  border-radius: 1px;
-  background: transparent;
-  }
-
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-  background: $darkgreen;
-  border-radius: 50px;
-  }
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-  background: $white;
-  }
-/*------------scrollbar------*/
-  .separator-bar{
-  width:2px;
-  height:10px;
-  background: $white;
-  }
-  .rank {
-  margin-bottom: 0 !important;
-  width :auto !important;
-  }
-}
-
 
 .list-element{
 display: flex;
-border: 2px solid $white;
-color : $white;
+color : $mediumgreen;
 align-items: center;
 width: 100%;
 margin-bottom: 8px;
-border-radius: 5px;
-padding: 3px;
+padding:  0 3px;
 text-decoration: none;
 min-height: 0px;
 transition: all 0.5s ease;
 
   .vitality-count {
-  width : 42px;
-  height : 42px;
-  border-radius: 50%;
-  background-color: $purple;
-  margin-left: 5px;
+    width: 100px;
+    height: 66px;
+    background-color: #6e599c;
+    margin: 0 7px;
   }
   p{
-  padding: 20px;
-  margin : 0;
-  font-weight: 600;
-  color: $white;
-  }
-  &:hover{
-  background: $white;
-  transition: all 0.5s ease;
+    padding: 20px;
+    border: 3px solid $mediumgreen;
+    margin : 0;
+    font-weight: 600;
+    border-radius: 5px;
+    color: $mediumgreen;
+    width: 100%;
+    transition: all 0.7s ease;
   }
   &:hover a{
   text-decoration: none !important;
-  color: $mediumgreen;
+  color: $white;
   }
   &:hover p{
-  color: $mediumgreen;
+  color: $white;
+  background: $mediumgreen;
+  border: 3px solid $mediumgreen;
+  transition: all 0.5s ease;
   }
 }
+

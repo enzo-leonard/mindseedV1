@@ -28,8 +28,9 @@
   flex-grow: 1;
   align-items: flex-end;
   justify-content: center;
-  background-color: rgb(44, 175, 144);
-  height:100%;
+  background-color: $light-gray;
+  min-height: 100vh;
+
 
 
   .card-name {
@@ -90,15 +91,16 @@
   width: 50%;
   display: flex;
   margin-left: 9%;
+  top:10vh;
 }
 
 .search-form {
   width: 80%;
   margin-top: 10px;
+
 }
 
 .search-submit {
-  padding-left: 20px;
   width: 20%;
   margin-top: 10px;
 }
@@ -112,8 +114,15 @@
 }
 
 .input-search {
-  padding: 25px !important;
+  width:100% !important;
+  border : 2px solid rgba($lightpurple, 0.2) !important;
+  padding: 22px !important;
   margin-bottom: 20px !important;
+
+&:focus-within{
+  border : 2px solid rgba($lightpurple, 1) !important;
+}
+
 }
 
 .results {
@@ -121,41 +130,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 25px;
   margin: 50px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .results {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .results {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .results {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .results {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .results {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 .result-deck {

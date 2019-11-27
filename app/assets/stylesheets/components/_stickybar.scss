@@ -80,13 +80,13 @@ background:$white;
 padding: 0;
 margin: 0;
 position: relative;
-border: 2px solid $white;
+border: 2px solid $mediumgreen;
 border-radius: 2px;
 }
 
 
 .popover-arrow {
-  z-index:-1;
+  z-index:-2;
   position: absolute;
   top: -10px;
   left: 5px;
