@@ -21,6 +21,8 @@ import initNewTheme from "../components/initNewTheme.js"
 
 $(function () {
   initPhotosUpload();
+  initCardLecteur();
+
   const json = (document.querySelector('.raw-json'))
   if (json) render(JSON.parse(json.innerHTML))
   initStickyBar();
@@ -37,5 +39,5 @@ initDictionary();
 initLearn();
 
 highlightPlant();
-initCardLecteur();
+
 initNewTheme();

@@ -14,15 +14,26 @@ class DecksController < ApplicationController
     @sql = 'name ILike?', "%#{params[:query]}%"
     @childs = []
     @decks = Deck.where(@sql)
+
     @decks.each do |deck|
       @childs << deck if deck.childs.count.zero?
     end
     @cards = Card.all
     @deck = Deck.new
     gon.cards = @cards
+    @all_decks = Deck.all
+    gon.decks = @all_decks
+    @all_themes = Theme.where(user: current_user)
+    gon.themes = @all_themes
+    @user = current_user.id
+    gon.user = @user
+
     @cards.each do |card|
       p card
     end
+
+    @sql_for_import = Deck.joins(:theme).where(themes: {user: current_user})
+
     @theme = Theme.new
     # import_deck
   end
