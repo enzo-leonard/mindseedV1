@@ -34,6 +34,7 @@ const initCardLecteur = () => {
       }
       else {
         document.querySelector(".add2").classList.toggle('hidden')
+        console.log('pas clean ')
         document.querySelector('.add2 form').setAttribute('action', `/decks/${id}/import`)
 
 
