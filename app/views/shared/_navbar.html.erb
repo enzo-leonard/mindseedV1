@@ -22,6 +22,7 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
+
               <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/36x36" %>
               <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
               <p>username</p>
@@ -31,6 +32,7 @@
               <%= link_to ' <i class="fas fa-user"></i> Profile'.html_safe, dashboard_path, class: "dropdown-item" %>
               <%= link_to '<i class="fas fa-tree"></i>Dashboard'.html_safe, dashboard_path, class: "dropdown-item" %>
               <%= link_to '<i class="fas fa-power-off"></i>Log out'.html_safe, destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
               <%# Bout de code pour se log out sans avoir à se logout de son compte Google %>
               <%# <a href="#" onclick="signOut();">Sign out</a>
                 <script>

@@ -15,7 +15,7 @@ def addCard(parent,term, definition = nil)
 end
 
 
-user = User.create!(username: "admin", password: "password", email: "admin@gmail.com")
+user = User.create!(username: "admin", password: "password", email: "admin@gmail.com", first_name: "Enza", avatar: "https://images.unsplash.com/photo-1546538994-4f15d0aa966f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
 user2 = User.create!(username: "toto", password: "password", email: "toto@gmail.com")
 
 puts "Creation du theme english"

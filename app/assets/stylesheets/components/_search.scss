@@ -1,12 +1,12 @@
 .search-full {
   flex-direction: row;
   display: flex;
-  min-height: 100vh;
+  height:100vh;
   align-items: flex-start;
 }
 
 .search-left {
-  min-height: 100%;
+  height:100%;
   overflow-x: auto;
   -moz-box-pack: justify;
   justify-content: space-between;
@@ -14,7 +14,7 @@
     rgb(255, 255, 255);
   flex-direction: column;
   display: flex;
-  width: 60%;
+  width: 100%;
 }
 
 .search-box {
@@ -24,12 +24,13 @@
 }
 
 .search-right {
-  max-width: 50%;
+  width: 50%;
   flex-grow: 1;
   align-items: flex-end;
   justify-content: center;
   background-color: $light-gray;
   min-height: 100vh;
+
 
 
   .card-name {
