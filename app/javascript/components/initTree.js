@@ -30,7 +30,7 @@ import $ from 'jquery';
 
 function render(treeData) {
   console.log("lancement treeData")
-  console.log(treeData)
+
 
   // Calculate total nodes, max label length
   var totalNodes = 0;
@@ -47,7 +47,7 @@ function render(treeData) {
   var root;
 
   // size of the diagram
-  var viewerWidth = $(document).width() / 1.35;
+  var viewerWidth = document.querySelector('.view-data').offsetWidth
   var viewerHeight = $(document).height();
 
   var tree = d3.layout.tree()
@@ -183,7 +183,7 @@ function render(treeData) {
 
 
   // Define the drag listeners for drag/drop behaviour of nodes.
-  console.log('test')
+
   var dragListener = d3.behavior.drag()
     .on("dragstart", function (d) {
       if (d == root) {
@@ -330,19 +330,19 @@ function render(treeData) {
     link.exit().remove();
   };
 
-  // Function to center node when clicked/dropped so node doesn't get lost when collapsing/moving with large amount of children.
+  // Function to center node when clicked/dropped so node doesn't get lost when collapsting/moving with large amount of children.
 
   function centerNode(source) {
-    let scale = zoomListener.scale();
-    let x = -source.y0;
-    let y = -source.x0;
-    x = x * scale + viewerWidth / 2;
+    scale = zoomListener.scale();
+    x = -source.y0;
+    y = -source.x0;
+    x = x * scale + viewerWidth * 2;
     y = y * scale + viewerHeight / 2;
     d3.select('g').transition()
       .duration(duration)
       .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
     zoomListener.scale(scale);
-    zoomListener.translate([972, 371]);
+    zoomListener.translate([x, y]);
   }
 
   // Toggle children function
@@ -361,10 +361,15 @@ function render(treeData) {
   // Toggle children on click.
 
   function click(d) {
+    if (d.deck_id) {
+      window.location.replace(`http://localhost:3000/decks/${d.deck_id}`);
+    }
+
     if (d3.event.defaultPrevented) return; // click suppressed
     d = toggleChildren(d);
     update(d);
     centerNode(d);
+
   }
 
   function update(source) {
@@ -394,7 +399,7 @@ function render(treeData) {
     // Set widths between levels based on maxLabelLength.
     nodes.forEach(function (d) {
       d.y = (d.depth * (maxLabelLength * 15));
-    //maxLabelLength * 10px
+      //maxLabelLength * 10px
       // alternatively to keep a fixed scale one can set a fixed depth per level
       // Normalize for fixed-depth by commenting out below line
       // d.y = (d.depth * 500); //500px per level.
@@ -406,8 +411,6 @@ function render(treeData) {
         return d.id || (d.id = ++i);
       });
 
-    var rectGrpEnter = node.enter().append('g')
-      .attr('class', 'node-rect-text-grp');
 
     // Enter any new nodes at the parent's previous position.
     var nodeEnter = node.enter().append("g")
@@ -426,21 +429,25 @@ function render(treeData) {
         return d._children ? "lightsteelblue" : "#fff";
       });
 
+
     nodeEnter.append("text")
       .attr("x", function (d) {
-
         return d.children || d._children ? -10 : 10;
       })
       .attr("dy", ".35em")
-      .attr('class', 'nodeText')
+      .attr('class', 'nodeText2')
       .attr("text-anchor", function (d) {
         return d.children || d._children ? "end" : "start";
       })
       .text(function (d) {
         return d.name;
       })
-      .style("fill-opacity", 0);
-
+      .style("font-size", function(d) {
+        return 20- d.rank*2
+       })
+      .style("fill", function (d) {
+        return d.children || d._children ?  "#6E599C" : "#53C0BB" ;
+      })
     // phantom node to give us mouseover in a radius around it
     nodeEnter.append("circle")
       .attr('class', 'ghostCircle')
@@ -455,13 +462,6 @@ function render(treeData) {
         outCircle(node);
       });
 
-    nodeEnter.append('rect')
-    .attr('rx', 6)
-    .attr('ry', 6)
-    .attr("opacity", 0.5)
-    .attr('width', 70)
-    .attr('height', 50)
-    .attr('class', 'node-rect');
     // Update the text to reflect whether node has children or not.
     node.select('text')
       .attr("x", function (d) {
@@ -473,8 +473,8 @@ function render(treeData) {
       .text(function (d) {
         if (!d.children) return `${d.name}(${d.card_nb}) `
         if (d.rank == 0)
-           return d.name.toUpperCase();
-           else return d.name
+          return d.name.toUpperCase();
+        else return d.name
 
       });
 
@@ -483,7 +483,7 @@ function render(treeData) {
       .attr("r", 4.5)
       .style("fill", function (d) {
         if (d.children)
-        return d._children ? "lightsteelblue" : "#fff";
+          return d._children ? "lightsteelblue" : "#fff";
         else return d._children ? "lightsteelblue" : "$green";
       });
 
