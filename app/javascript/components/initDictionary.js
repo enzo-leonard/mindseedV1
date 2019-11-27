@@ -6,6 +6,29 @@ const initDictionary = () => {
   const divDef = document.querySelectorAll('.definitions');
   const containerNew = document.querySelector('.defs-container-new')
 
+
+
+
+
+  const googleKnowledge = (query) => {
+    console.log('google api with: '+query)
+    var service_url = 'https://kgsearch.googleapis.com/v1/entities:search';
+    var params = {
+      'query': query,
+      'limit': 5,
+      'indent': true,
+      'key': 'AIzaSyDSadQ6BhTJzITsuhwYLCswPbaFKRWfrkQ',
+    };
+
+    $.getJSON(service_url + '?callback=?', params, function (response) {
+      console.log(response.itemListElement)
+      // $.each(response.itemListElement, function (i, element) {
+      //   $('<div>', { text: element['result']['name'] }).appendTo(document.body);
+      // });
+    });
+
+  }
+
   if (input) {
 
 
@@ -75,6 +98,7 @@ const initDictionary = () => {
         const updateDef = document.querySelector(`#def-${id}`)
         const mot = document.querySelector(`#term_${id}`).value
         document.querySelector(`#container_${id}`).classList.toggle('hidden')
+        googleKnowledge(mot)
 
       fetch(`https://wordsapiv1.p.rapidapi.com/words/${mot}/definitions`, {
           "method": "GET",
