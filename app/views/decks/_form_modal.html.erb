@@ -1,6 +1,6 @@
-<%= simple_form_for([theme, deck], remote: :true) do |form| %>
+<%= simple_form_for([theme, deck]) do |form| %>
   <%= form.input :name %>
   <%= form.input :description %>
-  <%= form.association :parent %>
+  <%= form.association :parent, :collection => Deck.where(theme: theme) %>
   <%= form.button :submit %>
 <% end %>
