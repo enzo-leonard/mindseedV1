@@ -23,6 +23,7 @@ $(function () {
   initPhotosUpload();
   const json = (document.querySelector('.raw-json'))
   if (json) render(JSON.parse(json.innerHTML))
+  initStickyBar();
 
 });
 
@@ -34,7 +35,7 @@ initDictionary();
 // initD3();
 //initGoogleSign()
 initLearn();
-initStickyBar();
+
 highlightPlant();
 initCardLecteur();
 initNewTheme();

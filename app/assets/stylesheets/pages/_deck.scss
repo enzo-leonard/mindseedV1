@@ -10,14 +10,22 @@
     box-shadow: none !important;
   }
 
-  .modal-dialog {
-    max-width: 700px;
+
+
+  .modal.show .modal-dialog {
+    border-radius: 5px;
+    max-width: 800px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: transparent;
+    ;
   }
 
   .modal-header,
   .modal-body,
   .modal-footer {
     background-color: white;
+    color: $purple;
   }
 
   .modal-content {
@@ -29,9 +37,9 @@
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    border-radius: 7px;
     background-color: transparent;
-    border: none;
+    border-radius: 7px;
+
   }
 
 
@@ -128,10 +136,7 @@
   padding: 10px;
   margin: 10px;
 
-  .btn {
-    background-color: white;
-    margin: 10px;
-  }
+
 }
 
 .opt-hidden {
@@ -188,6 +193,12 @@
   min-height: 300px;
   max-height: 70vh;
   overflow-y: scroll;
+  font-family: $headers-font;
+}
+
+.editable:focus {
+  outline: none;
+  border: none;
 }
 
 .input-deck {
