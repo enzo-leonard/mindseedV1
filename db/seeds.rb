@@ -15,8 +15,14 @@ def addCard(parent,term, definition = nil)
 end
 
 
-user = User.create!(username: "admin", password: "password", email: "admin@gmail.com", first_name: "Enza", avatar: "https://images.unsplash.com/photo-1546538994-4f15d0aa966f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
+enza = User.create!(username: "admin", password: "password", email: "admin@gmail.com", first_name: "Enza", avatar: "https://images.unsplash.com/photo-1546538994-4f15d0aa966f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
 user2 = User.create!(username: "toto", password: "password", email: "toto@gmail.com")
+arnaud = User.create!(username: "arnaud", password: "password", email: "arnaud@gmail.com", first_name: "Arnaud", avatar: "https://avatars1.githubusercontent.com/u/55239555?v=4")
+enzo = User.create!(username: "enzo", password: "password", email: "enzo@gmail.com", first_name: "Enzo", avatar: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/zyh4tgnhlwhx5wrvtcfs.jpg")
+melvin = User.create!(username: "melvin", password: "password", email: "melvin@gmail.com", first_name: "Melvin", avatar: "https://avatars1.githubusercontent.com/u/53007293?v=4")
+simon = User.create!(username: "simon", password: "password", email: "simon@gmail.com", first_name: "Simon", avatar: "https://avatars1.githubusercontent.com/u/22522924?v=4")
+
+
 
 puts "Creation du theme english"
 
