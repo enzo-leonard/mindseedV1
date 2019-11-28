@@ -4,8 +4,15 @@ class ThemesController < ApplicationController
     @themes = Theme.all
     @data = {}
     @themes.each do |theme|
-      @data[theme.name] = {nb_car: card_theme(theme).count,  vitality: theme.vitality ? theme.vitality : 0}
+      nb = (card_theme(theme).count - 1)
+      div = 1
+      div = nb if nb > 0
+      @data[theme.name] = {
+        nb_car: nb,
+        vitality_tt: card_theme_vitality(theme),
+        vitality: card_theme_vitality(theme)/div }
     end
+
     @data_test = {
       "theme1" =>  {nb_card: 0, vitality: 90},
       "theme2" =>  {nb_card: 10, vitality: 50},
@@ -15,6 +22,7 @@ class ThemesController < ApplicationController
       "theme6" => {nb_card: 70, vitality: 10},
       "theme7" =>  {nb_card: 0, vitality: 60}
     }
+
   end
 
   def show
@@ -57,6 +65,7 @@ class ThemesController < ApplicationController
       end
     end
   end
+
   def update
     respond_to do |format|
       if @theme.update(theme_params)
@@ -68,6 +77,7 @@ class ThemesController < ApplicationController
       end
     end
   end
+
   def destroy
     @theme.destroy
     respond_to do |format|
@@ -75,18 +85,25 @@ class ThemesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def theme_params
       params.require(:theme).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id)
     end
 
-
     def card_child(array, done, count)
       array.each do |item|
         if !done.include?(item)
-          count += item.cards
+            done << item
+
+            item.cards.each do |card|
+            count << card
+            puts card.term
+            end
+
           card_child(item.childs, done, count) if item.childs
+        else
         end
         end
         count
@@ -95,8 +112,28 @@ class ThemesController < ApplicationController
     def card_theme(theme)
       done = []
       count = []
-      count += card_child(theme.decks, done, count)
+      count << card_child(theme.decks, done, count)
     end
+
+     def card_theme_vitality(theme)
+      done = []
+      vita = 0
+      vita += card_child_vitality(theme.decks, done, vita)
+    end
+
+    def card_child_vitality(array, done, vita)
+      array.each do |item|
+        if !done.include?(item)
+          item.cards.each do |card|
+            vita += card.vitality
+          end
+
+          card_child_vitality(item.childs, done, vita) if item.childs
+         end
+        end
+        vita
+    end
+
 
 
     def show_child(array, done)
@@ -113,6 +150,7 @@ class ThemesController < ApplicationController
       end
         childrens
     end
+
     def mind_map()
       done = []
       array = @theme.decks
@@ -124,8 +162,8 @@ class ThemesController < ApplicationController
       map4.to_json
     end
   # Use callbacks to share common setup or constraints between actions.
-  def set_Theme
-    @theme = Theme.find(params[:id])
-  end
+    def set_Theme
+      @theme = Theme.find(params[:id])
+    end
   # Never trust parameters from the scary internet, only allow the white list through.
 end
