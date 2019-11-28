@@ -2,10 +2,16 @@ URGENT DEBUG :
 
 
 
-- VITALITY :
- - add default vitality         - done
- - calcul vitality of theme
- - change vitality of card
- - change vitality of theme
+
+ - bug
+   - two card
+   - selection import
+   - information theme
+   - learn select card by vitality
+   - fix result page
+   - fix photo
+   - hover dashboard
+   - vitality dashboard
+   - [photo decks]
 
 

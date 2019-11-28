@@ -1,17 +1,16 @@
-.dash-list{
-}
+.dash-list {}
 
-.dash-list-theme{
+.dash-list-theme {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  overflow-x : hidden;
-  height:80vh;
+  overflow-x: hidden;
+  height: 80vh;
   position: relative;
 
   &::-webkit-scrollbar {
     width: 8px;
-    margin:2px;
+    margin: 2px;
   }
 
   /* Track */
@@ -26,23 +25,25 @@
     background: $darkgreen;
     border-radius: 50px;
   }
+
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: $white;
   }
-/*------------scrollbar------*/
+
+  /*------------scrollbar------*/
 }
 
 
-.list-element{
-color : $mediumgreen;
-display:flex;
-width: 100%;
-margin-bottom: 8px;
-text-decoration: none;
-min-height: 0px;
-transition: all 0.5s ease;
-opacity:0;
+.list-element {
+  color: $mediumgreen;
+  display: flex;
+  width: 100%;
+  margin-bottom: 8px;
+  text-decoration: none;
+  min-height: 0px;
+  transition: all 0.15s ease;
+  opacity: 0;
 
   .vitality-count {
     width: 100px;
@@ -50,33 +51,36 @@ opacity:0;
     background-color: #6e599c;
     margin-right: 7px;
     border-radius: 50%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    h4{
-      color:$white !important;
+
+    h4 {
+      color: $white !important;
       font-size: 1.2rem;
     }
   }
-  p{
+
+  p {
     padding: 20px;
-    border: 3px solid $mediumgreen;
-    margin : 0;
+    border: 1.5px solid $mediumgreen;
+    margin: 0;
     font-weight: 600;
     border-radius: 5px;
     color: $mediumgreen;
     width: 100%;
-    transition: all 0.7s ease;
+    transition: all 0.15s ease;
   }
-  &:hover a{
-  text-decoration: none !important;
-  color: $white;
+
+  &:hover a {
+    text-decoration: none !important;
+    color: $white;
   }
-  &:hover p{
-  color: $white;
-  background: $mediumgreen;
-  border: 3px solid $mediumgreen;
-  transition: all 0.5s ease;
+
+  &:hover p {
+    color: $white;
+    background: $mediumgreen;
+    border: 3px solid $mediumgreen;
+    transition: all 0.15s ease;
   }
 }
-
