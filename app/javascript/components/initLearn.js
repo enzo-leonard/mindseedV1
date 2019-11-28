@@ -72,8 +72,7 @@ const initLearn = () => {
         const resultcontent = document.querySelector(".result .content")
         resultcontent.insertAdjacentHTML("beforeend",
 
-          `<div class="congrat">Congratulations !</div>
-          <div class="debrief">You did great ! The vitality's score of your tree gain <strong>+30pts</strong> !</div>
+          `<div class="debrief">You did great ! The vitality's score of your tree gain <strong>+30pts</strong> !</div>
           <div class="all-cards">
           <div class="known-card" > <h3 class="good nb"> ${trueAnswer} </h3> cards you do know.</div>
           <div class="unknown-card"> <h3 class="bad nb"> ${falseAnswer} </h3> cards you do soon !</div>
@@ -83,6 +82,8 @@ const initLearn = () => {
           <a href="" class="btn btn-green" id=btn-again> <i class="fas fa-redo"></i> keep learning </a>
           <a href="/dashboard" class="btn btn-purple" id=btn-dashboard><i class="fas fa-seedling"></i> dashboard</a>
           </div>`)
+
+
 
         console.log(resultcard)
 
