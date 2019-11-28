@@ -87,7 +87,7 @@ Card.create!(
   deck: irr,
   context: "I said I would abide by their decision",
   memo: "avoir du bide ça fait souffire",
-  photo: "https://source.unsplash.com/random"
+  photo: ""
 )
 
 Card.create!(
@@ -96,7 +96,7 @@ Card.create!(
   deck: irr,
   context: "they hoped that the King might beget an heir by his new queen",
   memo: "",
-  photo: "https://source.unsplash.com/random"
+  photo: ""
 )
 
 
@@ -106,7 +106,7 @@ Card.create!(
   deck: irr,
   context: "she berated herself for being fickle",
   memo: "",
-  photo: "https://source.unsplash.com/random"
+  photo: ""
 )
 
 
@@ -145,7 +145,7 @@ Card.create!(
   deck: god,
   context: "Athena !",
   memo: "Athena as the grece capital",
-  photo: "https://source.unsplash.com/random"
+  photo: ""
 )
 
 Card.create!(
@@ -154,7 +154,7 @@ Card.create!(
   deck: god,
   context: "Athena !",
   memo: "Athena as the grece capital",
-  photo: "https://source.unsplash.com/random"
+  photo: ""
 )
 Card.create!(term: "Poseidon", deck: god)
 Card.create!(term: "Zeus", deck: god)
@@ -199,8 +199,6 @@ am_nord = Deck.create!(name: "North America", rank: 2, parent: capital, theme: g
 euro = Deck.create!(name: "Europe", rank: 2, parent: capital, theme: geo, original_owner: true)
 asie = Deck.create!(name: "Asia", rank: 2, parent: capital, theme: geo, original_owner: true)
 
-
-
 addCard(euro, "Paris", "France")
 addCard(euro, "Madrid", "Spain")
 addCard(euro, "Roma", "Italy")
@@ -208,6 +206,141 @@ addCard(euro, "London", "Great Britain")
 addCard(euro, "Copenhagen", "Danemark")
 addCard(euro, "Berlin", "Germany")
 
+dietetic = Theme.create!(name: "Dietetic", user: melvin)
+general = Deck.create!(name: "General", rank: 1, parent: nil, theme: dietetic, original_owner: true)
+glucose = Deck.create!(name: "Glucose", rank: 2, parent: general, theme: dietetic, original_owner: true)
+lipid = Deck.create!(name: "Lipid", rank: 2, parent: general, theme: dietetic, original_owner: true)
+protein = Deck.create!(name: "Protein", rank: 2, parent: general, theme: dietetic, original_owner: true)
+vitamins = Deck.create!(name: "Vitamins", rank: 2, parent: general, theme: dietetic, original_owner: true)
+minerals = Deck.create!(name: "Minerals", rank: 2, parent: general, theme: dietetic, original_owner: true)
+
+# cards glucose
+Card.create!(
+  term: "Glucose",
+  definition: "a simple sugar which is an important energy source in living organisms and is a component of many carbohydrates.",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "Where glucose is found?",
+  definition: "It is found in the sap of plants, and is found in the human bloodstream where it is referred to as blood sugar.",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What should my glucose level be?",
+  definition: "Normal blood sugar levels are less than 100 mg/dL after not eating (fasting) for at least eight hours. And they're less than 140 mg/dL two hours after eating. ",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What is glucose simple?",
+  definition: "Glucose is the main type of sugar in the blood and is the major source of energy for the body's cells.",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What food is glucose found in?",
+  definition: "The body's main source of energy and is found in fruit such as pasta, whole grain bread, legumes and a range of vegetables.",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "Types of glucose?",
+  definition: "Simple carbohydrates are either monosaccharides (one sugar molecule) or disaccharides (two sugar molecules)",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "Monosaccharides",
+  definition: "The two main monosaccharides are glucose and fructose.",
+  deck: glucose,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+# cards lipid
+Card.create!(
+  term: "Lipid",
+  definition: "Any of a class of organic compounds that are fatty acids or their derivatives.",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What is the function for lipids?",
+  definition: "The functions of lipids include storing energy, signaling, and acting as structural components of cell membranes.",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What is a lipid in food?",
+  definition: "The three main types of lipids are triacylglycerols, phospholipids, and sterols.",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What foods are high in lipids?",
+  definition: "    Avocados, Cheese, Dark Chocolate, Whole Eggs, Fatty Fish, Nuts, Chia Seeds, Extra Virgin Olive Oil.",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "How lipids are formed?",
+  definition: "When one reacts with a fatty acid a monoglyceride forms. When two react with two fatty acid molecules a digylceride forms.",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "What are high lipids?",
+  definition: "that means you have high blood levels of low-density lipoprotein (LDL) cholesterol, and fats called triglycerides, or both.",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
+
+Card.create!(
+  term: "Are steroids lipids?",
+  definition: "Steroids are lipids because they are hydrophobic and insoluble in water, but they do not resemble lipids since they have a structure composed of four fused rings. ",
+  deck: lipid,
+  context: "",
+  memo: "",
+  photo: ""
+)
 
 def printChild(parent)
   parent.childs.each do |child|
