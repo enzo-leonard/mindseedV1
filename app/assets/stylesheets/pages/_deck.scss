@@ -87,6 +87,102 @@
     min-height: 80px;
   }
 
+
+
+  .brf {
+    position: sticky;
+    bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin: 10px;
+
+
+  }
+
+  .opt-hidden {
+    bottom: 23px;
+    right: 8px;
+    z-index: 0;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .opt-visible {
+    bottom: 110px;
+    cursor: pointer;
+    left: 95vw;
+  }
+
+
+
+  .btn-add:hover {
+    opacity: 1;
+    position: sticky;
+    bottom: 25px;
+    right: 10px;
+    width: 70px;
+    left: 95vw;
+    height: 70px;
+    background-color: #00b818;
+    padding: 0px 10px;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+
+  .inv {
+    height: 0px;
+    margin: 0px;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    width: 0px;
+    padding: 0px;
+    position: absolute;
+  }
+
+
+  .editable {
+    color: black;
+    min-height: 300px;
+    max-height: 70vh;
+    overflow-y: scroll;
+    font-family: $headers-font;
+  }
+
+  .editable:focus {
+    outline: none;
+    border: none;
+  }
+
+  .input-deck {
+    color: black;
+    min-height: 70px;
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+
+
+
+  .word {
+    display: inline-block;
+    color: grey;
+  }
+
+  .word:hover {
+    color: purple;
+    font-weight: bold;
+  }
+
+  .modal-after {}
+
   .change-photo {
     position: relative;
   }
@@ -126,98 +222,3 @@
 .hidden {
   display: none;
 }
-
-
-.brf {
-  position: sticky;
-  bottom: 20px;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-  margin: 10px;
-
-
-}
-
-.opt-hidden {
-  bottom: 23px;
-  right: 8px;
-  z-index: 0;
-  font-size: 15px;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-}
-
-.opt-visible {
-  bottom: 110px;
-  cursor: pointer;
-  left: 95vw;
-}
-
-
-
-.btn-add:hover {
-  opacity: 1;
-  position: sticky;
-  bottom: 25px;
-  right: 10px;
-  width: 70px;
-  left: 95vw;
-  height: 70px;
-  background-color: #00b818;
-  padding: 0px 10px;
-  font-size: 50px;
-  font-weight: 900;
-  text-align: center;
-  color: white;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-
-.inv {
-  height: 0px;
-  margin: 0px;
-  width: 0px;
-  height: 0px;
-  margin: 0px;
-  width: 0px;
-  padding: 0px;
-  position: absolute;
-}
-
-
-.editable {
-  color: black;
-  min-height: 300px;
-  max-height: 70vh;
-  overflow-y: scroll;
-  font-family: $headers-font;
-}
-
-.editable:focus {
-  outline: none;
-  border: none;
-}
-
-.input-deck {
-  color: black;
-  min-height: 70px;
-  max-height: 50vh;
-  overflow-y: scroll;
-}
-
-
-
-.word {
-  display: inline-block;
-  color: grey;
-}
-
-.word:hover {
-  color: purple;
-  font-weight: bold;
-}
-
-.modal-after {}
