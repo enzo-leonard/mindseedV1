@@ -12,6 +12,8 @@ class ThemesController < ApplicationController
       "theme3" =>  {nb_card: 45, vitality: 100},
       "theme4" => {nb_card: 100, vitality: 10},
       "theme5" =>  {nb_card: 89, vitality: 60},
+      "theme6" => {nb_card: 70, vitality: 10},
+      "theme7" =>  {nb_card: 0, vitality: 60}
     }
   end
   def show

@@ -11,7 +11,7 @@ import initDictionary from "../components/initDictionary.js"
 //import initD3 from "../components/initD3.js"
 import initStickyBar from "../components/initStickyBar.js"
 import "./anime";
-import highlightPlant from "./highlight_plant";
+// import highlightPlant from "./highlight_plant";
 import render from "../components/initTree"
 import initInput from "../components/initInput"
 import initCircle from "../components/initCirclePacking"
@@ -35,6 +35,6 @@ initDictionary();
 //initGoogleSign()
 initLearn();
 initStickyBar();
-highlightPlant();
+// highlightPlant();
 initCardLecteur();
 initNewTheme();

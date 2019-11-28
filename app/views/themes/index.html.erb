@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class="container1">
 
-    <div class="button-bar">
+      <div class="button-bar">
     <div class="new hidden">
       <div id="form-container-theme">
         <%= render 'themes/form_new', theme: Theme.new %>
@@ -9,6 +9,7 @@
     </div>
       <a id="launch-new-theme" class="btn btn-green"><%= icon('fa', 'plus', 'New theme') %></a>
   </div>
+
   <div class="dash-bar">
 
    <div class="header">
@@ -24,6 +25,7 @@
         <a href="/themes/<%=item.id%>">
           <div class="list-element">
             <div class="vitality-count">
+              <h4><%=item.vitality%></h4>
             </div>
             <p> <%= item.name %></p>
           </div>
@@ -38,7 +40,7 @@
         <% @data_test.each do |key, metrics| %>
         <div class="tree-forest">
         <h2 class="tree-name"><%= key %></h2>
-        <p><%= @nbcard = metrics[:nb_card] %></p>
+        <p class="tree-count"><%= @nbcard = metrics[:nb_card] %> cards</p>
           <% if @nbcard == 0 %>
           <%= render 'plant1' %>
           <% elsif @nbcard >= 80 %>

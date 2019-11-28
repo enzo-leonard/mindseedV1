@@ -52,6 +52,13 @@ transition: all 0.5s ease;
     background-color: #6e599c;
     margin: 0 7px;
     border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    h4{
+      color:$white !important;
+      font-size: 1.2rem;
+    }
   }
   p{
     padding: 20px;

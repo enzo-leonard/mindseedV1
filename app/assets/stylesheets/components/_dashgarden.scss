@@ -7,6 +7,9 @@
   padding-top: 50px;
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 
   &::-webkit-scrollbar {
     width: 20px;
@@ -30,17 +33,6 @@
     opacity: 0.2;
     border-radius: 50px;
   }
-
-  .return-dash {
-    width: 75%;
-    background: rgba(0, 0, 0, 0);
-    height: 90vh;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 102;
-  }
-
   .hidden {
     display: none;
   }
@@ -52,7 +44,7 @@
   box-sizing: border-box;
 }
 
-$max-in-row: 3;
+$max-in-row: 4;
 $min-in-row: $max-in-row - 1;
 
 @mixin block() {
@@ -85,6 +77,7 @@ $min-in-row: $max-in-row - 1;
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 15vh;
 
   p, h2{
     color: $black;
@@ -93,7 +86,7 @@ $min-in-row: $max-in-row - 1;
 
 .forest .tree-forest {
   @include block();
-  height: 200px;
+  height: 190px;
   // !Reset test: need to use something of higher
   // specificity than just .paras p when @media querying:
   // not doing this causes all specified :nth-of-type
@@ -103,13 +96,61 @@ $min-in-row: $max-in-row - 1;
   // }
 }
 
-.tree {
+.tree-forest {
+  margin:2px;
+  display:flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+
+  p, h2{
+  position: absolute;
+  opacity: 0;
+  bottom:150px;
+  transition: all 0.4s ease 0s;
+  pointer-events: none;
+  z-index:2;
+  }
+
+ h2{
+  padding: 3px;
+  color: $white !important;
+  background-color: $mediumgreen;
+  transform: rotate(0deg);
+ }
+
+  p{
+  padding: 1px 3px;
+  background-color: $purple;
+  color: $white !important;
+  transform: rotate(0deg);
+ }
+  .tree {
+    opacity: 1;
+    transform: scale(1.2);
+    transform-origin: center bottom;
+  }
+
+
+ .group-svg:hover {
   pointer-events: auto;
   cursor: pointer;
-  opacity: 0;
-  // transform: scale(1.2, 0.2);
-  transform-origin: center bottom;
+  }
 }
+
+  .tree-forest:hover h2{
+    bottom: 220px!important;
+    opacity: 1;
+    transition: all 0.5s ease 0.4s;
+    transform: rotate(-1deg);
+  }
+
+  .tree-forest:hover p{
+    bottom: 190px!important;
+    opacity: 1;
+    transition: all 0.5s ease 0.4s;
+  }
+
 
 .popout {
   width: 75%;
