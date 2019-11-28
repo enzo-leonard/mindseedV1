@@ -29,7 +29,7 @@ puts "Creation du theme english"
 user = User.first
 
 english = Theme.new(name: "English")
-english.user = user
+english.user = enzo
 english.save
 
 verb = Deck.create!(
@@ -114,7 +114,7 @@ learn = Theme.create!(name: "How we learn", user: user)
 brain = Deck.create!(name: "Neuroscience", rank: 1, parent: nil, theme: learn, original_owner: true)
 
 
-full_stack = Theme.create!(name: "Full Stack", user: user)
+full_stack = Theme.create!(name: "Informatique", user: enzo)
 
 
 ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: full_stack, original_owner: true)
@@ -132,12 +132,14 @@ rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack, ori
 
 
 
-history = Theme.create!(name: "History", user: user)
+history = Theme.create!(name: "History", user: enzo)
 greek = Deck.create!(name: "Greek Mythology", rank: 1, parent: nil, theme: history, original_owner: true)
-god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history, original_owner: true)
-demigod = Deck.create!(name: "SemiGod", rank: 2, parent: greek, theme: history, original_owner: true)
-titan = Deck.create!(name: "Titant", rank: 2, parent: greek, theme: history, original_owner: true)
-creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history, original_owner: true)
+  god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history, original_owner: true)
+  demigod = Deck.create!(name: "SemiGod", rank: 2, parent: greek, theme: history, original_owner: true)
+  titan = Deck.create!(name: "Titant", rank: 2, parent: greek, theme: history, original_owner: true)
+  creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history, original_owner: true)
+
+french = Deck.create!(name: "French", rank: 1, parent: nil, theme: history, original_owner: true)
 
 Card.create!(
   term: "Athena",
@@ -182,16 +184,16 @@ Card.create!(term: "Heracles", deck: demigod)
 Card.create!(term: "Persueus", deck: demigod)
 Card.create!(term: "Theseus", deck: demigod)
 
-latin = Deck.create!(name: "Roman deities", rank: 1, parent: nil, theme: history)
-romain_god = Deck.create!(name: "God ", rank: 2, parent: latin, theme: history)
-addCard(romain_god, "Venus")
-addCard(romain_god, "Phoebus")
-addCard(romain_god, "Mars")
-addCard(romain_god, "Saturn")
-addCard(romain_god, "Ceres")
-addCard(romain_god, "Bacchus")
+# latin = Deck.create!(name: "Roman deities", rank: 1, parent: nil, theme: history)
+# romain_god = Deck.create!(name: "God ", rank: 2, parent: latin, theme: history)
+# addCard(romain_god, "Venus")
+# addCard(romain_god, "Phoebus")
+# addCard(romain_god, "Mars")
+# addCard(romain_god, "Saturn")
+# addCard(romain_god, "Ceres")
+# addCard(romain_god, "Bacchus")
 
-geo = Theme.create!(name: "Geography", user: user)
+geo = Theme.create!(name: "Geography", user: enzo)
 capital = Deck.create!(name: "Capital", rank: 1, parent: nil, theme: geo, original_owner: true)
 afrique = Deck.create!(name: "Africa", rank: 2, parent: capital, theme: geo, original_owner: true)
 am_sud = Deck.create!(name: "South America", rank: 2, parent: capital, theme: geo, original_owner: true)
@@ -416,6 +418,7 @@ end
 
 
 general_knowledge = Theme.create!(name: "General Knowledge", user: arnaud)
+general_knowledge = Theme.create!(name: "Culture G", user: enzo)
 french_history = Deck.create!(name: "French History", rank: 1, parent: nil, theme: general_knowledge, original_owner: true)
 french_kings = Deck.create!(name: "French Kings", rank: 2, parent: french_history, theme: general_knowledge, original_owner: true)
 Card.create!(term: "Louis XIV", definition: "Known as Louis the Great (Louis le Grand) or the Sun King (le Roi Soleil), was King of France from 14 May 1643 until his death in 1715.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/1024px-Louis_XIV_of_France.jpg", vitality: 0, deck: french_kings)
