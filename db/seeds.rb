@@ -114,7 +114,7 @@ learn = Theme.create!(name: "How we learn", user: user)
 brain = Deck.create!(name: "Neuroscience", rank: 1, parent: nil, theme: learn, original_owner: true)
 
 
-full_stack = Theme.create!(name: "Informatique", user: enzo)
+full_stack = Theme.create!(name: "Informatic", user: enzo)
 
 
 ruby = Deck.create!(name: "Ruby", rank: 1, parent: nil, theme: full_stack, original_owner: true)
@@ -133,10 +133,10 @@ rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack, ori
 
 
 history = Theme.create!(name: "History", user: enzo)
-dic = Theme.create!(name: "Dictionary", user: enzo)
-book = Deck.create!(name: "Books", rank: 1, parent: nil, theme: dic, original_owner: true)
+joke = Theme.create!(name: "Jokes", user: enzo)
+chuck = Deck.create!(name: "Chuck noris", rank: 1, parent: nil, theme: joke, original_owner: true)
 20.times do
-  addCard(book, "toto", "titi")
+  addCard(chuck, "toto", "titi")
   addCard(verb, "toto", "titi")
 end
 
