@@ -102,6 +102,8 @@ $min-in-row: $max-in-row - 1;
   position: relative;
   align-items: flex-end;
   justify-content: center;
+  transition: all 0.5s ease 0.4s;
+  transform-origin: center bottom;
 
   p, h2{
   position: absolute;
@@ -143,6 +145,13 @@ $min-in-row: $max-in-row - 1;
     opacity: 1;
     transition: all 0.5s ease 0.4s;
     transform: rotate(-1deg);
+  }
+
+    .tree-forest:hover{
+    transform:scale(1.2);
+    transition: all 0.5s ease 0.4s;
+    z-index: 5;
+
   }
 
   .tree-forest:hover p{

@@ -71,10 +71,18 @@ const initLearn = () => {
         // resultcard.classList.toggle("hidden");
         const resultcontent = document.querySelector(".result .content")
         resultcontent.insertAdjacentHTML("beforeend",
-          `Fecilitation vous avez terminé !
+
+          `<div class="congrat">Congratulations !</div>
+          <div class="debrief">You did great ! The vitality's score of your tree gain <strong>+30pts</strong> !</div>
+          <div class="all-cards">
+          <div class="known-card" > <h3 class="good nb"> ${trueAnswer} </h3> cards you do know.</div>
+          <div class="unknown-card"> <h3 class="bad nb"> ${falseAnswer} </h3> cards you do soon !</div>
+          </div>
           <div class = "score" > ${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%</div>
-          <hr>
-          <a href="" class="btn center" id=btn-again>Recommencer ?</a>`)
+          <div class="buttons">
+          <a href="" class="btn btn-green" id=btn-again> <i class="fas fa-redo"></i> keep learning </a>
+          <a href="/dashboard" class="btn btn-purple" id=btn-dashboard><i class="fas fa-seedling"></i> dashboard</a>
+          </div>`)
 
         console.log(resultcard)
 

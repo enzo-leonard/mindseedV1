@@ -4,8 +4,6 @@
 .dash-list-theme{
   display: flex;
   flex-direction: column;
-  padding:0px 5px;
-  margin:0px 5px;
   overflow-y: auto;
   overflow-x : hidden;
   height:80vh;
@@ -41,7 +39,6 @@ color : $mediumgreen;
 display:flex;
 width: 100%;
 margin-bottom: 8px;
-padding:  0 3px;
 text-decoration: none;
 min-height: 0px;
 transition: all 0.5s ease;
@@ -50,7 +47,7 @@ transition: all 0.5s ease;
     width: 100px;
     height: 66px;
     background-color: #6e599c;
-    margin: 0 7px;
+    margin-right: 7px;
     border-radius: 50%;
     display:flex;
     justify-content: center;

@@ -3,7 +3,7 @@ import anime from "animejs";
 
 
 anime({
-  targets: '.tree',
+  targets: '.tree-forest .tree',
   opacity: [
     { value: 0, duration: 0},
     { value: 1, duration: 2000}
