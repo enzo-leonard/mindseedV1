@@ -4,7 +4,7 @@
   <div class="button-bar">
    <div class="btn btn-green" data-toggle="modal" data-target="#auto-card"><%= icon('fa', 'plus', 'New branch') %></div>
 
-      <a href=<%="#{@theme.id}/learn"%> class="btn btn-purple"><%= icon('fas', 'seedling', '  Learny') %></a>
+      <a href=<%="#{@theme.id}/learn"%> class="btn btn-purple"><%= icon('fas', 'seedling', '  Learn') %></a>
 
 </div>
 
@@ -59,7 +59,7 @@
       <% render 'themes/theme_decks', theme: @theme %>
       <canvas class="separator"></canvas>
       <div class="option">
-        <h4>public deck</h4>
+        <h4>Public decks</h4>
         <input type="checkbox" name="sharing">
       </div>
       </div>
