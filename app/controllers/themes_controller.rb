@@ -4,7 +4,7 @@ class ThemesController < ApplicationController
     @themes = Theme.all
     @data = {}
     @themes.each do |theme|
-      @data[theme.name] = {nb_car: card_theme(theme),  vitality: theme.vitality ? theme.vitality : 0}
+      @data[theme.name] = {nb_car: card_theme(theme).count,  vitality: theme.vitality ? theme.vitality : 0}
     end
     @data_test = {
       "theme1" =>  {nb_card: 0, vitality: 90},
@@ -16,6 +16,7 @@ class ThemesController < ApplicationController
       "theme7" =>  {nb_card: 0, vitality: 60}
     }
   end
+
   def show
     @decks_originel = []
     @array_map = []
@@ -25,18 +26,23 @@ class ThemesController < ApplicationController
     end
      @map = mind_map()
   end
+
   def new
     @theme = Theme.new
   end
+
   def learn
     @theme = Theme.find(params[:id])
     @cards = []
-    7.times do @cards
-    @cards << Card.all.sample
+    7.times do
+      @cards << card_theme(@theme).sample
     end
+
   end
+
   def edit
   end
+
   def create
     @theme = Theme.new(theme_params)
     @user = current_user
@@ -74,20 +80,25 @@ class ThemesController < ApplicationController
     def theme_params
       params.require(:theme).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id)
     end
+
+
     def card_child(array, done, count)
       array.each do |item|
         if !done.include?(item)
-          count += item.cards.count
+          count += item.cards
           card_child(item.childs, done, count) if item.childs
         end
         end
         count
     end
+
     def card_theme(theme)
       done = []
-      count = 0
+      count = []
       count += card_child(theme.decks, done, count)
     end
+
+
     def show_child(array, done)
       childrens = []
       array.each do |item|
