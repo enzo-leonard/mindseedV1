@@ -41,6 +41,5 @@ initLearn();
 
 initStickyBar();
 // highlightPlant();
-initCardLecteur();
 
 initNewTheme();
