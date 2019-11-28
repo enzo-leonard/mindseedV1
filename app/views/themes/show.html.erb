@@ -3,13 +3,14 @@
 
   <div class="button-bar">
    <div class="btn btn-green" data-toggle="modal" data-target="#auto-card"><%= icon('fa', 'plus', 'New branch') %></div>
-      <%= link_to icon('fas', 'edit', '  Edit'), edit_theme_path(@theme), class:"btn btn-purple" %>
-      <a href=<%="#{@theme.id}/learn"%> class="btn btn-green"><%= icon('fas', 'seedling', '  Learny') %></a>
+
+      <a href=<%="#{@theme.id}/learn"%> class="btn btn-purple"><%= icon('fas', 'seedling', '  Learny') %></a>
+
 </div>
 
 <div class="dash-bar">
     <div class="header">
-      <div class="back ">
+      <div class="back mediumgreen">
         <a href="/themes"><%= icon('fas', 'chevron-left') %></a>
       </div>
       <h3 class=""> <%= @theme.name %></h3>
@@ -19,7 +20,18 @@
 
       <div class="vitality-time">
         <div class="vitality">
-          <div class="counter"></div>
+
+        <% totalcards = 0 %>
+        <% @theme.decks.each do |item|  %>
+        <% totalcards = totalcards + item.cards.count%>
+        <%end%>
+        <% unknown = 0 %>
+        <% known = 0 %>
+        <% totalcards.nil? ? totalcards = 0 : known = totalcards/rand(1..totalcards)  %>
+        <% known == 0 ? unknown = 0 : unknown = totalcards - known  %>
+        <% score = ((known.to_f/totalcards)*100).round(0) %>
+
+          <div class="counter"><h3 class="nb"><%=score%>%</h3></div>
           <p>vitality</p>
         </div>
         <div class="time">
@@ -30,22 +42,16 @@
       <canvas class="separator"></canvas>
 
       <div class="numbers-card">
-        <% totalcards = 0 %>
-        <% @theme.decks.each do |item|  %>
-        <% totalcards += item.cards.count%>
-        <%end%>
-        <% unknown = 0 %>
-        <% known = 0 %>
         <div class="totalcards">
           <h4 class="nb"><%= totalcards %></h4>
           <h4 >Flashcards</h4>
         </div>
         <div class="good">
-          <h4 class="nb"><%# known = totalcards/rand(1..totalcards) if totalcards %></h4>
+          <h4 class="nb"><%= known %></h4>
           <h4>known</h4>
         </div>
         <div class="bad">
-          <h4 class="nb"><%= unknown = totalcards - known %></h4>
+          <h4 class="nb"><%= unknown %></h4>
           <h4>unknow</h4>
         </div>
       </div>

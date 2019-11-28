@@ -135,38 +135,107 @@
     right: 20px;
     font-size: 48px;
     font-weight: 900;
-    color: grey;
+    color: $light-gray;
   }
 
   .score {
-    background-color: white;
+    background-color: $mediumgreen;
     padding: 15px 20px;
     margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 2px grey;
-    font-size: 48px;
+    border-radius: 20px;
+    font-size: 40px;
     font-weight: 900;
-    color: blueviolet;
+    color: $white;
   }
 
   .result {
-    background-color: darkslategrey;
+    background-color: $white;
     display: flex;
     justify-content: space-around;
+    align-items:center;
     position:absolute;
     bottom: -30vh;
     left: 40vh;
-  .content{
-    margin: 0 10vw;
-  }
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+    height: 604px;
+    width: 60vw;
+    padding: 0px 16px;
+    margin-right:100px;
+    opacity: 1;
+
+    .content {
+      display:flex;
+      justify-content: space-around;
+      align-items:center;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .congrat {
+      color: white;
+      font-size: 2rem;
+      text-align:center;
+      text-transform: uppercase;
+      background-color: $purple;
+      padding: 10px;
+      margin-bottom: 20px;
+      transform: rotate(-2deg);
+      width: 80%;
+      box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+    }
+
+    .debrief{
+      font-family: $body-font;
+      font-size: 1.3rem;
+      color: $black;
+      text-align: center;
+      padding:30px;
+    }
+
+    strong {
+      background-color:$purple;
+      color:white;
+      padding:0.2rem 0.4rem;
+      border-radius:10px;
+      transform: rotate(-1deg);
+    }
+.all-cards{
+display:flex;
+align-items: center;
+justify-content: center;
+}
+    .known-card {
+color:$green;
+display:flex;
+align-items: center;
+justify-content:space-around;
+    }
+    .unknown-card {
+color:$purple;
+display:flex;
+align-items: center;
+justify-content:space-between;
+    }
+    .good{
+    background-color:$mediumgreen;
+    margin-left: 10px;
+    }
+    .bad{
+    background-color:$purple;
+    margin-left: 10px;
+    }
   }
 
   #nb_card {
     color: blue;
   }
 
-  .content {
-    height: auto;
+
+  .buttons{
+     display:flex;
+    justify-content: space-around;
+    align-items:center;
   }
 
   .answer-container {

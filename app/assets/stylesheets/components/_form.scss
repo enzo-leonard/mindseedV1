@@ -1,6 +1,5 @@
 .input-theme {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -10,6 +9,7 @@
 
 #btn-new-theme {
   height: 50px;
+  margin: 0;
 }
 
 .theme-input {

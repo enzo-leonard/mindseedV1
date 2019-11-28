@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class="container1">
 
-    <div class="button-bar">
+      <div class="button-bar">
     <div class="new hidden">
       <div id="form-container-theme">
         <%= render 'themes/form_new', theme: Theme.new %>
@@ -9,6 +9,7 @@
     </div>
       <a id="launch-new-theme" class="btn btn-green"><%= icon('fa', 'plus', 'New theme') %></a>
   </div>
+
   <div class="dash-bar">
 
    <div class="header">
@@ -16,14 +17,15 @@
    </div>
    <div class="dash-list-theme">
    <div class="heading">
-     <p class="vitality">vitality</p>
-     <p>name</p>
+  <!--    <p class="vitality">score</p>
+     <p>name</p> -->
    </div>
     <% @themes.each do |item| %>
       <% if item.user == current_user %>
         <a href="/themes/<%=item.id%>">
           <div class="list-element">
             <div class="vitality-count">
+              <h4><%=item.vitality%></h4>
             </div>
             <p> <%= item.name %></p>
           </div>
@@ -32,19 +34,37 @@
     <%end%>
   </div>
 </div>
-<div class="dash-garden">
-  <div class="return-dash hidden">
-</div>
-    <div class="forest">
-      <%= render 'plant2' %>
-      <%= render 'plant3' %>
-      <%= render 'plant4' %>
-      <%= render 'plant5' %>
-      <%= render 'plant4' %>
-      <%= render 'plant1' %>
-     </div>
+  <div class="dash-garden">
+    <div class="return-dash hidden"></div>
+      <div class="forest">
+        <% @data_test.each do |key, metrics| %>
+        <div class="tree-forest">
+        <h2 class="tree-name"><%= key %></h2>
+        <p class="tree-count"><%= @nbcard = metrics[:nb_card] %> cards</p>
+          <% if @nbcard == 0 %>
+          <%= render 'plant1' %>
+          <% elsif @nbcard >= 80 %>
+          <%= render 'plant5' %>
+          <% elsif @nbcard >= 60 %>
+          <%= render 'plant4' %>
+          <% elsif @nbcard >= 40 %>
+          <%= render 'plant3' %>
+          <% elsif @nbcard >= 10 %>
+          <%= render 'plant2' %>
+          <% end %>
+          <% vitality = metrics[:vitality]%>
+           <!--   <#% if vitality  < 50 %>
+          < class="feuillage" fill="#fff" >
+          <#% elsif vitality > 50 %>
+          <#% end %> -->
+        </div>
+        <%end%>
+      </div>
   </div>
 </div>
+
+
+
 
 
 

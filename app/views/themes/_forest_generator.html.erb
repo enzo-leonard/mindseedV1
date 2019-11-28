@@ -1,0 +1,6 @@
+<div class="stat-tree">
+  <% @themes.each do |item| %>
+    <% if item.user == current_user %>
+    <p><%= item.name %></p>
+  <%end%>
+</div>
