@@ -112,6 +112,14 @@ const initLearn = () => {
       btnNo.addEventListener('click', () => {
         falseAnswer++
         card = next()
+         const step = document.querySelector("#growing.active");
+        step.classList.toggle("active");
+        if (step.nextElementSibling === null) {
+          step.classList.toggle("active");
+            // window.location.reload();
+          } else {
+            step.nextElementSibling.classList.toggle("active")
+          }
       })
     }
 

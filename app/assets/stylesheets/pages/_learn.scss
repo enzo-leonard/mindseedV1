@@ -154,8 +154,6 @@
     justify-content: space-around;
     align-items:center;
     position:absolute;
-    bottom: -30vh;
-    left: 40vh;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
@@ -164,6 +162,8 @@
     padding: 0px 16px;
     margin-right:100px;
     opacity: 1;
+    right: 99px;
+    z-index:7;
 
     .content {
       display:flex;
@@ -261,7 +261,7 @@ justify-content:space-between;
 }
 
 .slide-in{
-  transform: translateY(-30vw);
+  transform: translateY(0vw);
   opacity : 1!important;
   transition:all 1s ease;
 }
