@@ -37,9 +37,8 @@
 
 
 .list-element{
-display: flex;
 color : $mediumgreen;
-align-items: center;
+display:flex;
 width: 100%;
 margin-bottom: 8px;
 padding:  0 3px;
@@ -52,6 +51,7 @@ transition: all 0.5s ease;
     height: 66px;
     background-color: #6e599c;
     margin: 0 7px;
+    border-radius: 50%;
   }
   p{
     padding: 20px;
