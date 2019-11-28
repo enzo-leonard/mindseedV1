@@ -4,7 +4,7 @@
   <div class="button-bar">
    <div class="btn btn-green" data-toggle="modal" data-target="#auto-card"><%= icon('fa', 'plus', 'New branch') %></div>
 
-      <a href=<%="#{@theme.id}/learn"%> class="btn btn-purple"><%= icon('fas', 'seedling', '  Learny') %></a>
+      <a href=<%="#{@theme.id}/learn"%> class="btn btn-purple"><%= icon('fas', 'seedling', '  Learn') %></a>
 
 </div>
 
@@ -27,15 +27,15 @@
         <%end%>
         <% unknown = 0 %>
         <% known = 0 %>
-        <% totalcards.nil? ? totalcards = 0 : known = totalcards/rand(1..totalcards)  %>
+        <% totalcards ? totalcards = 0 : known = totalcards/rand(1..totalcards)  %>
         <% known == 0 ? unknown = 0 : unknown = totalcards - known  %>
-        <% score = ((known.to_f/totalcards)*100).round(0) %>
+        <% score = ((known/(totalcards+1))*100).round(0) %>
 
           <div class="counter"><h3 class="nb"><%=score%>%</h3></div>
           <p>vitality</p>
         </div>
         <div class="time">
-        <h4 class="nb"><%=rand(0..5)%>h</h4>
+        <h4 class="nb"><%= totalcards == 0 ? 0 : rand(0..5)%>h</h4>
         <p>learning</p>
         </div>
       </div>
@@ -44,7 +44,7 @@
       <div class="numbers-card">
         <div class="totalcards">
           <h4 class="nb"><%= totalcards %></h4>
-          <h4 >Flashcards</h4>
+          <h4> Flashcards</h4>
         </div>
         <div class="good">
           <h4 class="nb"><%= known %></h4>
@@ -59,8 +59,10 @@
       <% render 'themes/theme_decks', theme: @theme %>
       <canvas class="separator"></canvas>
       <div class="option">
+
         <h4 class="sharing">public deck</h4>
         <input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger">
+
       </div>
       </div>
      <!--  liste des decks -->

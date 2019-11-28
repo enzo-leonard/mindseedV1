@@ -1,11 +1,13 @@
 const initCardLecteur = () => {
   const result = document.querySelectorAll(".result-deck");
+  console.log(result)
   result.forEach((r) => {
     r.addEventListener('click', (event) => {
       const right = document.querySelector('.search-right')
       const btnRight = document.querySelector('.button-bar')
       right.classList.toggle("open");
       btnRight.classList.toggle("fix-btn");
+      console.log(right)
       const id = event.currentTarget.id
       const flashcards = document.querySelector('.flashcards')
       const flashcard = gon.cards;
@@ -36,7 +38,6 @@ const initCardLecteur = () => {
       }
       else {
         document.querySelector(".add2").classList.toggle('hidden')
-        console.log('pas clean ')
         document.querySelector('.add2 form').setAttribute('action', `/decks/${id}/import`)
 
 

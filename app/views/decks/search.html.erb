@@ -41,7 +41,7 @@
           <% end %>
         </div>
 
-    <div class="button-bar fix-btn">
+        <div class="button-bar">
           <% if Theme.where(user: current_user).empty? %>
           <div class="add hidden">
           <%= flash[:notice] = "Before being able to import a deck, you have to create a Theme" %>

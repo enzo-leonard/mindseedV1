@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/search', to: 'decks#search'
   get '/dashboard', to: 'themes#index'
   get 'themes/:id/learn', to: 'themes#learn'
+  post 'card/:id', to: 'cards#addVitality'
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

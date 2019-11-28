@@ -1,6 +1,6 @@
 
 class CardsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :create
+  skip_before_action :verify_authenticity_token, only: [:create, :addVitality]
 
   def index
   end
@@ -38,6 +38,18 @@ class CardsController < ApplicationController
     if @card.update!(card_params)
       respond_to do |format|
         format.js{ render 'update' }  # <-- idem
+      end
+    else
+      render 'decks/show'
+    end
+  end
+
+  def addVitality
+    @card = Card.find(params[:id])
+    @card.vitality += 50 if @card.vitality < 100;
+    if @card.save!
+      respond_to do |format|
+        format.html{ 'done' }  # <-- idem
       end
     else
       render 'decks/show'

@@ -47,6 +47,9 @@ const initLearn = () => {
         if (i >= 0) hide(cardsRecto[i])
           i++
 
+
+
+
         progressTrue.style.width = `${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%`
         progressFalse.style.width = `${((falseAnswer / nbMaxCard) * 100).toFixed(1)}%`
         console.log(progressFalse.style.width)
@@ -99,6 +102,11 @@ const initLearn = () => {
       })
       btnYes.addEventListener('click', () => {
         trueAnswer++
+        const id = cardsRecto[i].id.split('_')[1]
+        console.log('vita ++ >> '+id)
+        fetch(`/card/${id}`, { method: 'POST', headers: { 'Accepts': 'text/html', 'Content-Type': 'application/json' }, body: JSON.stringify({ id: id }) })
+        .then(response => response.text())
+
         card = next()
         const step = document.querySelector("#growing.active");
         step.classList.toggle("active");
