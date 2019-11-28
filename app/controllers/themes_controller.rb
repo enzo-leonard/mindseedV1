@@ -51,13 +51,17 @@ class ThemesController < ApplicationController
   end
 
   def learn
+
+
     @theme = Theme.find(params[:id])
     @cards = []
+    selection = card_theme(@theme)
     7.times do
-      @cards << card_theme(@theme).sample
+      @cards << selection.sample
     end
 
   end
+
 
   def edit
   end

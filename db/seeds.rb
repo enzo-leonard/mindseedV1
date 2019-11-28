@@ -133,6 +133,17 @@ rails = Deck.create!(name: "Rails", rank: 1, parent: nil, theme: full_stack, ori
 
 
 history = Theme.create!(name: "History", user: enzo)
+dic = Theme.create!(name: "Dictionary", user: enzo)
+book = Deck.create!(name: "Books", rank: 1, parent: nil, theme: dic, original_owner: true)
+20.times do
+  addCard(book, "toto", "titi")
+  addCard(verb, "toto", "titi")
+end
+
+50.times do
+  addCard(ruby, "toto", "titi")
+end
+
 greek = Deck.create!(name: "Greek Mythology", rank: 1, parent: nil, theme: history, original_owner: true)
   god = Deck.create!(name: "God", rank: 2, parent: greek, theme: history, original_owner: true)
   demigod = Deck.create!(name: "SemiGod", rank: 2, parent: greek, theme: history, original_owner: true)
