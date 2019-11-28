@@ -24,10 +24,8 @@
       <% if item.user == current_user %>
         <a href="/themes/<%=item.id%>">
           <div class="list-element">
-            <div class="vitality-count">
-              <h4><%=item.vitality%></h4>
-            </div>
             <p> <%= item.name %></p>
+
           </div>
         </a>
       <%end%>

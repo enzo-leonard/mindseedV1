@@ -86,7 +86,7 @@ $min-in-row: $max-in-row - 1;
 
 .forest .tree-forest {
   @include block();
-  height: 190px;
+  height: 160px;
   // !Reset test: need to use something of higher
   // specificity than just .paras p when @media querying:
   // not doing this causes all specified :nth-of-type
@@ -115,6 +115,7 @@ $min-in-row: $max-in-row - 1;
   }
 
  h2{
+  font-size: 1.4rem;
   padding: 3px;
   color: $white !important;
   background-color: $mediumgreen;

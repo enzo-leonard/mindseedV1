@@ -1,5 +1,13 @@
 import anime from "animejs";
 
+const listPop = anime({
+  targets: '.dash-list-theme .list-element',
+  opacity: [
+    { value: 0, duration: 0},
+    { value: 1, duration: 2000}
+ ],
+  delay: anime.stagger(400),
+});
 
 const treesPop = anime({
   targets: '.tree-forest .tree',

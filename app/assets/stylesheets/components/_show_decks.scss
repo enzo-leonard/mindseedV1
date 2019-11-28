@@ -44,7 +44,7 @@ height:80vh;
   margin-bottom: 25px;
   p{
     font-size: 1.1rem;
-    color:$white;
+    color:$gray;
     font-weight:600;
     bottom:-40px;
     position: absolute;
@@ -120,7 +120,7 @@ height:80vh;
 
 .separator {
   height:3px;
-  background-color:$mediumgreen;
+  background-color:$gray;
   width:90%;
   margin:30px auto;
 }
@@ -131,6 +131,9 @@ height:80vh;
   justify-content:center;
   align-items:center;
   position: relative;
+  .sharing{
+    font-size:1.1rem;
+  }
     input {
       margin: 5px;
     }

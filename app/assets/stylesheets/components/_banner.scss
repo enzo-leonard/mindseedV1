@@ -32,7 +32,8 @@
 
 .banner {
   background-size: cover;
-  background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
+  background-image: asset-url("hero.png");
+  // background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
   background-position: center;
   padding: 20px 0 200px 0;
   height: 70vh;

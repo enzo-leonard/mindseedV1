@@ -3,7 +3,7 @@
     <div class="brand">
 
          <%= link_to dashboard_path, class: "navbar-brand" do%>
-         <%= image_tag("logo_mindseed.png", size: "200x46", alt: "logo mindseed")%>
+         <%= image_tag("mindseed_logoCW.png", size: "200x46", alt: "logo mindseed")%>
          <% end %>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,11 +25,12 @@
 
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
 
+          <li class="nav-item dropdown">
               <% avatar_url = current_user.facebook_picture_url || current_user.avatar %>
               <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-              <p><%= current_user.first_name %></p>
+              <p class="user-name"><%= current_user.first_name %></p>
+
             <div class="dropdown-menu">
               <div class="popover-arrow"></div>
 
