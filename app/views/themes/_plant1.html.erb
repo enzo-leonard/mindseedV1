@@ -4,6 +4,24 @@ class="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1
    xml:space="preserve">
 <g class="group-svg">
 
+<%
+if vitality < 15
+  state = 7
+elsif vitality < 30
+  state = 6
+elsif vitality < 45
+  state = 5
+elsif vitality < 60
+  state = 4
+elsif vitality < 75
+  state = 3
+elsif vitality < 90
+  state = 2
+else
+  state = 1
+end
+%>
+
  <linearGradient id="vitality1" gradientUnits="userSpaceOnUse" x1="12.7109" y1="347.572" x2="17.4428" y2="286.0574" gradientTransform="matrix(1 0 0 -1 102.3999 611.6108)">
     <stop  offset="0.0102" style="stop-color:#46ACA8"/>
     <stop  offset="1" style="stop-color:#6ACCA5"/>
@@ -37,7 +55,7 @@ class="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1
     c-1.547,0.117-1.856,3.813-0.404,9.374c0.829,3.166,3.701,3.966,5.053,2.678c1.245,0.657,3.146,0.483,4.314-1.176
     C136.973,369.367,137.605,366.38,136.234,365.751z"/>
 
-  <path class="feuillage" style="fill:url(#vitality1);" d="M113.816,316.696c2.855,6.321,4.152,14.26-0.516,20.091
+  <path class="feuillage" style="fill:url(#vitality<%=state%>);" d="M113.816,316.696c2.855,6.321,4.152,14.26-0.516,20.091
     c-4.803,5.998-10.318,5.574-17.037,3.361c-3.065-1.008-5.901-2.559-8.318-4.706c-4.74-4.215-7.77-10.312-9.309-16.395
     c-1.857-7.345-0.287-19.609,10.346-16.569c6.596,1.886,10.08,6.281,14.008,11.415c0.394-2.068-0.179-7.921,2.5-8.123
     C108.488,305.547,112.826,314.502,113.816,316.696z"/>
@@ -47,7 +65,7 @@ class="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1
     <stop  offset="1" style="stop-color:#6ACCA5"/>
   </linearGradient>
 
-  <path class="feuillage" style="fill:url(#vitality1);" d="M141.352,336.688c-6.377,6.711-15.873,8.042-21.21,2.972s-4.494-14.621,1.884-21.334
+  <path class="feuillage" data-vita=<%= state %> style="fill:url(#vitality1);" d="M141.352,336.688c-6.377,6.711-15.873,8.042-21.21,2.972s-4.494-14.621,1.884-21.334
     c6.378-6.711,27.59-10.512,27.59-10.512C154.951,312.884,147.729,329.974,141.352,336.688z"/>
 
   <linearGradient id="light1_1" gradientUnits="userSpaceOnUse" x1="95.0195" y1="323.7334" x2="95.0195" y2="303.418">

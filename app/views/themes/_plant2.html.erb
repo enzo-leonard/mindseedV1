@@ -1,3 +1,21 @@
+<%
+if vitality < 15
+  state = 7
+elsif vitality < 30
+  state = 6
+elsif vitality < 45
+  state = 5
+elsif vitality < 60
+  state = 4
+elsif vitality < 75
+  state = 3
+elsif vitality < 90
+  state = 2
+else
+  state = 1
+end
+%>
+
 <svg version="1.1" id="tree2" class="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    width="122" height="195" viewBox="0 0 247.754 391.512" style="enable-background:new 0 0 247.754 391.512;"
    xml:space="preserve">
@@ -34,7 +52,7 @@
 	<stop  offset="0" style="stop-color:#732F15;stop-opacity:0.5"/>
 	<stop  offset="1" style="stop-color:#3A1312"/>
 </linearGradient>
-  <path class="feuillage" style="fill:url(#vitality1);" d="M173.221,292.528c-3.112-4.448-9.247-9.162-15.629-9.107
+  <path class="feuillage" style="fill:url(#vitality<%=state%>);" d="M173.221,292.528c-3.112-4.448-9.247-9.162-15.629-9.107
     c-0.176,0.004-0.355,0.011-0.537,0.017c-3.041,0.121-6.795,1.053-8.957,2.849c-1.387,1.151-5.109,5.747-4.736,7.36
     c-3.292-14.285-2.936-36.035-23.799-40.574c-7.445-1.619-15.456-0.031-22.263,2.641c-13.714,5.388-20.688,14.341-27.326,25.688
     c-6.941,11.872-11.763,25.437-10.333,38.872c0.828,7.793,4.807,15.792,15.518,20.314c18.182,7.678,47.799,5.645,67.158,1.411

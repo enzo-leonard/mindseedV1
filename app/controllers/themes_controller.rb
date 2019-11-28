@@ -1,16 +1,18 @@
 class ThemesController < ApplicationController
   before_action :set_Theme, only: [:show, :edit, :update, :destroy, :mind_map]
   def index
-    @themes = Theme.all
+    @themes = Theme.where(user: current_user)
     @data = {}
     @themes.each do |theme|
       nb = (card_theme(theme).count - 1)
       div = 1
       div = nb if nb > 0
       @data[theme.name] = {
-        nb_car: nb,
+        nb_card: nb,
         vitality_tt: card_theme_vitality(theme),
-        vitality: card_theme_vitality(theme)/div }
+        vitality: card_theme_vitality(theme)/div,
+        id: theme.id
+      }
     end
 
     @data_test = {
@@ -18,10 +20,9 @@ class ThemesController < ApplicationController
       "theme2" =>  {nb_card: 10, vitality: 50},
       "theme3" =>  {nb_card: 45, vitality: 100},
       "theme4" => {nb_card: 100, vitality: 10},
-      "theme5" =>  {nb_card: 89, vitality: 60},
-      "theme6" => {nb_card: 70, vitality: 10},
-      "theme7" =>  {nb_card: 0, vitality: 60}
+      "theme5" =>  {nb_card: 0, vitality: 0},
     }
+
 
   end
 

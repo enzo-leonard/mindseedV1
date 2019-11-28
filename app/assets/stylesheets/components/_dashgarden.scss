@@ -33,6 +33,7 @@
     opacity: 0.2;
     border-radius: 50px;
   }
+
   .hidden {
     display: none;
   }
@@ -79,7 +80,8 @@ $min-in-row: $max-in-row - 1;
   flex-wrap: wrap;
   margin-bottom: 15vh;
 
-  p, h2{
+  p,
+  h2 {
     color: $black;
   }
 }
@@ -97,37 +99,39 @@ $min-in-row: $max-in-row - 1;
 }
 
 .tree-forest {
-  margin:2px;
-  display:flex;
+  margin: 2px;
+  display: flex;
   position: relative;
   align-items: flex-end;
   justify-content: center;
   transition: all 0.5s ease 0.4s;
   transform-origin: center bottom;
 
-  p, h2{
-  position: absolute;
-  opacity: 0;
-  bottom:150px;
-  transition: all 0.4s ease 0s;
-  pointer-events: none;
-  z-index:2;
+  p,
+  h2 {
+    position: absolute;
+    opacity: 0;
+    bottom: 150px;
+    transition: all 0.4s ease 0s;
+    pointer-events: none;
+    z-index: 2;
   }
 
- h2{
-  font-size: 1.4rem;
-  padding: 3px;
-  color: $white !important;
-  background-color: $mediumgreen;
-  transform: rotate(0deg);
- }
+  h2 {
+    font-size: 1.4rem;
+    padding: 3px;
+    color: $white !important;
+    background-color: $mediumgreen;
+    transform: rotate(0deg);
+  }
 
-  p{
-  padding: 1px 3px;
-  background-color: $purple;
-  color: $white !important;
-  transform: rotate(0deg);
- }
+  p {
+    padding: 1px 3px;
+    background-color: $purple;
+    color: $white !important;
+    transform: rotate(0deg);
+  }
+
   .tree {
     opacity: 1;
     transform: scale(1.2);
@@ -135,31 +139,31 @@ $min-in-row: $max-in-row - 1;
   }
 
 
- .group-svg:hover {
-  pointer-events: auto;
-  cursor: pointer;
+  .group-svg:hover {
+    pointer-events: auto;
+    cursor: pointer;
   }
 }
 
-  .tree-forest:hover h2{
-    bottom: 220px!important;
-    opacity: 1;
-    transition: all 0.5s ease 0.4s;
-    transform: rotate(-1deg);
-  }
+.tree-forest:hover h2 {
+  bottom: 220px !important;
+  opacity: 1;
+  transition: all 0.5s ease 0.4s;
+  transform: rotate(-1deg);
+}
 
-    .tree-forest:hover{
-    transform:scale(1.2);
-    transition: all 0.5s ease 0.4s;
-    z-index: 5;
+.tree-forest:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease 0.4s;
+  z-index: 5;
 
-  }
+}
 
-  .tree-forest:hover p{
-    bottom: 190px!important;
-    opacity: 1;
-    transition: all 0.5s ease 0.4s;
-  }
+.tree-forest:hover p {
+  bottom: 190px !important;
+  opacity: 1;
+  transition: all 0.5s ease 0.4s;
+}
 
 
 .popout {

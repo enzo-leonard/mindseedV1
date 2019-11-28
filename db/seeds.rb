@@ -11,7 +11,7 @@ Theme.destroy_all
 User.destroy_all
 
 def addCard(parent,term, definition = nil)
-  Card.create!(term: term, definition: definition, deck: parent)
+  Card.create!(term: term, definition: definition, deck: parent, vitality: 100)
 end
 
 
@@ -82,7 +82,7 @@ irr = Deck.create!(
   original_owner: true)
 
 Card.create!(
-  term: "Abide",
+  term: "Abide", vitality: 100,
   definition: "To suffer",
   deck: irr,
   context: "I said I would abide by their decision",
@@ -91,7 +91,7 @@ Card.create!(
 )
 
 Card.create!(
-  term: "Beget",
+  term: "Beget", vitality: 100,
   definition: "engendrer",
   deck: irr,
   context: "they hoped that the King might beget an heir by his new queen",
@@ -101,7 +101,7 @@ Card.create!(
 
 
 Card.create!(
-  term: "Bereave",
+  term: "Bereave", vitality: 100,
   definition: "scold or criticize (someone) angrily.",
   deck: irr,
   context: "she berated herself for being fickle",
@@ -142,7 +142,7 @@ greek = Deck.create!(name: "Greek Mythology", rank: 1, parent: nil, theme: histo
 french = Deck.create!(name: "French", rank: 1, parent: nil, theme: history, original_owner: true)
 
 Card.create!(
-  term: "Athena",
+  term: "Athena", vitality: 100,
   definition: "goddess of wars",
   deck: god,
   context: "Athena !",
@@ -151,38 +151,38 @@ Card.create!(
 )
 
 Card.create!(
-  term: "Apollo",
+  term: "Apollo", vitality: 100,
   definition: "",
   deck: god,
   context: "Athena !",
   memo: "Athena as the grece capital",
   photo: ""
 )
-Card.create!(term: "Poseidon", deck: god)
-Card.create!(term: "Zeus", deck: god)
-Card.create!(term: "Ares", deck: god)
-Card.create!(term: "Artemis", deck: god)
-Card.create!(term: "Aphrodite", deck: god)
-Card.create!(term: "Hades", deck: god)
-Card.create!(term: "Hephaestus", deck: god)
-Card.create!(term: "Hera", deck: god)
-Card.create!(term: "Hermes", deck: god)
-Card.create!(term: "Hestia", deck: god)
+Card.create!(term: "Poseidon", vitality: 100, deck: god)
+Card.create!(term: "Zeus", vitality: 100, deck: god)
+Card.create!(term: "Ares", vitality: 100, deck: god)
+Card.create!(term: "Artemis", vitality: 100, deck: god)
+Card.create!(term: "Aphrodite", vitality: 100, deck: god)
+Card.create!(term: "Hades", vitality: 100, deck: god)
+Card.create!(term: "Hephaestus", vitality: 100, deck: god)
+Card.create!(term: "Hera", vitality: 100, deck: god)
+Card.create!(term: "Hermes", vitality: 100, deck: god)
+Card.create!(term: "Hestia", vitality: 100, deck: god)
 
-Card.create!(term: "Cronus", deck: titan)
+Card.create!(term: "Cronus", vitality: 100, deck: titan)
 
-Card.create!(term: "Giant", deck: creature)
-Card.create!(term: "Gorgons", deck: creature)
-Card.create!(term: "Medusa", deck: creature)
-Card.create!(term: "Pegasus", deck: creature)
-Card.create!(term: "Talos", deck: creature)
-Card.create!(term: "Cerberus", deck: creature)
-Card.create!(term: "Cyclopes", deck: creature)
+Card.create!(term: "Giant", vitality: 100, deck: creature)
+Card.create!(term: "Gorgons", vitality: 100, deck: creature)
+Card.create!(term: "Medusa", vitality: 100, deck: creature)
+Card.create!(term: "Pegasus", vitality: 100, deck: creature)
+Card.create!(term: "Talos", vitality: 100, deck: creature)
+Card.create!(term: "Cerberus", vitality: 100, deck: creature)
+Card.create!(term: "Cyclopes", vitality: 100, deck: creature)
 
-Card.create!(term: "Achilles", deck: demigod)
-Card.create!(term: "Heracles", deck: demigod)
-Card.create!(term: "Persueus", deck: demigod)
-Card.create!(term: "Theseus", deck: demigod)
+Card.create!(term: "Achilles", vitality: 100, deck: demigod)
+Card.create!(term: "Heracles", vitality: 100, deck: demigod)
+Card.create!(term: "Persueus", vitality: 100, deck: demigod)
+Card.create!(term: "Theseus", vitality: 100, deck: demigod)
 
 # latin = Deck.create!(name: "Roman deities", rank: 1, parent: nil, theme: history)
 # romain_god = Deck.create!(name: "God ", rank: 2, parent: latin, theme: history)
@@ -218,7 +218,7 @@ minerals = Deck.create!(name: "Minerals", rank: 2, parent: general, theme: diete
 
 # cards glucose
 Card.create!(
-  term: "Glucose",
+  term: "Glucose", vitality: 100,
   definition: "a simple sugar which is an important energy source in living organisms and is a component of many carbohydrates.",
   deck: glucose,
   context: "",

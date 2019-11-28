@@ -14,16 +14,18 @@
 
    <div class="header">
     <h3>My themes</h3>
+
    </div>
    <div class="dash-list-theme">
    <div class="heading">
   <!--    <p class="vitality">score</p>
      <p>name</p> -->
+
    </div>
     <% @themes.each do |item| %>
       <% if item.user == current_user %>
         <a href="/themes/<%=item.id%>">
-          <div class="list-element">
+          <div id=list_<%=item.id%> class="list-element">
             <p> <%= item.name %></p>
 
           </div>
@@ -34,30 +36,35 @@
 </div>
   <div class="dash-garden">
     <div class="return-dash hidden"></div>
+
       <div class="forest">
-        <% @data_test.each do |key, metrics| %>
-        <div class="tree-forest">
-        <h2 class="tree-name"><%= key %></h2>
+
+        <% @data.each do |key, metrics| %>
+             <a href="/themes/<%=metrics[:id]%>" >
+        <div id=forest_<%=metrics[:id]%> class="tree-forest">
+        <h2 class="tree-name"><%= key %> - <%= metrics[:vitality]%>%</h2>
         <p class="tree-count"><%= @nbcard = metrics[:nb_card] %> cards</p>
           <% if @nbcard == 0 %>
-          <%= render 'plant1' %>
-          <% elsif @nbcard >= 80 %>
-          <%= render 'plant5' %>
-          <% elsif @nbcard >= 60 %>
-          <%= render 'plant4' %>
-          <% elsif @nbcard >= 40 %>
-          <%= render 'plant3' %>
-          <% elsif @nbcard >= 10 %>
-          <%= render 'plant2' %>
+          <%= render 'plant1', vitality: metrics[:vitality] %>
+          <% elsif @nbcard >= 50 %>
+          <%= render 'plant5', vitality: metrics[:vitality] %>
+          <% elsif @nbcard >= 30 %>
+          <%= render 'plant4', vitality: metrics[:vitality] %>
+          <% elsif @nbcard >= 20 %>
+          <%= render 'plant3', vitality: metrics[:vitality] %>
+          <% else %>
+          <%= render 'plant2', vitality: metrics[:vitality] %>
           <% end %>
           <% vitality = metrics[:vitality]%>
            <!--   <#% if vitality  < 50 %>
           < class="feuillage" fill="#fff" >
           <#% elsif vitality > 50 %>
           <#% end %> -->
+          </a>
         </div>
         <%end%>
       </div>
+
   </div>
 </div>
 

@@ -17,6 +17,7 @@ import initInput from "../components/initInput"
 import initCircle from "../components/initCirclePacking"
 import initCardLecteur from "../components/initCardLecteur.js"
 import initNewTheme from "../components/initNewTheme.js"
+import initForest from "../components/initForest";
 
 
 $(function () {
@@ -32,7 +33,7 @@ $(function () {
 });
 
 
-
+//initForest();
 initInput();
 initDictionary();
 //initCircle();
