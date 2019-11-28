@@ -11,7 +11,7 @@ Theme.destroy_all
 User.destroy_all
 
 def addCard(parent,term, definition = nil)
-  Card.create!(term: term, definition: definition, deck: parent, vitality: 100)
+  Card.create!(term: term, definition: definition, deck: parent)
 end
 
 
@@ -77,7 +77,6 @@ irr = Deck.create!(
 
 Card.create!(
   term: "Abide",
-  vitality: 100,
   definition: "To suffer",
   deck: irr,
   context: "I said I would abide by their decision",
@@ -87,7 +86,6 @@ Card.create!(
 
 Card.create!(
   term: "Beget",
-  vitality: 100,
   definition: "engendrer",
   deck: irr,
   context: "they hoped that the King might beget an heir by his new queen",
@@ -98,7 +96,6 @@ Card.create!(
 
 Card.create!(
   term: "Bereave",
-  vitality: 100,
   definition: "scold or criticize (someone) angrily.",
   deck: irr,
   context: "she berated herself for being fickle",
@@ -138,7 +135,6 @@ creature = Deck.create!(name: "Creature", rank: 2, parent: greek, theme: history
 
 Card.create!(
   term: "Athena",
-  vitality: 100,
   definition: "goddess of wars",
   deck: god,
   context: "Athena !",
@@ -148,7 +144,6 @@ Card.create!(
 
 Card.create!(
   term: "Apollo",
-  vitality: 100,
   definition: "",
   deck: god,
   context: "Athena !",
@@ -218,65 +213,13 @@ end
 
 puts "liste des thèmes : \n\n"
 
-# themes = Theme.all
-# themes.each do |t|
-#   puts "\n\n--------------\nTheme : #{t.name}\n-------------\n\n"
-#   t.decks.each do |x|
-#     puts "- "+x.name  if x.rank == 1
-#     printChild(x) if x.rank == 1
-#   end
-# end
+themes = Theme.all
+themes.each do |t|
+  puts "\n\n--------------\nTheme : #{t.name}\n-------------\n\n"
+  t.decks.each do |x|
+    puts "- "+x.name  if x.rank == 1
+    printChild(x) if x.rank == 1
+  end
+end
 
 
-def card_child(array, done, count)
-      array.each do |item|
-        if !done.include?(item)
-            done << item
-
-            item.cards.each do |card|
-            count << card
-            puts card.term
-            end
-
-          card_child(item.childs, done, count) if item.childs
-        else
-
-        end
-
-        end
-        count
-    end
-
-    def card_theme(theme)
-      done = []
-      count = []
-      count << card_child(theme.decks, done, count)
-    end
-
-     def card_theme_vitality(theme)
-      done = []
-      vita = 0
-      vita += card_child_vitality(theme.decks, done, vita)
-      card_theme(theme).count == 0 ? nb = card_theme(theme).count : nb = 1
-      vitality = vita / nb
-      puts "#{vitality} - #{nb}"
-
-    end
-
-    def card_child_vitality(array, done, vita)
-      array.each do |item|
-        if !done.include?(item)
-          item.cards.each do |card|
-            vita += card.vitality
-          end
-
-          card_child_vitality(item.childs, done, vita) if item.childs
-         end
-        end
-        vita
-
-    end
-
-
-puts "\n -- nombre de card du theme anglais : " + card_theme(english).count.to_s
-puts "vita : " + card_theme_vitality(english).to_s

@@ -22,6 +22,8 @@ import initNewTheme from "../components/initNewTheme.js"
 $(function () {
   initPhotosUpload();
   initCardLecteur();
+  initLearn();
+
 
   const json = (document.querySelector('.raw-json'))
   if (json) render(JSON.parse(json.innerHTML))
@@ -37,7 +39,6 @@ initDictionary();
 // init();
 // initD3();
 //initGoogleSign()
-initLearn();
 
 initStickyBar();
 // highlightPlant();

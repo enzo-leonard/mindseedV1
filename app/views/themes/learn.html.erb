@@ -1,7 +1,7 @@
 <div class="center-view">
 
   <div class="plant-progress">
-    <div id="growing"class="active"><%= render 'plant1' %></div>
+    <div id="growing" class="active"><%= render 'plant1' %></div>
     <div id="growing"><%= render 'plant2' %></div>
     <div id="growing"><%= render 'plant3' %></div>
     <div id="growing"><%= render 'plant3' %></div>
@@ -13,73 +13,75 @@
     <div class="card-learn-header">
       <a class=close href="/themes"><i class="fas fa-times"></i></a>
       <div class="progress">
-        <div id=progressTrue class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        <div id=progressFalse class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div id=progressTrue class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0"
+          aria-valuemin="0" aria-valuemax="100"></div>
+        <div id=progressFalse class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0"
+          aria-valuemin="0" aria-valuemax="100"></div>
       </div>
     </div>
 
     <div class="card-learn-container">
-      <% @cards.each do |card| %>
-      <div class="consigne hidden">
-        Quelle est la composition d'un <%= card.term %> ?
-      </div>
+      <% @cards.each do |item| %>
 
 
-      <div class="flip-card hidden learn">
+      <div id='card_<%=item.id%>' class="flip-card hidden learn">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <div class="flashcard-card"
-            style="background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg" %>); background-size: cover; background-position: center;;">
-            <a><%= card.term %></a>
+              style="background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= item.photo.present? ? item.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg" %>); background-size: cover; background-position: center;;">
+              <a><%= item.term %></a>
+            </div>
           </div>
-        </div>
-        <div class="flip-card-back">
-          <img class="icon-title" src=<%= card.photo.present? ? card.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>>
-          <div class="title learn">
-            <%= card.term %>
-          </div>
-          <div class="content learn">
-            <span><strong>answer :</strong></span> <%= card.definition%>
+          <div class="flip-card-back">
+            <img class="icon-title"
+              src=<%= item.photo.present? ? item.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg"  %>>
+            <div class="title learn">
+              <%= item.term %>
+            </div>
+            <div class="content learn">
+              <span><strong>answer :</strong></span> <%= item.definition%>
 
-          </div>
-          <div class="end">
+            </div>
+            <div class="end">
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <%end%>
+      <%end%>
 
-    <div class="answer-container">
+      <div class="answer-container">
 
 
-      <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
-      <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
-      <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
-      <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
+        <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
+        <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
+        <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
+        <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
 
+      </div>
     </div>
   </div>
-</div>
 
 
-<div class="answers hidden"></div>
+  <div class="answers hidden"></div>
 
 
-<div class="result slide-out">
+  <div class="result slide-out">
 
-  <div class="result-img">
-    <img src="https://images.unsplash.com/photo-1525923838299-2312b60f6d69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80" alt="" style="height: 500px">
-  </div>
-  <div class ="content">
-    <div class="congrat">Congratulations !</div>
-    <!-- <h2>Congratulations!</h2>
+    <div class="result-img">
+      <img
+        src="https://images.unsplash.com/photo-1525923838299-2312b60f6d69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80"
+        alt="" style="height: 500px">
+    </div>
+    <div class="content">
+      <div class="congrat">Congratulations !</div>
+      <!-- <h2>Congratulations!</h2>
     <h3>Les plus arides</h3>
     <p>Flashcard pas oufement révisées 1</p>
     <p>Flashcard pas oufement révisées 2</p>
     <p>Flashcard pas oufement révisées 3</p> -->
+    </div>
+
+
   </div>
-
-
-</div>
 </div>
