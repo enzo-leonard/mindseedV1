@@ -25,20 +25,76 @@ const initCardLecteur = () => {
           flashcards.insertAdjacentHTML("beforeend", card)
         }
       })
-      document.querySelector('.selector') !== null;
+
 
       const noTheme = document.querySelector('.add')
       const themeExist = document.querySelector('.add2')
 
       if (noTheme !== null) {
-      document.querySelector('.add').classList.toggle('hidden')
-      document.querySelector('.add form').setAttribute('action', `/themes`)
-}
+        document.querySelector('.add').classList.toggle('hidden')
+        document.querySelector('.add form').setAttribute('action', `/themes`)
+      }
+      else {
+        document.querySelector(".add2").classList.toggle('hidden')
+        console.log('pas clean ')
+        document.querySelector('.add2 form').setAttribute('action', `/decks/${id}/import`)
 
-else {
-      document.querySelector('.add2').classList.toggle('hidden')
-      document.querySelector('.add2 form').setAttribute('action', `/decks/${id}/import`)
-}
+
+
+        document.querySelector("#deck_theme_id").addEventListener('change', (e) => {
+
+
+          document.querySelectorAll("#deck_parent_id option").forEach((option) => {
+            option.classList.add('hidden')
+          })
+
+
+          const themeIdSelected = e.currentTarget.value
+          const decks = gon.decks;
+          const themes = gon.themes;
+
+
+          decks.forEach((deck) => {
+
+
+              if (themeIdSelected == deck.theme_id) {
+                console.log(deck)
+
+          const addOption = `<option value="${deck.id}">${deck.name}</option>`
+          document.querySelector("#deck_parent_id > option").insertAdjacentHTML("afterend", addOption)
+           // document.querySelector("#new_deck > input.btn.hidden.btn.btn-white").classList.toggle('hidden')
+          }
+        })
+
+          })
+
+
+      //         const themeId = document.querySelector("#deck_theme_id").value
+      //         const decks = gon.decks;
+      //         const themes = gon.themes;
+
+      //         decks.forEach((deck) => {
+      //           themes.forEach((theme) => {
+      //             const userId = gon.user
+      //            if (userId == theme.user_id && themeId == deck.theme_id)
+      //             console.log('coucou')
+      //            // const deckOptions = `
+      //            //  <%= f.association :parent, :collection => @sql_for_import %>
+
+      //            //  `
+
+      //            //  document.querySelector('.add2').insertAdjacentHTML("beforeend", deckOptions)
+      //           })
+
+      //         })
+
+      //       })
+
+      // }
+
+          // })
+        // })
+      }
     })
   })
 }

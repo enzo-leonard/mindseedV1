@@ -1,21 +1,26 @@
+URGENT DEBUG :
 
 
-TO DO DEMO :
-
-  CARD :
-  - add timeout photo
-  - debug add photo new
-  - edit fast card
-  - direct transformation
-  - reload after quit modal
-
-  HEURISTIQUE :
-  - add block
+ Input :
+  - definition :
+  - fast add
 
 
+Css :
 
-TICKET
-- acces DB
+  - modal add branch done
+  - modal import done
+  - card search done
+  - redirect import done
 
+
+Back :
+
+ - learn select theme
+ - learn change vitality
+ - calcul vitaly
+
+  Decks :
+   - add branch
 
 

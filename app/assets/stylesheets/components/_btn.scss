@@ -183,8 +183,8 @@
   bottom: 25px;
   right: 25px;
   z-index: 10;
-  display:flex;
-  height : 70px;
+  display: flex;
+  height: 70px;
   transition: all 0.3s ease;
 }
 
@@ -246,8 +246,4 @@
   .fas:hover {
     color: $mediumgreen !important;
   }
-}
-
-.new_deck{
-  display:flex;
 }

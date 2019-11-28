@@ -6,11 +6,11 @@ const initPhotosUpload = () => {
   const serviceKey = "4182fdf2da204cfda3fbdd407fbfc6db";
   let credentials = new CognitiveServicesCredentials(serviceKey);
   let imageSearchApiClient = new ImageSearchAPIClient(credentials);
+  const btnNew = document.querySelector('#btn-add-card')
   'use strict';
 
 
   const replaceNoPhoto = () => {
-    console.log('replace no photo')
 
     let noPhoto = []
 
@@ -20,6 +20,8 @@ const initPhotosUpload = () => {
         noPhoto.push(id)
       }
     })
+
+
 
     console.log('no photo : ' + noPhoto)
     noPhoto.forEach((id) => {
@@ -40,8 +42,12 @@ const initPhotosUpload = () => {
             let firstImageResult = imageResults.value[0];
             if (firstImageResult) {
               image.src = firstImageResult.contentUrl
+              console.log('source bef: '+src.value)
               src.value = firstImageResult.contentUrl
-              document.querySelector(`#update_btn_${id}`).click()
+              console.log('source after: ' + src.value)
+              const form = document.querySelector(`#edit_card_${id}`)
+              console.log('changement de photo : '+form)
+              Rails.fire(form, 'submit');
             }
           }
         })
@@ -54,16 +60,22 @@ const initPhotosUpload = () => {
 
 
 
-    document.querySelector('.decks.show').addEventListener('change', () => {
+    btnNew.addEventListener('click', () => {
       console.log('something change here')
       replaceNoPhoto();
-
     })
 
       const modalAfter = document.querySelector('.editable')
-      console.log('target : ' + modalAfter)
       modalAfter.addEventListener('click', () => {
-        console.log('changement de la modal after')
+        document.querySelectorAll('.btn-change-photo').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            let id = e.currentTarget.attributes.data_id.value
+            let hidden = document.querySelector(`#alts_${id}`)
+            hidden.classList.toggle('hidden')
+            console.log("la")
+            loadPhoto(id)
+          })
+        });
         replaceNoPhoto();
       })
 
@@ -107,7 +119,8 @@ const initPhotosUpload = () => {
                 alt.addEventListener('click', () => {
                   image.src = alt.src
                   src.value = alt.src
-                  update(id)
+                  const form = document.querySelector(`#edit_card_${id}`)
+                  Rails.fire(form, 'submit');
                   changePhoto(id)
                 })
               })
@@ -125,7 +138,6 @@ const initPhotosUpload = () => {
 
     $(function () {
       // Handler for .ready() called.
-      console.log("ehh")
       const btnChangePhoto = document.querySelector('.btn-change-photo-new')
       console.log(btnChangePhoto)
     });
@@ -188,7 +200,6 @@ const initPhotosUpload = () => {
               hidden.classList.toggle('hidden')
               console.log("la")
               loadPhoto(id)
-
             })
           });
 
@@ -209,6 +220,12 @@ const initPhotosUpload = () => {
   }
 
 }
+
+const reloadPhoto = () => {
+  initPhotosUpload()
+}
+
+
 
 
 
