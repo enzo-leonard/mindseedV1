@@ -1,17 +1,58 @@
+<%
+if vitality < 15
+  state = 7
+elsif vitality < 30
+  state = 6
+elsif vitality < 45
+  state = 5
+elsif vitality < 60
+  state = 4
+elsif vitality < 75
+  state = 3
+elsif vitality < 90
+  state = 2
+else
+  state = 1
+end
+%>
+
 <svg version="1.1" id="tree2" class="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    width="122" height="195" viewBox="0 0 247.754 391.512" style="enable-background:new 0 0 247.754 391.512;"
    xml:space="preserve">
 <g class="group-svg">
-  <ellipse style="fill:#46ACA8;" cx="115.333" cy="363" rx="61.667" ry="28.666"/>
   <path style="fill:#6ACCA5;" d="M131.234,374.751c-1.239-0.565-3.687,0.983-6.135,4.1c-1.436-4.729-3.381-7.638-4.789-7.528
     c-1.547,0.117-1.856,3.813-0.404,9.374c0.829,3.166,3.701,3.966,5.054,2.678c1.244,0.657,3.146,0.483,4.313-1.176
     C131.973,378.367,132.605,375.38,131.234,374.751z"/>
 
-    <linearGradient id="green2" gradientUnits="userSpaceOnUse" x1="12.7109" y1="347.572" x2="17.4428" y2="286.0574" gradientTransform="matrix(1 0 0 -1 102.3999 611.6108)">
+    <linearGradient id="vitality1" gradientUnits="userSpaceOnUse" x1="12.7109" y1="347.572" x2="17.4428" y2="286.0574" gradientTransform="matrix(1 0 0 -1 102.3999 611.6108)">
     <stop  offset="0.0102" style="stop-color:#46ACA8"/>
     <stop  offset="1" style="stop-color:#6ACCA5"/>
   </linearGradient>
-  <path class="feuillage" style="fill:url(#green2);" d="M173.221,292.528c-3.112-4.448-9.247-9.162-15.629-9.107
+<linearGradient id="vitality2" gradientUnits="userSpaceOnUse" x1="162.2754" y1="85.3911" x2="125.4424" y2="305.7237">
+	<stop  offset="0" style="stop-color:#B3CE67"/>
+	<stop  offset="1" style="stop-color:#70C6A3"/>
+</linearGradient>
+<linearGradient id="vitality3" gradientUnits="userSpaceOnUse" x1="355.041" y1="131.9321" x2="359.8611" y2="276.5304">
+	<stop  offset="0" style="stop-color:#B3CE67"/>
+	<stop  offset="1" style="stop-color:#F79445"/>
+</linearGradient>
+<linearGradient id="vitality4" gradientUnits="userSpaceOnUse" x1="573.5459" y1="131.9316" x2="578.366" y2="276.5305">
+	<stop  offset="0" style="stop-color:#F79445"/>
+	<stop  offset="1" style="stop-color:#E66225"/>
+</linearGradient>
+<linearGradient id="vitality5" gradientUnits="userSpaceOnUse" x1="828.5908" y1="131.9326" x2="833.4109" y2="276.5304">
+	<stop  offset="0" style="stop-color:#E66225;stop-opacity:0.4"/>
+	<stop  offset="1" style="stop-color:#7D1618"/>
+</linearGradient>
+<linearGradient id="vitality6" gradientUnits="userSpaceOnUse" x1="1036.3828" y1="63.5171" x2="1044.858" y2="317.7684">
+	<stop  offset="0" style="stop-color:#732F15;stop-opacity:0.5"/>
+	<stop  offset="1" style="stop-color:#3A1312"/>
+</linearGradient>
+<linearGradient id="vitality7" gradientUnits="userSpaceOnUse" x1="1254.5264" y1="66.4785" x2="1263.0017" y2="320.7308">
+	<stop  offset="0" style="stop-color:#732F15;stop-opacity:0.5"/>
+	<stop  offset="1" style="stop-color:#3A1312"/>
+</linearGradient>
+  <path class="feuillage" style="fill:url(#vitality<%=state%>);" d="M173.221,292.528c-3.112-4.448-9.247-9.162-15.629-9.107
     c-0.176,0.004-0.355,0.011-0.537,0.017c-3.041,0.121-6.795,1.053-8.957,2.849c-1.387,1.151-5.109,5.747-4.736,7.36
     c-3.292-14.285-2.936-36.035-23.799-40.574c-7.445-1.619-15.456-0.031-22.263,2.641c-13.714,5.388-20.688,14.341-27.326,25.688
     c-6.941,11.872-11.763,25.437-10.333,38.872c0.828,7.793,4.807,15.792,15.518,20.314c18.182,7.678,47.799,5.645,67.158,1.411

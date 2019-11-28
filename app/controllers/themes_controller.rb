@@ -1,16 +1,18 @@
 class ThemesController < ApplicationController
   before_action :set_Theme, only: [:show, :edit, :update, :destroy, :mind_map]
   def index
-    @themes = Theme.all
+    @themes = Theme.where(user: current_user)
     @data = {}
     @themes.each do |theme|
       nb = (card_theme(theme).count - 1)
       div = 1
       div = nb if nb > 0
       @data[theme.name] = {
-        nb_car: nb,
+        nb_card: nb,
         vitality_tt: card_theme_vitality(theme),
-        vitality: card_theme_vitality(theme)/div }
+        vitality: card_theme_vitality(theme)/div,
+        id: theme.id
+      }
     end
 
     @data_test = {
@@ -18,14 +20,23 @@ class ThemesController < ApplicationController
       "theme2" =>  {nb_card: 10, vitality: 50},
       "theme3" =>  {nb_card: 45, vitality: 100},
       "theme4" => {nb_card: 100, vitality: 10},
-      "theme5" =>  {nb_card: 89, vitality: 60},
-      "theme6" => {nb_card: 70, vitality: 10},
-      "theme7" =>  {nb_card: 0, vitality: 60}
+      "theme5" =>  {nb_card: 0, vitality: 0},
     }
+
 
   end
 
   def show
+     @data = {}
+      nb = (card_theme(@theme).count - 1)
+      div = 1
+      div = nb if nb > 0
+    @data[@theme.name] = {
+        nb_card: nb,
+        vitality_tt: card_theme_vitality(@theme),
+        vitality: card_theme_vitality(@theme)/div,
+        know: card_theme_know(@theme).count
+      }
     @decks_originel = []
     @array_map = []
     @theme.decks.each do |item|
@@ -40,13 +51,17 @@ class ThemesController < ApplicationController
   end
 
   def learn
+
+
     @theme = Theme.find(params[:id])
     @cards = []
+    selection = card_theme(@theme)
     7.times do
-      @cards << card_theme(@theme).sample
+      @cards << selection.sample
     end
 
   end
+
 
   def edit
   end
@@ -92,6 +107,30 @@ class ThemesController < ApplicationController
       params.require(:theme).permit(:vitality, :rank, :name, :description, :theme_id, :stars, :is_private, :parent_id)
     end
 
+
+
+    def card_know(array, done, count)
+      array.each do |item|
+        if !done.include?(item)
+            done << item
+
+            item.cards.each do |card|
+            count << card if card.vitality > 99
+            end
+
+          card_know(item.childs, done, count) if item.childs
+        else
+        end
+        end
+        count
+    end
+
+    def card_theme_know(theme)
+      done = []
+      count = []
+      count << card_know(theme.decks, done, count)
+    end
+
     def card_child(array, done, count)
       array.each do |item|
         if !done.include?(item)
@@ -133,6 +172,8 @@ class ThemesController < ApplicationController
         end
         vita
     end
+
+
 
 
 

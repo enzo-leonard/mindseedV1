@@ -3,6 +3,47 @@
     background-color: blue;
   }
 
+  #new-img {
+    img {
+      width: 100%;
+    }
+  }
+
+  .change-photo {
+    position: relative;
+  }
+
+  .btn-change-photo,
+  .btn-change-photo-new {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    padding: 1px 4px;
+    opacity: 0.5;
+    color: $black !important;
+    border-radius: 5px;
+    background: $white !important;
+  }
+
+  .alt-photo-container,
+  .alt-photo-container-new {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+  }
+
+  .alt-photo,
+  .alt-photo-new {
+    height: 75px;
+    width: 65px;
+    background-size: cover;
+    ;
+  }
+
   .dash-bar {
 
 

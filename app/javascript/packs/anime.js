@@ -18,6 +18,7 @@ const treesPop = anime({
   scaleX: [
    { value: 1.4, duration: 0},
    { value: 1.2, duration: 1500}
+
   ],
   scaleY: [
    { value: 0.1, duration: 0, easing: 'easeOutElastic(1, .3)'},

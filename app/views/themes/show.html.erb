@@ -27,11 +27,11 @@
         <%end%>
         <% unknown = 0 %>
         <% known = 0 %>
-        <% totalcards ? totalcards = 0 : known = totalcards/rand(1..totalcards)  %>
+        <% totalcards ? known = 0 : known = totalcards/rand(1..totalcards)  %>
         <% known == 0 ? unknown = 0 : unknown = totalcards - known  %>
         <% score = ((known/(totalcards+1))*100).round(0) %>
 
-          <div class="counter"><h3 class="nb"><%=score%>%</h3></div>
+          <div class="counter"><h3 class="nb"><%=@data[@theme.name][:vitality]%>%</h3></div>
           <p>vitality</p>
         </div>
         <div class="time">
@@ -47,11 +47,11 @@
           <h4> Flashcards</h4>
         </div>
         <div class="good">
-          <h4 class="nb"><%= known %></h4>
+          <h4 class="nb"><%= @data[@theme.name][:know] - 1%></h4>
           <h4>known</h4>
         </div>
         <div class="bad">
-          <h4 class="nb"><%= unknown %></h4>
+          <h4 class="nb"><%= totalcards - ( @data[@theme.name][:know] - 1 ) %></h4>
           <h4>unknow</h4>
         </div>
       </div>

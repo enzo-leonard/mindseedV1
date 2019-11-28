@@ -1,13 +1,13 @@
 <div class="center-view">
 
   <div class="plant-progress">
-    <div id="growing" class="active"><%= render 'plant1' %></div>
-    <div id="growing"><%= render 'plant2' %></div>
-    <div id="growing"><%= render 'plant3' %></div>
-    <div id="growing"><%= render 'plant3' %></div>
-    <div id="growing"><%= render 'plant4' %></div>
-    <div id="growing"><%= render 'plant5' %></div>
-    <div id="growing"><%= render 'plant5' %></div>
+    <div id="growing" class="active"><%= render 'plant1', vitality: 0%></div>
+    <div id="growing"><%= render 'plant2', vitality: 15 %></div>
+    <div id="growing"><%= render 'plant3', vitality: 30 %></div>
+    <div id="growing"><%= render 'plant3', vitality: 45 %></div>
+    <div id="growing"><%= render 'plant4', vitality: 60 %></div>
+    <div id="growing"><%= render 'plant5', vitality: 75 %></div>
+    <div id="growing"><%= render 'plant5', vitality: 100 %></div>
   </div>
   <div class="card-learn">
     <div class="card-learn-header">
@@ -56,7 +56,7 @@
 
 
 
-        <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
+        <a class="btn btn-purple big" id=show-card><i class="far fa-eye"></i>Show the answer</a>
         <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
         <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
         <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
@@ -78,7 +78,7 @@
   </div>
   <div class ="content">
     <div class="congrat">Congratulations !</div>
- 
+
     </div>
 
 

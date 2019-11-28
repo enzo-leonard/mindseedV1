@@ -2,5 +2,6 @@
   <%= form.input :name %>
   <%= form.input :description %>
   <%= form.association :parent, :collection => Deck.where(theme: theme) %>
+  <%= form.input :photo, as: :hidden, class: "hidden", input_html: { id: 'new_img_hidden'}%>
   <%= form.button :submit, class: "btn btn-green"%>
 <% end %>

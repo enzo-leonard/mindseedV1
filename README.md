@@ -15,3 +15,9 @@ URGENT DEBUG :
    - [photo decks]
 
 
+
+ticket :
+- bug deck
+- bug sort deck
+
+
