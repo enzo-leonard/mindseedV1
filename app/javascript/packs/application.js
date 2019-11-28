@@ -42,6 +42,5 @@ initDictionary();
 
 initStickyBar();
 // highlightPlant();
-initCardLecteur();
 
 initNewTheme();

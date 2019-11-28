@@ -28,9 +28,11 @@
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <div class="flashcard-card"
+
               style="background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= item.photo.present? ? item.photo : "https://www.npa2009.org/sites/default/files/images/NPA%20point%20d%27interrogation.jpg" %>); background-size: cover; background-position: center;;">
               <a><%= item.term %></a>
             </div>
+
           </div>
           <div class="flip-card-back">
             <img class="icon-title"
@@ -53,10 +55,12 @@
       <div class="answer-container">
 
 
+
         <a class="btn btn-purple big" id=show-card><i class="far fa-question-circle"></i>Need the answer</a>
         <a class="btn btn-green big" id=btn-next><i class="far fa-arrow-alt-circle-right"></i>Next</a>
         <a class="btn btn-green big" id=yes><i class="far fa-check-circle"></i>I knew that!</a>
         <a class="btn btn-purple big" id=no><i class="far fa-times-circle"></i>i don't know.</a>
+
 
       </div>
     </div>

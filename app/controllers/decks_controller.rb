@@ -94,7 +94,7 @@ class DecksController < ApplicationController
   def import
     @deck = Deck.find(params[:deck_id])
 
-    args = { rank: @deck.rank, name: @deck.name, description: @deck.description, is_private: true, theme_id: @deck.theme_id, parent_id: @deck.parent}
+    args = { rank: @deck.rank, name: @deck.name, description: @deck.description, is_private: true, theme_id: @deck.theme_id, parent_id: @deck.parent, vitality: 0}
     @deck2 = Deck.new(args)
     @deck2.theme.user = current_user
     @deck2.save
