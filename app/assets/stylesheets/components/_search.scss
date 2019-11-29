@@ -132,7 +132,12 @@
 .flashcard img {
   height: 90vh;
   width: 120px;
-  object-fit: cover;
+  -o-object-fit: cover;
+  /* object-fit: cover; */
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
+  background-color: black;
 }
 
 .flashcard h2 {
