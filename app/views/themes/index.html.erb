@@ -42,7 +42,8 @@
         <% @data.each do |key, metrics| %>
              <a href="/themes/<%=metrics[:id]%>" >
         <div id=forest_<%=metrics[:id]%> class="tree-forest">
-        <h2 class="tree-name"><%= key %> - <%= metrics[:vitality]%>%</h2>
+        <div class="tree-vita"><%= metrics[:vitality]%>%</div>
+        <h2 class="tree-name"><%= key %></h2>
         <p class="tree-count"><%= @nbcard = metrics[:nb_card] %> cards</p>
           <% if @nbcard == 0 %>
           <%= render 'plant1', vitality: metrics[:vitality] %>

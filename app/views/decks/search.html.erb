@@ -52,11 +52,10 @@
           <div class="add2 hidden">
             <%= simple_form_for(@deck, url: '') do |f| %>
 
-              <%= f.association :theme, :placeholder => "Choose a theme", :collection => Theme.where(user: current_user), input_html: { class: 'choose-decks left' } %>
-              <%= f.association :parent, :placeholder => "Choose a deck", class: 'hidden', collection: [] %>
-              <%= button_tag(type: 'submit', class: "btn btn-green small right") do %>
-            <i class="fas fa-plus"></i>
-
+              <%= f.association :theme,selected: "choose a theme", :placeholder => "Choose a theme", :collection => Theme.where(user: current_user), input_html: { class: 'choose-decks' } %>
+              <%= f.association :parent,selected: "Choose a deck", :placeholder => "Choose a deck", class: 'hidden', collection: [] %>
+              <%= button_tag(type: 'submit', class: "btn btn-green full") do %>
+            <i class="fas fa-plus"></i> import this deck
             <% end %>
 
           </div>

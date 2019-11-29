@@ -31,31 +31,39 @@
 }
 
 .banner {
-  background-size: cover;
   background-image: asset-url("hero.png");
-  // background: radial-gradient(circle at 50% 21%, $green, $mediumgreen);
-  background-position: center;
-  padding: 20px 0 200px 0;
-  height: 70vh;
+ background-size: contain;
+    background-position: right;
+    padding: 20px 0 200px 0;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-color: white;
+    box-shadow: inset -4px -10px 50px rgba(76, 189, 184, 0.1);
 
-  .wrapper-main {
-    padding-top: 8rem;
+  .title-banner {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+  .logo-banner{
+    transform: scale(1.2);
+    transform-origin: left center;
+    margin:2rem 0;
+    width: 300px;
   }
   h1 {
     text-align: left;
     font-family : $headers-font;
     margin: 0;
-    color: $white;
+    color: $green;
     padding-bottom: 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     font-weight: bold;
   }
   p {
     font-family : $body-font;
     font-size: 20px;
-    color: $white;
+    color: $lightpurple;
     opacity: .9;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
