@@ -14,7 +14,9 @@ URGENT DEBUG :
    - vitality dashboard
    - [photo decks]
 
-
+To do :
+ - button train dashboard
+ - change scale vitality
 
 ticket :
 - bug deck

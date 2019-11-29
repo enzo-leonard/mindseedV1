@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'omniauth-facebook'
 gem 'oxford_dictionary'
 gem 'gon'
+gem 'awesome_print'
 
 
 group :development do
