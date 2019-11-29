@@ -154,36 +154,36 @@ french = Deck.create!(name: "French", rank: 1, parent: nil, theme: history, orig
 
 Card.create!(
   term: "Athena", vitality: 100,
-  definition: "goddess of wars",
+  definition: " Artemis in the ancient Greek religion, is the goddess of the hunt, the wilderness.",
   deck: god,
   context: "Athena !",
   memo: "Athena as the grece capital",
-  photo: ""
+  photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Mattei_Athena_Louvre_Ma530_n2.jpg/220px-Mattei_Athena_Louvre_Ma530_n2.jpg"
 )
 
 Card.create!(
   term: "Apollo", vitality: 100,
-  definition: "",
+  definition: "Apollo is one of the most important and complex of the Olympian deities in classical Greek.",
   deck: god,
   context: "Athena !",
   memo: "Athena as the grece capital",
-  photo: ""
+  photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Apollo_of_the_Belvedere.jpg/220px-Apollo_of_the_Belvedere.jpg"
 )
-Card.create!(term: "Poseidon", vitality: 50, deck: god)
-Card.create!(term: "Zeus", vitality: 50, deck: god)
-Card.create!(term: "Ares", vitality: 50, deck: god)
-Card.create!(term: "Artemis", vitality: 50, deck: god)
-Card.create!(term: "Aphrodite", vitality: 50, deck: god)
-Card.create!(term: "Hades", vitality: 50, deck: god)
-Card.create!(term: "Hephaestus", vitality: 50, deck: god)
-Card.create!(term: "Hera", vitality: 50, deck: god)
-Card.create!(term: "Hermes", vitality: 50, deck: god)
+Card.create!(term: "Poseidon", definition: "Poseidon was one of the Twelve Olympians in ancient Greek religion and myth, god of the sea.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/0036MAN_Poseidon.jpg/220px-0036MAN_Poseidon.jpg", vitality: 50, deck: god)
+Card.create!(term: "Zeus", definition: "Zeús is the thunder god in ancient Greek religion, who rules as king of the gods of Mount Olympus.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jupiter_Smyrna_Louvre_Ma13.jpg/220px-Jupiter_Smyrna_Louvre_Ma13.jpg", vitality: 50, deck: god)
+Card.create!(term: "Ares", definition: "Ares is the Greek god of war. He is one of the Twelve Olympians, the son of Zeus and Hera.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Ares_Canope_Villa_Adriana_b.jpg/220px-Ares_Canope_Villa_Adriana_b.jpg", vitality: 50, deck: god)
+Card.create!(term: "Artemis", definition: "Artemis, in the ancient Greek religion and myth, is the goddess of the hunt, the wilderness.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Diane_de_Versailles_Leochares.jpg/220px-Diane_de_Versailles_Leochares.jpg",vitality: 50, deck: god)
+Card.create!(term: "Aphrodite", definition: "Aphrodite is an ancient Greek goddess associated with love, beauty, pleasure, passion and procreation.", photo: "https://upload.wikimedia.org/wikipedia/commons/0/02/NAMA_Aphrodite_Syracuse.jpg" ,vitality: 50, deck: god)
+Card.create!(term: "Hades", definition: "Hades, in the ancient Greek religion and myth, is the god of the dead and the king of the underworld.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Hades-et-Cerberus-III.jpg/220px-Hades-et-Cerberus-III.jpg" ,vitality: 50, deck: god)
+Card.create!(term: "Hephaestus", definition: "Hephaestus is the Greek god of blacksmiths, metalworking, carpenters, craftsmen, artisans...", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Vulcan_Coustou_Louvre_MR1814.jpg/220px-Vulcan_Coustou_Louvre_MR1814.jpg" ,vitality: 50, deck: god)
+Card.create!(term: "Hera", definition: "Hera is the goddess of women, marriage, family, and childbirth in ancient Greek religion and myth.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Hera_Campana_Louvre_Ma2283.jpg/220px-Hera_Campana_Louvre_Ma2283.jpg" ,vitality: 50, deck: god)
+Card.create!(term: "Hermes", definition: "Hermes is the god of trade, heralds, commerce, thieves, sports, travelers, and athletes.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hermes_Ingenui_Pio-Clementino_Inv544.jpg/220px-Hermes_Ingenui_Pio-Clementino_Inv544.jpg" ,vitality: 50, deck: god)
 
 # Card.create!(term: "Cronus", vitality: 100, deck: titan)
 
-Card.create!(term: "Giant", vitality: 100, deck: creature)
-Card.create!(term: "Gorgons", vitality: 100, deck: creature)
-Card.create!(term: "Medusa", vitality: 100, deck: creature)
+Card.create!(term: "Giant", definition: "In Greek Mythology, the Giants, also called Gigantes, were a race of great strength.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Poseidon_Polybotes_Cdm_Paris_573.jpg/220px-Poseidon_Polybotes_Cdm_Paris_573.jpg", vitality: 100, deck: creature)
+Card.create!(term: "Gorgons", definition: "In Greek mythology, a Gorgon turn people to horrifying visage that turned those who beheld her to stone.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Crat%C3%A8re_de_Vix_0007.jpg/180px-Crat%C3%A8re_de_Vix_0007.jpg", vitality: 100, deck: creature)
+Card.create!(term: "Medusa", definition: "In Greek mythology, Medusa was a a Gorgon, generally described as a winged human female.", photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Gorgoneion.JPG/280px-Gorgoneion.JPG", vitality: 100, deck: creature)
 # Card.create!(term: "Pegasus", vitality: 100, deck: creature)
 # Card.create!(term: "Talos", vitality: 100, deck: creature)
 # Card.create!(term: "Cerberus", vitality: 100, deck: creature)
