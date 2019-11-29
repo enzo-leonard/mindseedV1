@@ -1,9 +1,9 @@
 .dash-list {}
 
-.container-list-item{
+.container-list-item {
   display: flex;
-  background-color:red;
-  width:100%;
+  background-color: red;
+  width: 100%;
 }
 
 .dash-list-theme {
@@ -46,17 +46,27 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 8px;
+
   text-decoration: none;
   min-height: 0px;
   transition: all 0.15s ease;
   opacity: 0;
+
+  .learnBtn {
+    background-color: red;
+  }
+
+  a {
+    color: $mediumgreen !important;
+  }
 
   .vitality-count {
     width: 100px;
     height: 66px;
     background-color: #6e599c;
     margin-right: 7px;
+    margin-bottom: 3px;
+    ;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -68,23 +78,31 @@
     }
   }
 
-  p {
-    padding: 20px;
-    border: 1.5px solid $mediumgreen;
-    margin: 0;
-    font-weight: 600;
-    border-radius: 5px;
-    color: $mediumgreen;
-    width: 100%;
-    transition: all 0.15s ease;
+  &:hover .learn_dash {
+    opacity: 1;
   }
+
+  .learn_dash {
+    opacity: 0;
+  }
+
+
+  padding: 20px;
+  border: 1.5px solid $mediumgreen;
+  margin-bottom: 8px;
+  font-weight: 600;
+  border-radius: 5px;
+  color: $mediumgreen;
+  width: 100%;
+  transition: all 0.15s ease;
+
 
   &:hover a {
     text-decoration: none !important;
-    color: $white;
+    color: $white !important;
   }
 
-  &:hover p {
+  &:hover {
     color: $white;
     background: $mediumgreen;
     border: 3px solid $mediumgreen;

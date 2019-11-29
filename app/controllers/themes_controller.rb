@@ -51,8 +51,6 @@ class ThemesController < ApplicationController
   end
 
   def learn
-
-
     @theme = Theme.find(params[:id])
     @cards = @theme.cards.order(:vitality).first(7)
   end

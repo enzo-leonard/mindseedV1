@@ -43,10 +43,10 @@
   .button-bar {
     width: 100%;
     position: relative;
-    right:0!important;
+    right: 0 !important;
   }
 
-   .search .is-valid,
+  .search .is-valid,
   .search .form-control {
     border: inherit;
     background-image: none;
@@ -61,7 +61,7 @@
     color: $black;
     font-weight: 500;
     margin-bottom: -25px;
-    background:red;
+    background: red;
   }
 
   &::-webkit-scrollbar {
@@ -251,4 +251,8 @@
   }
 }
 
-.add, .add2 {width:100%; margin-top: 10px;}
+.add,
+.add2 {
+  width: 100%;
+  margin: 50px 0px;
+}

@@ -55,12 +55,16 @@
               <%= f.association :theme, include_blank: "Choose a Theme", :collection => Theme.where(user: current_user), input_html: { class: 'choose-decks' } %>
               <%= f.association :parent, include_blank: "Choose a Deck", class: 'hidden', collection: [] %>
               <%= button_tag(type: 'submit', class: "btn btn-green full") do %>
-            <i class="fas fa-plus"></i> Import this deck
+            <i class="fas fa-plus"></i> Import this deck <br>
             <% end %>
           </div>
+
+
       <% end %>
     <% end %>
+
   </div>
+
 
       </div>
     </div>
