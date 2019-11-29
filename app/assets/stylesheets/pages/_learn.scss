@@ -81,7 +81,7 @@
     opacity:0;
     transition: all 1s ease;
     width: 19vh;
-    transform: scaleY(0.5) scaleX(2.5);
+    transform: scaleY(2) scaleX(2);
     transform-origin: bottom center;
 
   }
@@ -90,7 +90,7 @@
   }
   .active{
     opacity:1 !important;
-    transform: scaleY(2.1) scaleX(2.1)!important;
+    transform: scaleY(2) scaleX(2)!important;
     transition: all 1s ease;
   }
 }
@@ -164,6 +164,10 @@
     opacity: 1;
     right: 99px;
     z-index:7;
+
+.result-img{
+  object-fit:contain;
+}
 
     .content {
       display:flex;

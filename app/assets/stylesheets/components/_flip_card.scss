@@ -1,3 +1,7 @@
+.flip-card.training{
+  height: 400px!important;
+}
+
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -105,7 +109,7 @@
 
   .icon-title {
     position:absolute;
-    top: -32px;
+    top: 0;
     left: 56px;
     border: 4px solid $white;
     height: 180px;

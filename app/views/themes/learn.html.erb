@@ -1,13 +1,13 @@
 <div class="center-view">
-
   <div class="plant-progress">
-    <div id="growing" class="active"><%= render 'plant1', vitality: 0%></div>
-    <div id="growing"><%= render 'plant2', vitality: 15 %></div>
-    <div id="growing"><%= render 'plant3', vitality: 30 %></div>
-    <div id="growing"><%= render 'plant3', vitality: 45 %></div>
-    <div id="growing"><%= render 'plant4', vitality: 60 %></div>
-    <div id="growing"><%= render 'plant5', vitality: 75 %></div>
-    <div id="growing"><%= render 'plant5', vitality: 100 %></div>
+    <div id="growing" class="active"><%= render 'grow1' %></div>
+    <div id="growing"><%= render 'grow2' %></div>
+    <div id="growing"><%= render 'grow3' %></div>
+    <div id="growing"><%= render 'grow4' %></div>
+    <div id="growing"><%= render 'grow5' %></div>
+    <div id="growing"><%= render 'grow6' %></div>
+    <div id="growing"><%= render 'grow7' %></div>
+    <div id="growing"><%= render 'grow8' %></div>
   </div>
   <div class="card-learn">
     <div class="card-learn-header">
@@ -24,7 +24,7 @@
       <% @cards.each do |item| %>
 
 
-      <div id='card_<%=item.id%>' class="flip-card hidden learn">
+      <div id='card_<%=item.id%>' class="flip-card hidden learn training">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <div class="flashcard-card"

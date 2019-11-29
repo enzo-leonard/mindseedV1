@@ -107,29 +107,45 @@ $min-in-row: $max-in-row - 1;
   transition: all 0.5s ease 0.4s;
   transform-origin: center bottom;
 
-  p,
-  h2 {
+  .tree-vita, .tree-name,.tree-count {
     position: absolute;
     opacity: 0;
     bottom: 150px;
     transition: all 0.4s ease 0s;
     pointer-events: none;
+  }
+
+  .tree-vita{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    background-color: $blue;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: white;
+    font-weight:600;
+    left: 3px;
     z-index: 2;
   }
 
-  h2 {
+  .tree-name {
     font-size: 1.4rem;
-    padding: 3px;
+    padding: 4px;
     color: $white !important;
     background-color: $mediumgreen;
     transform: rotate(0deg);
+    left: 40px;
+    padding-left: 20px;
+    z-index: 1;
   }
 
-  p {
+  .tree-count {
     padding: 1px 3px;
     background-color: $purple;
     color: $white !important;
     transform: rotate(0deg);
+    z-index: 3;
   }
 
   .tree {
@@ -145,12 +161,6 @@ $min-in-row: $max-in-row - 1;
   }
 }
 
-.tree-forest:hover h2 {
-  bottom: 220px !important;
-  opacity: 1;
-  transition: all 0.5s ease 0.4s;
-  transform: rotate(-1deg);
-}
 
 .tree-forest:hover {
   transform: scale(1.2);
@@ -159,7 +169,19 @@ $min-in-row: $max-in-row - 1;
 
 }
 
-.tree-forest:hover p {
+.tree-forest:hover .tree-vita {
+  bottom: 220px !important;
+  opacity: 1;
+  transition: all 0.5s ease 0.4s;
+}
+
+.tree-forest:hover .tree-name {
+  bottom: 220px !important;
+  opacity: 1;
+  transition: all 0.5s ease 0.4s;
+  transform: rotate(-1deg);
+}
+.tree-forest:hover .tree-count {
   bottom: 190px !important;
   opacity: 1;
   transition: all 0.5s ease 0.4s;

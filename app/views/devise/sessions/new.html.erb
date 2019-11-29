@@ -1,4 +1,7 @@
 <div class="login-full">
+    <div class="fun">
+       <%= image_tag("fun_signup.png", alt: "signup")%>
+    </div>
   <div class="login-left">
     <div class="login-form">
       <div class="title green">
@@ -42,9 +45,6 @@
     </div>
   </div>
   <div class="login-right">
-    <div class="fun">
-       <%= image_tag("fun_signup.png", alt: "signup")%>
-    </div>
     <div class="content">
       <p>Don't have an account yet ?</p>
       <p class ="btn btn-ghost-white"><%= link_to "Sign up", new_registration_path(resource_name) %></p>
