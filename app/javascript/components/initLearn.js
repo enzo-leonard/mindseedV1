@@ -75,20 +75,20 @@ const initLearn = () => {
         const resultcontent = document.querySelector(".result .content")
         resultcontent.insertAdjacentHTML("beforeend",
 
-          `<div class="debrief">You did great ! The vitality's score of your tree gain <strong>+30pts</strong> !</div>
+          `<div class="debrief">You did great ! Your tree's vitality gained <strong>+30pts</strong> ! </div>
           <div class="all-cards">
-          <div class="known-card" > <h3 class="good nb"> ${trueAnswer} </h3> cards you do know.</div>
-          <div class="unknown-card"> <h3 class="bad nb"> ${falseAnswer} </h3> cards you do soon !</div>
+          <div class="known-card" > <h3 class="good nb"> ${trueAnswer} </h3> cards you already know.</div>
+          <div class="unknown-card"> <h3 class="bad nb"> ${falseAnswer} </h3> cards you'll know soon !</div>
           </div>
           <div class = "score" > ${((trueAnswer / nbMaxCard) * 100).toFixed(1)}%</div>
           <div class="buttons">
-          <a href="" class="btn btn-green" id=btn-again> <i class="fas fa-redo"></i> keep learning </a>
-          <a href="/dashboard" class="btn btn-purple" id=btn-dashboard><i class="fas fa-seedling"></i> dashboard</a>
+          <a href="" class="btn btn-green" id=btn-again> <i class="fas fa-redo"></i> Keep learning </a>
+          <a href="/dashboard" class="btn btn-purple" id=btn-dashboard><i class="fas fa-seedling"></i> Dashboard</a>
           </div>`)
 
 
 
-        console.log(resultcard)
+
 
       }
 

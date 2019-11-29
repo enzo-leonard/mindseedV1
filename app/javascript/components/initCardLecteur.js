@@ -1,13 +1,13 @@
 const initCardLecteur = () => {
   const result = document.querySelectorAll(".result-deck");
-  console.log(result)
+
   result.forEach((r) => {
     r.addEventListener('click', (event) => {
       const right = document.querySelector('.search-right')
       const btnRight = document.querySelector('.button-bar')
       right.classList.toggle("open");
       btnRight.classList.toggle("fix-btn");
-      console.log(right)
+
       const id = event.currentTarget.id
       const flashcards = document.querySelector('.flashcards')
       const flashcard = gon.cards;
@@ -59,7 +59,7 @@ const initCardLecteur = () => {
 
 
               if (themeIdSelected == deck.theme_id) {
-                console.log(deck)
+
 
           const addOption = `<option value="${deck.id}">${deck.name}</option>`
           document.querySelector("#deck_parent_id > option").insertAdjacentHTML("afterend", addOption)
