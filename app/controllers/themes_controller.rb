@@ -51,15 +51,8 @@ class ThemesController < ApplicationController
   end
 
   def learn
-
-
     @theme = Theme.find(params[:id])
-    @cards = []
-    selection = card_theme(@theme)
-    7.times do
-      @cards << selection.sample
-    end
-
+    @cards = @theme.cards.order(:vitality).first(7)
   end
 
 
@@ -137,15 +130,14 @@ class ThemesController < ApplicationController
             done << item
 
             item.cards.each do |card|
-            count << card
-            puts card.term
+              count << card
+              puts card.term
             end
 
           card_child(item.childs, done, count) if item.childs
-        else
         end
-        end
-        count
+      end
+      count
     end
 
     def card_theme(theme)

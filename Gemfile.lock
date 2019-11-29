@@ -58,6 +58,7 @@ GEM
       zeitwerk (~> 2.2)
     autoprefixer-rails (9.7.1)
       execjs
+    awesome_print (1.8.0)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -237,6 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  awesome_print
   bootsnap
   devise
   dotenv-rails

@@ -22,18 +22,20 @@
      <p>name</p> -->
 
    </div>
+   <div class="dash-list-theme">
     <% @themes.each do |item| %>
-      <% if item.user == current_user %>
-        <a href="/themes/<%=item.id%>">
-          <div id=list_<%=item.id%> class="list-element">
-           <p> <%= item.name %>
-            <a href="/themes/<%=item.id%>/learn">learn</a>
-          </p>
-          </div>
-          </a>
+ <% if item.user == current_user %>
+
+ <div class="container list-element">
+ <a href="/themes/<%=item.id%>"> <%=item.name%> </a>
+  <a href="/themes/<%=item.id%>/learn" class="learn_dash"> <i class="fas fa-seedling"></i> learn </a>
+
+ </div>
+
 
       <%end%>
     <%end%>
+  </div>
   </div>
 </div>
   <div class="dash-garden">
