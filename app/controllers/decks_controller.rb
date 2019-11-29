@@ -118,7 +118,9 @@ class DecksController < ApplicationController
     @deck2.theme = @theme
     @deck2.parent = Deck.find(params[:deck][:parent_id])
 
-    @deck2.save
+
+    @deck2.save!
+
 
     redirect_to theme_path(@theme)
 

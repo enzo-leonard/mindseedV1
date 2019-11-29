@@ -20,7 +20,6 @@ const initCardLecteur = () => {
             <div class="flashcard-infos">
             <h2>${f.term}</h2>
             <p>${f.definition}</p>
-              <p class='italic'>${f.context}</p>
             </div>
           </div>`
 
