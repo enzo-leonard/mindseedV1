@@ -1,5 +1,11 @@
 .dash-list {}
 
+.container-list-item{
+  display: flex;
+  background-color:red;
+  width:100%;
+}
+
 .dash-list-theme {
   display: flex;
   flex-direction: column;
@@ -38,6 +44,7 @@
 .list-element {
   color: $mediumgreen;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 8px;
   text-decoration: none;

@@ -26,10 +26,12 @@
       <% if item.user == current_user %>
         <a href="/themes/<%=item.id%>">
           <div id=list_<%=item.id%> class="list-element">
-            <p> <%= item.name %></p>
-
+           <p> <%= item.name %>
+            <a href="/themes/<%=item.id%>/learn">learn</a>
+          </p>
           </div>
-        </a>
+          </a>
+
       <%end%>
     <%end%>
   </div>

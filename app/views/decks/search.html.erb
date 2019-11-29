@@ -41,7 +41,7 @@
           <% end %>
         </div>
 
-        <div class="button-bar">
+      <div class="button-bar">
           <% if Theme.where(user: current_user).empty? %>
           <div class="add hidden">
           <%= flash[:notice] = "Before being able to import a deck, you have to create a Theme" %>
@@ -57,11 +57,10 @@
               <%= button_tag(type: 'submit', class: "btn btn-green full") do %>
             <i class="fas fa-plus"></i> Import this deck
             <% end %>
-
           </div>
-          <% end %>
-          <% end %>
-    </div>
+      <% end %>
+    <% end %>
+  </div>
 
       </div>
     </div>
